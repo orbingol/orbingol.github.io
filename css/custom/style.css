@@ -5,3 +5,17 @@ body {
 .strong {
 	font-weight: bold;
 }
+
+.nps {
+    display: none !important;
+}
+
+@media print {
+    .np {
+        display: none !important;
+    }
+
+    .nps {
+        display: block !important;
+    }
+}
