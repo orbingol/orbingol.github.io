@@ -4,7 +4,7 @@ This is the repository of my personal web page.
 
 ## Social Icons ##
 
-Social Icons are courtesy of Dan Leech and can be downloaded from (here)[http://www.iconarchive.com/show/simple-icons-by-danleech.2.html]
+Social Icons are courtesy of Dan Leech and can be downloaded from [here](http://www.iconarchive.com/show/simple-icons-by-danleech.2.html).
 
 ## License ##
 
