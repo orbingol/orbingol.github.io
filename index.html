@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Onur Rauf Bingol's personal page and CV">
+  <meta name="description" content="Onur Rauf Bingol's personal page">
   <meta name="author" content="Onur Rauf Bingol">
   <title>Onur Rauf Bingol</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom/style.css">
 
@@ -20,6 +20,17 @@
   <script src="js/html5shiv.js"></script>
   <script src="js/respond.min.js"></script>
   <!--[endif]-->
+  <script type="text/javascript">
+    jQuery(window).bind('resize', (function() {
+      var timer;
+      return function() {
+        clearTimeout(timer);
+        timer = setTimeout(function() {
+          Cufon.refresh();
+        }, 500); 
+      };
+    })());
+  </script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -33,27 +44,31 @@
 <body>
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2 text-center">
-      <div class="page-header">
-        <h1 class="cufon-header">Onur Rauf Bingol
-          <small>Personal Website</small>
-        </h1>
-      </div>
+    <div class="col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-3 col-xs-offset-1">
+      <img src="http://www.gravatar.com/avatar/933fee328c75da3e4c63c264921a1c68?s=240" class="img-thumbnail" />
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="well well-lg">
-        <p>I am a Metallurgical and Materials Engineer with strong enthusiast and good experience in
-          <strong>Software and Web Development</strong> technologies.</p>
-        <br/>
-
-        <div class="btn-group btn-group-justified btn-group-lg">
-          <a href="/cv/" class="btn btn-primary" role="button">My CV</a>
-          <a href="/personal/" class="btn btn-default" role="button">Personal Info</a>
+    <div class="col-md-5 col-sm-5 col-xs-5">
+        <div class="row">
+          <div class="">
+            <h1 class="cufon-header text-center">Onur Rauf Bingol</h1>
+          </div>
         </div>
-
-      </div>
+        <div class="row">
+          <div style="text-align: center;">
+            <p><strong>Software Specialist and Web Developer</strong></p>
+          </div>
+        </div>
+        <div class="row">
+          <div style="text-align: center;">
+            <p>
+              <a href="http://www.linkedin.com/in/onurraufbingol" target="_blank"><img src="images/linkedin-icon.png" /></a> 
+              &nbsp;
+              <a href="https://github.com/orbingol" target="_blank"><img src="images/github-icon.png" /></a>
+              &nbsp;
+              <a href="https://plus.google.com/+OnurRaufBingöls" target="_blank"><img src="images/google-plus-icon.png" /></a>
+            </p>
+          </div>
+        </div>
     </div>
   </div>
 </div>
