@@ -2,8 +2,14 @@ body {
   padding-top: 70px;
 }
 
-text-center {
+.text-center {
   text-align: center;
+}
+
+.social-box {
+  margin-top: 5px;
+  padding-top: 10px;
+  border-top: 1px #ccc dotted;
 }
 
 @media(max-width: 480px) {
