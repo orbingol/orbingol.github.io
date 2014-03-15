@@ -15,33 +15,49 @@ body {
 @media(max-width: 480px) {
   h1 {
     font-size: 18px;
+    margin-bottom: 0px;
   }
   h2 {
-    font-size: 9px;
+    font-size: 11px;
+  }
+  .social-box {
+    margin-top: 7px;
+    padding-top: 20px;
   }
 }
 
 @media(min-width: 480px) and (max-width: 768px) {
   h1 {
     font-size: 28px;
+    margin-bottom: 0px;
   }
   h2 {
-    font-size: 14px;
+    font-size: 16px;
+  }
+  .social-box {
+    margin-top: 10px;
+    padding-top: 20px;
   }
 }
 
 @media(min-width: 768px) and (max-width: 992px) {
   h1 {
     font-size: 36px;
+    margin-bottom: 0px;
   }
   h2 {
     font-size: 18px;
+  }
+  .social-box {
+    margin-top: 25px;
+    padding-top: 20px;
   }
 }
 
 @media(min-width: 992px) {
   h1 {
     font-size: 42px;
+    margin-bottom: 0px;
   }
   h2 {
     font-size: 24px;
