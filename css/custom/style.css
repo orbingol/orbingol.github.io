@@ -7,9 +7,17 @@ body {
 }
 
 .social-box {
-  margin-top: 5px;
-  padding-top: 10px;
-  border-top: 1px #ccc dotted;
+  margin-top: 10px;
+  padding-top: 15px;
+  margin-bottom: 15px;
+}
+
+.social-box a {
+  padding-left: 30px;
+}
+
+.social-box a:first-child {
+  padding-left: 0px;
 }
 
 @media(max-width: 480px) {
@@ -18,25 +26,17 @@ body {
     margin-bottom: 0px;
   }
   h2 {
-    font-size: 11px;
-  }
-  .social-box {
-    margin-top: 7px;
-    padding-top: 20px;
+    font-size: 14px;
   }
 }
 
 @media(min-width: 480px) and (max-width: 768px) {
   h1 {
     font-size: 28px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
   }
   h2 {
-    font-size: 16px;
-  }
-  .social-box {
-    margin-top: 10px;
-    padding-top: 20px;
+    font-size: 20px;
   }
 }
 
@@ -48,10 +48,6 @@ body {
   h2 {
     font-size: 18px;
   }
-  .social-box {
-    margin-top: 25px;
-    padding-top: 20px;
-  }
 }
 
 @media(min-width: 992px) {
@@ -60,7 +56,6 @@ body {
     margin-bottom: 0px;
   }
   h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
-}
 }
