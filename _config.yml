@@ -1,0 +1,25 @@
+# Site settings
+title: Onur Rauf Bingöl
+email: orbingol@gmail.com
+description: "Kişisel blogum..."
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://onurraufbingol.com" # the base hostname & protocol for your site
+twitter_username: orbingol
+github_username:  orbingol
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+
+# Use the following plug-ins
+gems:
+- jemoji # Emoji please!
+- jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+
+# Exclude these files from your production _site
+exclude:
+- Gemfile
+- Gemfile.lock
+- LICENSE.md
+- README.md
+- CNAME
