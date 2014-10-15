@@ -16,6 +16,9 @@ gems:
 - jemoji # Emoji please!
 - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
 
+# Default encoding
+encoding: "utf-8"
+
 # Exclude these files from your production _site
 exclude:
 - Gemfile
