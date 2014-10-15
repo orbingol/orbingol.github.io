@@ -19,6 +19,10 @@ gems:
 # Default encoding
 encoding: "utf-8"
 
+# Extension handling
+markdown_ext: "markdown,md,html"
+textile_ext: "textile"
+
 # Exclude these files from your production _site
 exclude:
 - Gemfile
