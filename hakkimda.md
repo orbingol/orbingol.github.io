@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Hakkımda
+menu: main
 permalink: /hakkimda/
 ---
 
