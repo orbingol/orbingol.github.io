@@ -7,6 +7,9 @@ url: "http://onurraufbingol.com" # the base hostname & protocol for your site
 twitter_username: orbingol
 github_username:  orbingol
 
+# Default permalink style
+permalink: /:year/:month/:day/:title.html
+
 # Build settings
 markdown: kramdown
 highlighter: pygments
