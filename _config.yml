@@ -1,35 +1,79 @@
-# Site settings
-title: Onur Rauf Bingöl
-email: orbingol@gmail.com
-description: "Kişisel blogum..."
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://onurraufbingol.com" # the base hostname & protocol for your site
-twitter_username: orbingol
-github_username:  orbingol
+#
+# This file contains configuration flags to customize your site
+#
 
-# Default permalink style
-permalink: /:year/:month/:day/:title.html
+# Name of your site (displayed in the header)
+name: Onur Rauf Bingöl
 
-# Build settings
+# Short bio or description (displayed in the header)
+description: Kişisel blogum...
+
+# URL of your avatar or profile pic (you could use your GitHub profile pic)
+avatar: http://www.gravatar.com/avatar/933fee328c75da3e4c63c264921a1c68
+
+#
+# Flags below are optional
+#
+
+# Includes an icon in the footer for each username you enter
+footer-links:
+  dribbble: 
+  email: 
+  facebook: 
+  flickr: 
+  github: orbingol
+  instagram: 
+  linkedin: onurraufbingol
+  pinterest: 
+  rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
+  twitter: orbingol
+  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+
+# Your disqus shortname, entering this will enable commenting on posts
+disqus: orbingol
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics: UA-771805-9
+
+# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
+# Used for Sitemap.xml and your RSS feed
+url: http://onurraufbingol.com
+
+# If you're hosting your site at a Project repository on GitHub pages 
+# (http://yourusername.github.io/repository-name)
+# and NOT your User repository (http://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
+baseurl: ""
+
+#
+# !! You don't need to change any of the configuration flags below !!
+#
+
 markdown: kramdown
 highlighter: pygments
+permalink: /:year/:month/:day/:title.html
+
+# The release of Jekyll Now that you're using
+version: v1.0.0
+
+# Set the Sass partials directory, as we're using @imports
+sass:
+  sass_dir: _scss
+  style: :expanded # You might prefer to minify using :compressed
 
 # Use the following plug-ins
 gems:
-- jemoji # Emoji please!
-- jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-
-# Default encoding
-encoding: "utf-8"
-
-# Extension handling
-markdown_ext: "markdown,md,html"
-textile_ext: "textile"
+  - jemoji # Emoji please!
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
 
 # Exclude these files from your production _site
 exclude:
-- Gemfile
-- Gemfile.lock
-- LICENSE.md
-- README.md
-- CNAME
+    - Gemfile
+    - Gemfile.lock
+    - LICENSE.md
+    - README.md
+    - CNAME
+
+# Set markup extensions
+markdown_ext: "markdown,md,html"
+textile_ext: "textile"
