@@ -68,11 +68,11 @@ gems:
 
 # Exclude these files from your production _site
 exclude:
-    - Gemfile
-    - Gemfile.lock
-    - LICENSE.md
-    - README.md
-    - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - CNAME
 
 # Set markup extensions
 markdown_ext: "markdown,md,html"
