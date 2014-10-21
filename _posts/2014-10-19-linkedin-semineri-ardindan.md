@@ -4,7 +4,7 @@ title:  "LinkedIn Semineri ardından"
 date:   2014-10-19 23:00:00
 categories: sosyal medya
 ---
-17 Ekim 2014 tarihinde ODTÜ Kültür ve Kongre Merkezi'nde düzenlenen **LinkedIn Semineri**'ne katıldım. Konuşmacı LinkedIn İrlanda ofisinden [Genco Orkun Genç](http://ie.linkedin.com/in/gencoorkun) idi.
+17 Ekim 2014 tarihinde ODTÜ Kültür ve Kongre Merkezi'nde düzenlenen **LinkedIn Semineri**'ne katıldım. Konuşmacı LinkedIn İrlanda ofisinden Genco Orkun Genç idi. Kendisinin herkese açık LinkedIn profiline [buradan](http://ie.linkedin.com/in/gencoorkun) ulaşabilirsiniz.
 
 ### Basitçe neler konuşuldu?
 
