@@ -23,9 +23,9 @@ Mezun olduktan sonra ODTÜ'de çalışmaya başladım. Çeşitli bölümlerde bi
 
 ODTÜ içinde bu kadar çalışmak, en sonunda, bana Bilgi İşlem'de çalışma şansı sağladı. Burada sunucu yöneticiliği ve web programcılığı yaptım. Arka planda ve ön planda çalışan bir çok yazılım geliştirdim. Bunların yanında, kullanıcığı desteği verdim ve üniversite personeline geliştirilen sistemler hakkında bir çok eğitim verdim.
 
-## Egitim geçmişim
+## Eğitim geçmişim
 
-* ODTÜ Bilişim Sistemleri, Yazılım Yönetimi programı *(2012-2014)*
+* ODTÜ Bilişim Sistemleri, Yazılım Yönetimi programı, Y. Lisans *(2012-2014)*
 * ODTÜ Metalurji ve Malzeme Mühendisliği, Y. Lisans *(2007-2010)*
 * ODTÜ Metalurji ve Malzeme Mühendisliği, Lisans *(2003-2007)*
 * Ankara Gazi Anadolu Lisesi
