@@ -20,11 +20,15 @@ Facebook Graph API bize */user/picture* ucunu sunmakta. Bu ucu kullanarak doğru
 
 Bu noktada örnek vermenin işleri kolaylaştırabileceğini düşünüyorum. Mesela, kullanıcı ismi *muratduman.net* ise, sorgu yapacağımız ucu şu şekilde ayarlıyoruz:
 
-`http://graph.facebook.com/muratduman.net/picture`
+{% highlight html %}
+http://graph.facebook.com/muratduman.net/picture
+{% endhighlight %}
 
 Veya kullanıcı ID'si *123456789* ise, sorgu yapacağımız uç şu şekle dönüşüyor
 
-`http://graph.faceook.com/123456789/picture`
+{% highlight html %}
+http://graph.faceook.com/123456789/picture
+{% endhighlight %}
 
 ### API parametreleri ve dönüş elemanları
 
@@ -48,15 +52,21 @@ Hemen deneme yapalım :)
 
 * _muratduman.net_ kullanıcısının profil resmini *genişliği 420px* olacak şekilde alalım ve bizi doğrudan resme yönlendirsin:
 
-`http://graph.facebook.com/muratduman.net/picture?width=420`
+{% highlight html %}
+http://graph.facebook.com/muratduman.net/picture?width=420
+{% endhighlight %}
 
 * _muratduman.net_ kullanıcısının profil resmini *genişliği 720px* ve *orjinal boy* olacak şekilde alalım ve bizi doğrudan resme yönlendirsin:
 
-`http://graph.facebook.com/muratduman.net/picture?width=720&type=large`
+{% highlight html %}
+http://graph.facebook.com/muratduman.net/picture?width=720&type=large
+{% endhighlight %}
 
 * _muratduman.net_ kullanıcısının profil resmini *genişliği ve yüksekliği 720px* ve *orjinal boy* olacak şekilde alalım ve JSON verisi olarak dönüş yapılsın:
 
-`http://graph.facebook.com/muratduman.net/picture?redirect=0&width=720&type=large`
+{% highlight html %}
+http://graph.facebook.com/muratduman.net/picture?redirect=0&width=720&type=large
+{% endhighlight %}
 
 Dönen JSON verisi şu şekilde olacaktır:
 
@@ -73,10 +83,11 @@ Dönen JSON verisi şu şekilde olacaktır:
 
 Bu noktada elimize daha düşük genişlik ve yükseklik verisi geldi. Muhtemelen,  _muratduman.net_ kullanıcısı muhtemelen profil resmini 720px boyunda yüklemedi ve bu yüzden Facebook bize daha düşük boyda bir dönüş yaptı.
 
-
 * _123456789_ kullanıcısının profil resmini *genişliği ve yüksekliği 180px* ve *kare boy* olacak şekilde alalım ve JSON verisi olarak dönüş yapılsın:
 
-`http://graph.facebook.com/123456789/picture?redirect=0&width=180&type=square`
+{% highlight html %}
+http://graph.facebook.com/123456789/picture?redirect=0&width=180&type=square
+{% endhighlight %}
 
 Dönen JSON verisi şu şekilde olacaktır:
 
