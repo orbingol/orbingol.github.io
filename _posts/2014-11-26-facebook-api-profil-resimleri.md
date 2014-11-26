@@ -60,7 +60,7 @@ Hemen deneme yapalım :)
 
 Dönen JSON verisi şu şekilde olacaktır:
 
-```JSON
+````json
 {
    "data": {
       "height": 539,
@@ -69,27 +69,25 @@ Dönen JSON verisi şu şekilde olacaktır:
       "width": 572
    }
 }
-```
+````
 
 Bu noktada elimize daha düşük genişlik ve yükseklik verisi geldi. Muhtemelen,  _muratduman.net_ kullanıcısı muhtemelen profil resmini 720px boyunda yüklemedi ve bu yüzden Facebook bize daha düşük boyda bir dönüş yaptı.
 
 
 * _123456789_ kullanıcısının profil resmini *genişliği ve yüksekliği 180px* ve *kare boy* olacak şekilde alalım ve JSON verisi olarak dönüş yapılsın:
 
-```
-http://graph.facebook.com/123456789/picture?redirect=0&width=180&type=square
-```
+`http://graph.facebook.com/123456789/picture?redirect=0&width=180&type=square`
 
 Dönen JSON verisi şu şekilde olacaktır:
 
-```JSON
+````json
 {
    "data": {
       "is_silhouette": true,
       "url": "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yo/r/UlIqmHJn-SK.gif"
    }
 }
-```
+````
 
 Evet :) **is_silhoutte** elemanı *true* olarak döndü. Yani aşağıdaki resmi göreceğiz:
 
