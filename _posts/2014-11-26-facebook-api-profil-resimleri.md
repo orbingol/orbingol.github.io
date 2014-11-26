@@ -10,7 +10,8 @@ categories:
 ---
 Günümüze şöyle bir bakıldığında, sosyal medya araçlarına duyulan ilginin oldukça fazla olduğunu gözlemlemek zor değil. Hayatın her anında belirmeye başlamış oldukları ise su katılmaz gerçek. Bu durumda, genel olarak müşteri gereksinimlerine bakıldığında da, sosyal medya API'lerinin kullanımı *yazılım işinin ayrılmaz parçası* haline gelmesi kaçınılmaz oluyor. Üstüne üstlük, çoğu zaman sosyal medya API'lerini kullanmak eğlenceli oluyor :)
 
-Bugün Facebook Graph API kullanarak, kullanıcıların profil resimlerine nasıl erişebileceğimizi öğreneceğiz. Bu işlemi [Facebook PHP API](https://developers.facebook.com/docs/reference/php/4.0.0) veya [jQuery AJAX](http://api.jquery.com/jquery.ajax/) gibi yollarla websitenize entegre edebilirsiniz.
+Bugün, Facebook Graph API kullanarak kullanıcıların profil resimlerine nasıl erişebileceğimizi öğreneceğiz. İşin güzel tarafı, **bu API ucunu test edebilmek için Facebook'a giriş yapmaya gerek yok**. Ayrıca, dilerseniz, bu sistemi [Facebook PHP API](https://developers.facebook.com/docs/reference/php/4.0.0) veya [jQuery AJAX](http://api.jquery.com/jquery.ajax/) gibi yollarla websitenize entegre edebilirsiniz.
+
 
 ### Profil resimlerine erişim
 
@@ -42,7 +43,7 @@ Bu uç 4 tip parametre alabilmektedir.
 Daha önceden de bahsettiğim gibi, bu uç bize doğrudan resmi dönebiliyor veya *redirect* parametresinin değerine göre JSON verisi dönebiliyor. Eğer, JSON verisi dönerse aşağıdaki elemanları dönecektir.
 
 * **url**: Profil resmine doğrudan bağlantı adresi
-* **is_silhoutte**: Eğer profil resmi yüklenmemişse veya bir şekilde resmi görüntülemeye izniniz yoksa, Facebook'un varsayılan boş profil resmi gösterilir. Bu eleman *true* veya *false* dönerek, varsayılan profil resminin değiştirilip değiştirilmediğini size bildirir. Böylelikle, profil resmi olmayan kullanıcılar için kendinizin belirleiği varsayılan avatarı kullanma şansınız olur.
+* **is_silhoutte**: Eğer profil resmi yüklenmemişse veya bir şekilde resmi görüntülemeye izniniz yoksa, Facebook'un varsayılan boş profil resmi gösterilir. Bu eleman *true* veya *false* dönerek, varsayılan profil resminin değiştirilip değiştirilmediğini size bildirir. Böylelikle, profil resmi olmayan kullanıcılar için kendinizin belirlediği varsayılan herhangi başka bir resmi kullanma şansınız olur.
 * **width**: *url* parametresi ile belirlenen resmin genişliğini piksel cinsinden gösterir.
 * **height**: *url* parametresi ile belirlenen resmin uzunluğunu piksel cinsinden gösterir.
 
@@ -83,6 +84,8 @@ Dönen JSON verisi şu şekilde olacaktır:
 
 Bu noktada elimize daha düşük genişlik ve yükseklik verisi geldi. Muhtemelen,  _muratduman.net_ kullanıcısı muhtemelen profil resmini 720px boyunda yüklemedi ve bu yüzden Facebook bize daha düşük boyda bir dönüş yaptı.
 
+**Bu arada**, denemek isterseniz *url* elemanı içindeki linki web tarayıcısınıza yapıştırabilirsiniz. Çalışacaktır :)
+
 * _123456789_ kullanıcısının profil resmini *genişliği ve yüksekliği 180px* ve *kare boy* olacak şekilde alalım ve JSON verisi olarak dönüş yapılsın:
 
 {% highlight html %}
@@ -108,6 +111,7 @@ Facebook API'sinin kullanıcı profil resmi ile ilgili kısmı bu kadardı. Soru
 
 Kolaylıklar! :)
 
+**Not:** Teşekkürler [Murat](http://muratduman.com) :)
 
 
 *ORB.*
