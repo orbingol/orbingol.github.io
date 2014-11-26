@@ -16,19 +16,19 @@ Bugün Facebook Graph API kullanarak, kullanıcıların profil resimlerine nası
 
 Facebook Graph API bize */user/picture* ucunu sunmakta. Bu ucu kullanarak doğrudan resmi gösterebileceğimiz gibi, JSON verisi olarak da profil resmi bilgilerine erişebiliyoruz. Sorgu yapacağımız uç şu şekilde:
 
-```
+```html
 http://graph.facebook.com/{kullanici_ismi veya ID'si}/picture
 ```
 
 Bu noktada örnek vermenin işleri kolaylaştırabileceğini düşünüyorum. Mesela, kullanıcı ismi *muratduman.net* ise, sorgu yapacağımız ucu şu şekilde ayarlıyoruz:
 
-```
+```html
 http://graph.facebook.com/muratduman.net/picture
 ```
 
 Veya kullanıcı ID'si *123456789* ise, sorgu yapacağımız uç şu şekle dönüşüyor
 
-```
+```html
 http://graph.faceook.com/123456789/picture
 ```
 
@@ -54,25 +54,25 @@ Hemen deneme yapalım :)
 
 * _muratduman.net_ kullanıcısının profil resmini *genişliği 420px* olacak şekilde alalım ve bizi doğrudan resme yönlendirsin:
 
-```
+```html
 http://graph.facebook.com/muratduman.net/picture?width=420
 ```
 
 * _muratduman.net_ kullanıcısının profil resmini *genişliği 720px* ve *orjinal boy* olacak şekilde alalım ve bizi doğrudan resme yönlendirsin:
 
-```
+```html
 http://graph.facebook.com/muratduman.net/picture?width=720&type=large
 ```
 
 * _muratduman.net_ kullanıcısının profil resmini *genişliği ve yüksekliği 720px* ve *orjinal boy* olacak şekilde alalım ve JSON verisi olarak dönüş yapılsın:
 
-```
+```html
 http://graph.facebook.com/muratduman.net/picture?redirect=0&width=720&type=large
 ```
 
 Dönen JSON verisi şu şekilde olacaktır:
 
-```json
+```javascript
 {
    "data": {
       "height": 539,
@@ -82,18 +82,19 @@ Dönen JSON verisi şu şekilde olacaktır:
    }
 }
 ```
+
 Bu noktada elimize daha düşük genişlik ve yükseklik verisi geldi. Muhtemelen,  _muratduman.net_ kullanıcısı muhtemelen profil resmini 720px boyunda yüklemedi ve bu yüzden Facebook bize daha düşük boyda bir dönüş yaptı.
 
 
 * _123456789_ kullanıcısının profil resmini *genişliği ve yüksekliği 180px* ve *kare boy* olacak şekilde alalım ve JSON verisi olarak dönüş yapılsın:
 
-```
+```html
 http://graph.facebook.com/123456789/picture?redirect=0&width=180&type=square
 ```
 
 Dönen JSON verisi şu şekilde olacaktır:
 
-```json
+```javascript
 {
    "data": {
       "is_silhouette": true,
