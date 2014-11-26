@@ -60,7 +60,7 @@ Hemen deneme yapalım :)
 
 Dönen JSON verisi şu şekilde olacaktır:
 
-````json
+{% highlight json %}
 {
    "data": {
       "height": 539,
@@ -69,7 +69,7 @@ Dönen JSON verisi şu şekilde olacaktır:
       "width": 572
    }
 }
-````
+{% endhighlight %}
 
 Bu noktada elimize daha düşük genişlik ve yükseklik verisi geldi. Muhtemelen,  _muratduman.net_ kullanıcısı muhtemelen profil resmini 720px boyunda yüklemedi ve bu yüzden Facebook bize daha düşük boyda bir dönüş yaptı.
 
@@ -80,14 +80,14 @@ Bu noktada elimize daha düşük genişlik ve yükseklik verisi geldi. Muhtemele
 
 Dönen JSON verisi şu şekilde olacaktır:
 
-````json
+{% highlight json %}
 {
    "data": {
       "is_silhouette": true,
       "url": "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yo/r/UlIqmHJn-SK.gif"
    }
 }
-````
+{% endhighlight %}
 
 Evet :) **is_silhoutte** elemanı *true* olarak döndü. Yani aşağıdaki resmi göreceğiz:
 
