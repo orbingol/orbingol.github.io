@@ -24,7 +24,7 @@ Bu noktada örnek vermenin işleri kolaylaştırabileceğini düşünüyorum. Me
 http://graph.facebook.com/muratduman.net/picture
 {% endhighlight %}
 
-Veya kullanıcı ID'si *123456789* ise, sorgu yapacağımız uç şu şekle dönüşüyor
+Veya kullanıcı ID'si *123456789* ise, sorgu yapacağımız uç şu şekle dönüşüyor:
 
 {% highlight html %}
 http://graph.faceook.com/123456789/picture
