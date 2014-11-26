@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Facebook API ile profil resimlerine erişmek"
-date:   2014-10-26 09:00:00
+date:   2014-11-26 09:30:00
 categories:
 - sosyal medya
 - api
