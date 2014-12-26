@@ -42,13 +42,14 @@ AB2015'e ev sahipliği yapan okul Anadolu Üniversitesi. Kongre hakkında tüm b
 
 İdari işlemler dışında herhangi bir sorunuz için bana ulaşabilirsiniz. İletişim bilgilerim:
 
-**Twitter:** [@orbingol](https://twitter.com/orbingol)
-**E-posta:** *info_AT_onurbingol_DOT_net*
+* **Twitter:** [@orbingol](https://twitter.com/orbingol)
+* **E-posta:** *info_AT_onurbingol_DOT_net*
 
 Akademik Bilişim 2015 ile ilgili haberleri takip edebilmek için:
 
-**AB2015 Twitter:** [@abilisim2015](https://twitter.com/abilisim2015)
-**AB2015 Hashtag:** #ab2015
+* **AB2015 Twitter:** [@abilisim2015](https://twitter.com/abilisim2015)
+* **AB2015 Hashtag:** #ab2015
+* **Web:** [http://www.ab.org.tr](http://www.ab.org.tr)
 
 Sorularınız olursa bana aşağıdaki Disqus kutusundan, Twitter veya eposta ile ulaşabilirsiniz.
 
