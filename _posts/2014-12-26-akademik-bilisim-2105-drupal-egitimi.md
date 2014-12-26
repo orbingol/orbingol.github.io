@@ -8,7 +8,7 @@ categories:
 ---
 Evet, Akademik Bilişim zamanı da geldi çattı. 31 Ocak - 6 Şubat 2015 arasında 17. Akademik Bilişim Konferansı (AB2015) düzenlenecek. Bu konferansta *Eğitim Kurumları için Drupal Kullanımı" isimli eğitimi vereceğim. Eğitim 4 gün sürecek ve *Drupal nedir aşaması*ndan *kodlama aşamasına kadar* bir çok konuyu kapsayacak.
 
-Kursların duyuru posterine [buradan](files/ab2015-kurslar.pdf) ulaşabilirsiniz. 
+Kursların duyuru posterine [buradan](/files/ab2015-kurslar.pdf) ulaşabilirsiniz. 
 
 ## Kurs hakkında genel bilgiler
 
