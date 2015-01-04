@@ -6,7 +6,7 @@
 name: Onur Rauf Bingöl
 
 # Short bio or description (displayed in the header)
-description: Bilgisayarlara fısıldayan insan!
+description: ... and action!
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: http://www.gravatar.com/avatar/933fee328c75da3e4c63c264921a1c68
@@ -25,7 +25,7 @@ footer-links:
   instagram: 
   linkedin: onurraufbingol
   pinterest: 
-  rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
+  rss: rss.xml
   twitter: orbingol
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 
