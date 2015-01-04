@@ -10,7 +10,7 @@ categories:
 
 Akademik Bilişim 2015'te [Murat](http://www.muratduman.com) ile düzenleyeceğimiz Drupal kursu içeriğini belirledik.  Öncelikle eğitim kurumlarından biraz bahsedeceğiz ve sonrasında bu bilgiler doğrultusunda Drupal üzerine yoğunlaşacağız.
 
-Sorularınızı twitter üzerinden ([Onur](https://twtitter.com/orbingol) veya [Murat](https://twitter.com/mduman)) veya eposta ile (*info_AT_onurbingol_DOT_net*) sorabilirsiniz.
+Sorularınızı sosyal medya üzerinden ([Onur](https://twtitter.com/orbingol) veya [Murat](https://twitter.com/mduman)) veya eposta ile (*info_AT_onurbingol_DOT_net*) sorabilirsiniz.
 
 Katılım bilgisi, ön koşullar ve detaylar için [AB'15 Kurs Sayfası](http://ab.org.tr/ab15/Kurs/164.html) adresini ziyaret edebilirsiniz.
 
