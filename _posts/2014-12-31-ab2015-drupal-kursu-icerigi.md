@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "AB15 Drupal Kursu İçeriği"
+title:  "AB 2015 Drupal Kursu Konuları"
 date:   2014-12-31 20:00:00
 categories:
 - drupal
