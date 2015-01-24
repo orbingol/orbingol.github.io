@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Akademik Bilişim 2015 Drupal Eğitimi"
+title:  "Akademik Bilişim 2015 Drupal kursu"
 date:   2014-12-26 12:00:00
 categories:
 - drupal
@@ -18,7 +18,7 @@ Bu başlık altında *Ben olsam ne sorardım?*'ların cevabını vermeye çalı�
 
 Bu biraz benim geçmişimle ilgili. Drupal'i oldukça uzun zamandır biliyor olmama rağmen, ODTÜ'de çalışmaya başladığımda oldukça içli dışlı olmaya başladım. Bu esnada, Drupal'in dünya çapında eğitim kurumları arasında çok yaygın olduğunu farkettim. *Eğitim* konusu kongrenin amacına da uygun. En nihayetinde, kursda verilecek örnekler için bir konu seçmek de gerekiyordu :-)
 
-Her ne kadar kurs için Eğitim Kurumları konusu seçilmiş olsa bile, Drupal ile çok çok fazla şey yapabilirsiniz. AB2015'teki Drupal kursu da tam olarak bunu amaçlıyor ve Drupal'i herhangi bir projeniz için neden tercih etmeniz gerektiği hakkında bilgi vermeyi planlıyor.
+Her ne kadar kurs için **Eğitim Kurumları** konusu seçilmiş olsa bile, Drupal ile çok çok fazla şey yapabilirsiniz. AB2015'teki Drupal kursu da tam olarak bunu amaçlıyor ve Drupal'i herhangi bir projeniz için neden tercih etmeniz gerektiği hakkında bilgi vermeyi planlıyor.
 
 ### Ders planı
 
