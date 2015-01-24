@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "AB 2015 Drupal Kursu Kayıtları Tamamlandı"
+title:  "AB 2015 Drupal Kursu kayıtları tamamlandı"
 date:   2015-01-24 20:00:00
 categories:
 - drupal
