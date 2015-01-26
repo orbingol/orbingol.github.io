@@ -9,8 +9,8 @@ layout: default
     {{ content }}
   </div>
 
-  <div class="date">
-    Bu yazı {{ page.date | date: "%d.%m.%Y" }} tarihinde yazılmıştır.
+  <div class="date" style="font-size 10px;">
+    Bu yazı {{ page.date | date: "%d.%m.%Y" }} tarihinde eklenmiştir.
   </div>
 
   {% include disqus.html disqus_identifier=page.disqus_identifier %}
