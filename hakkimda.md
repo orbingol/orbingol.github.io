@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Hakkımda
+description: "Onur Rauf Bingöl hakkında bazı şeyler, genel bilgiler ve bir kısım yalan dolanlar..."
 menu: main
 permalink: /hakkimda/
 ---
