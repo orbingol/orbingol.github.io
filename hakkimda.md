@@ -18,7 +18,7 @@ Basitçe;
 
 ve hepsinden öte, güler yüzlü normal bir insanım. Başka ne bekliyordunuz ki? :-)
 
-Bana sosyal medyadan (Twitter ve/veya LinkedIn) çok rahatlıkla ulaşabilirsiniz. Gerekli linkler sitenin alt kısmında mevcut. Lütfen çekinmeyin ve yazın, kesinlikle yanıt dönerim.
+Bana sosyal medyadan ([Twitter](https://twitter.com/orbingol) ve/veya [LinkedIn](https://www.linkedin.com/in/onurraufbingol)) rahatlıkla ulaşabilirsiniz. Lütfen çekinmeyin ve yazın, kesinlikle yanıt dönerim.
 
 Uğradığınız için teşekkürler :-)
 
