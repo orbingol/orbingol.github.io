@@ -49,7 +49,7 @@ owners.
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 mysql> 
-{% endhighlight ½}
+{% endhighlight %}
 
 ## Bazı temel komutlar
 
