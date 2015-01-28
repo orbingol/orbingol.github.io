@@ -51,9 +51,9 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql> 
 {% endhighlight %}
 
-## Bazı temel komutlar
+## Bazı temel sorgular
 
-Bu noktada çeşitli sorgular yazabiliriz. Mesela;
+Şu anda sunucuya giriş yapmış ve sorgu yazabilir hale gelmiş durumdayız. Örnek olarak aşağıdaki sorguları kullanalım:
 
 * **SHOW DATABASES;** sorgusu ile sunucu üzerinde *yetkimiz dahilinde olan veritabanlarını* görebiliriz.
 * **USE mysql;** sorgusu ile *mysql* isimli veritabanını seçebiliriz.
