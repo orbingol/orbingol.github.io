@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Komut satırından MySQL ile çalışmak - 1"
+title:  "Komut satırından MySQL ile çalışmak - Bölüm 1"
 description: "Komut satırı kullanarak MySQL veritabanlarını ve kullanıcılarını yönetmek - bölüm 1"
 date:   2015-01-28 13:15:00
 categories:
