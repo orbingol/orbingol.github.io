@@ -65,7 +65,7 @@ Aşağıda bu komutların örneklerini bulabilirsiniz.
 
 ### Sorgu: use mysql;
 
-{% highlight %}
+{% highlight bash %}
 mysql> use mysql;
 Reading table information for completion of table and column names
 You can turn off this feature to get a quicker startup with -A
@@ -75,7 +75,7 @@ Database changed
 
 ### Sorgu: show tables;
 
-{% highlight %}
+{% highlight bash %}
 mysql> show tables;
 +---------------------------+
 | Tables_in_mysql           |
@@ -110,7 +110,7 @@ mysql> show tables;
 
 ### Sorgu: describe user;
 
-{% highlight %}
+{% highlight bash %}
 mysql> describe user;
 +------------------------+-----------------------------------+------+-----+---------+-------+
 | Field                  | Type                              | Null | Key | Default | Extra |
