@@ -86,7 +86,15 @@ mysql> show grants for 'drpluser'@localhost;
 
 Gördüğünüz gibi yeni eklediğimiz veritabanı kullanım yetkisi yerinde duruyor.
 
-Bunu deneyelim.
+Tabii ki de unutmadan aşağıdaki sorguyu çalıştırmamız gerekiyor.
+
+{% highlight bash %}
+mysql> flush privileges;
+Query OK, 0 rows affected (0.01 sec)
+
+{% endhighlight %}
+
+Hemen yaptıklarımızı bir deneyelim.
 
 {% highlight bash %}
 onur@watt ~ $ mysql -u drpluser -p
