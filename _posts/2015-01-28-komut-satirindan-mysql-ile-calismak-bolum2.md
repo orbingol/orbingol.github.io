@@ -8,7 +8,7 @@ categories:
 - database
 ---
 
-Yazımızın 2. bölümünde, MySQL üzerinde veritabanı ve kullanıcı oluşturma işlemlerini anlatacağım.
+Yazının birinci bölümünde genel MySQL komut satırı kullanımı ve temel bazı sorgulardan bahsetmiştim. Yazının 2. bölümünde, MySQL üzerinde veritabanı ve kullanıcı oluşturma işlemlerini anlatacağım.
 
 ## Veritabanı oluşturma
 
