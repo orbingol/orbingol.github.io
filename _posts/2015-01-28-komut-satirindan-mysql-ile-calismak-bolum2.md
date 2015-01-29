@@ -94,6 +94,8 @@ Query OK, 0 rows affected (0.01 sec)
 
 {% endhighlight %}
 
+## İşlemleri test etme
+
 Hemen yaptıklarımızı bir deneyelim.
 
 {% highlight bash %}
