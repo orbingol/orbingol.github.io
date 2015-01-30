@@ -6,21 +6,21 @@ menu: main
 permalink: /hakkimda/
 ---
 
-Kendine kısaca *ORB* diyen bu şahıs, 1984 doğumlu, malzeme mühendisi ama bilgisayarları çok seven ve halen onlarla garip işler yapmaktan vazgeçmemiş bir kardeşinizdir.
+Kendine kısaca *ORB* diyen bu şahıs, 1984 doğumlu, malzeme mühendisi ama bilgisayarları çok seven ve halen onlarla garip işler yapmaktan vazgeçmemiş bir kişidir.
 
-Basitçe;
+Genel olarak;
 
 * PHP ve Python ile yazılım geliştirmeyi seven
-* Linux ile türlü türlü cambazlıklar yapan
-* Drupal manyağı
-* Biyomalzemelere ve biyosensörlere takmış
+* Linux ile çalışırken oldukça rahat olan ve terminal ekranı görünce mutlu olan
+* [Drupal](https://drupal.org) ile ciddi seviyede ilgili
+* Biyomalzemeler ve biyosensörler ile ilgilenmeyi hobi edinmiş
 * Canı sıkılınca sosyal konuları (politika, siyaset vb. hariç) deşmeyi / okumayı seven
 * Genelde her türlü kağıt parçasını okuyan (klasikler ve hatta reklam broşürleri dahil) ama çizgi roman görünce dayanamayan
 
-ve hepsinden öte, güler yüzlü normal bir insanım. Başka ne bekliyordunuz ki? :-)
+ve hepsinden öte, güler yüzlü normal bir insanım. Başka ne bekliyordunuz ki? :)
 
 Bana sosyal medyadan ([Twitter](https://twitter.com/orbingol) ve/veya [LinkedIn](https://www.linkedin.com/in/onurraufbingol)) rahatlıkla ulaşabilirsiniz. Lütfen çekinmeyin ve yazın, kesinlikle yanıt dönerim.
 
-Uğradığınız için teşekkürler :-)
+Uğradığınız için teşekkürler :)
 
 _ORB._
