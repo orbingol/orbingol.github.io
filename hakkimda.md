@@ -15,7 +15,7 @@ Genel olarak;
 * [Drupal](https://drupal.org) ile ciddi seviyede ilgili
 * Biyomalzemeler ve biyosensörler ile ilgilenmeyi hobi edinmiş
 * Canı sıkılınca sosyal konuları (politika, siyaset vb. hariç) deşmeyi / okumayı seven
-* Genelde her türlü kağıt parçasını okuyan (klasikler ve hatta reklam broşürleri dahil) ama çizgi roman görünce dayanamayan
+* Genelde her türlü kağıt parçasını okuyan (klasikler, çizgi romanlar ve hatta reklam broşürleri dahil)
 
 ve hepsinden öte, güler yüzlü normal bir insanım. Başka ne bekliyordunuz ki? :)
 
