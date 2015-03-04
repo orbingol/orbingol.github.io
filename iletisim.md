@@ -10,6 +10,6 @@ Yakın zamanda buraya bir form koyacağım. O zamana kadar bana aşağıdaki yol
 
 * **E-posta**: *info-@-onurbingol-net*
 * **Twitter**: [@orbingol](https://twitter.com/orbingol)
-* **LinkedIn**: [/in/onurraufbingol](http://tr.linkedin.com/in/onurraufbingol)
+* **LinkedIn**: [/in/onurraufbingol](https://tr.linkedin.com/in/onurraufbingol)
 
 _ORB._
