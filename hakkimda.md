@@ -19,8 +19,4 @@ Genel olarak;
 
 ve hepsinden öte, güler yüzlü normal bir insanım. Başka ne bekliyordunuz ki? :)
 
-Bana sosyal medyadan ([Twitter](https://twitter.com/orbingol) ve/veya [LinkedIn](https://www.linkedin.com/in/onurraufbingol)) rahatlıkla ulaşabilirsiniz. Lütfen çekinmeyin ve yazın, kesinlikle yanıt dönerim.
-
-Uğradığınız için teşekkürler :)
-
 _ORB._
