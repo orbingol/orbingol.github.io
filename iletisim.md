@@ -8,7 +8,7 @@ permalink: /iletisim/
 
 Yakın zamanda buraya bir form koyacağım. O zamana kadar bana aşağıdaki yollardan ulaşabilirsiniz:
 
-* **E-posta**: *info~at~onurbingol~net*
+* **E-posta**: *info-@-onurbingol-net*
 * **Twitter**: [@orbingol](https://twitter.com/orbingol)
 * **LinkedIn**: [/in/onurraufbingol](http://tr.linkedin.com/in/onurraufbingol)
 
