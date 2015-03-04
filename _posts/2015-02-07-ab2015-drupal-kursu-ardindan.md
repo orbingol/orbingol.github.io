@@ -16,14 +16,14 @@ Kurs sonunda bazı değerlendirmelerim olacak ve bunları madde madde belirtmek 
 * Bu kursta biraz esnek olabilmek için kurs kayıtları öncesi özel bir sınav yapmamıştık. Maalesef, temel Linux bilgisi ve programlama bilgisini sorgulayacak bir sınava ihtiyaç varmış.
 * 4 günlük ders programı yaparken, aslında 2 günlük program yapmak ve bunu 4 güne yaymak gerekiyormuş :) Yetiştirmek çok zor olabiliyor.
 * Katılımcıların bir kısmı **sadece program yazmak** ve bazıları ise **sadece arayüz üzerinden çalışmak** için gelmişti. Bu iki kursu ayrı ayrı düzenlemek gerekiyormuş.
-* Kurs bitimince katılımcıların Drupal hakkında farkındalığı oldukça arttı. **drush rs** mottoları oldu :) Hatta **drush rs** önünde fotoğrafımız bile var.
+* Kurs bitimince katılımcıların Drupal hakkında farkındalığı oldukça arttı. **drush rs** mottoları oldu :) Hatta **drush rs** önünde fotoğrafımız bile var :) Aşağıda kendisini paylaşıyorum.
 
 ![Akademik Bilişim 2015 Drupal kursu öğrencileri ile birlikte](/files/ab2015-drupal.jpg)
 
-Bunların yanında, benim için gerçekten oldukça eğlenceli bir hafta geçti. Yeni arkadaşlar ve meslektaşlarımla tanıştım. Hepsi çok parlak ve ileride çok başarılı olacak kişiler. Tabii **başarılıyız biz** havasına girilirse, başarısız olunması kaçınılmaz bir durum. Bu yüzden bu yazıyı, Margaret Thatcher'in bir sözü ile bitirmek istiyorum:
+Hepsinden öte, benim için oldukça eğlenceli bir hafta oldu. Yeni arkadaşlar ve meslektaşlarımla tanıştım. Hepsi çok parlak ve ileride çok başarılı olacak kişiler. Tabii ki de **başarılıyız biz** havasına girilirse, başarısız olunması kaçınılmaz bir durum. Bu yüzden bu yazıyı, Margaret Thatcher'in bir sözü ile bitirmek istiyorum:
 
 > Power is like being a lady... if you have to tell people you are, you aren't.
 
-Başka bir etkinlikte görüşmek dileğiyle...
+Umarım katılanlar için de güzel bir etkinlik olmuştur. Başka bir etkinlikte görüşmek dileğiyle...
 
 *ORB.*
