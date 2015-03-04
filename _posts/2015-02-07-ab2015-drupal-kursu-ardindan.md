@@ -18,7 +18,7 @@ Kurs sonunda bazı değerlendirmelerim olacak ve bunları madde madde belirtmek 
 * Katılımcıların bir kısmı **sadece program yazmak** ve bazıları ise **sadece arayüz üzerinden çalışmak** için gelmişti. Bu iki kursu ayrı ayrı düzenlemek gerekiyormuş.
 * Kurs bitimince katılımcıların Drupal hakkında farkındalığı oldukça arttı. **drush rs** mottoları oldu :) Hatta **drush rs** önünde fotoğrafımız bile var.
 
-![Akademik Bilişim 2015 Drupal kursu öğrencileri ile birlikte](/files/ab2015-kurslar.pdf)
+![Akademik Bilişim 2015 Drupal kursu öğrencileri ile birlikte](/files/ab2015-drupal.jpg)
 
 Bunların yanında, benim için gerçekten oldukça eğlenceli bir hafta geçti. Yeni arkadaşlar ve meslektaşlarımla tanıştım. Hepsi çok parlak ve ileride çok başarılı olacak kişiler. Tabii **başarılıyız biz** havasına girilirse, başarısız olunması kaçınılmaz bir durum. Bu yüzden bu yazıyı, Margaret Thatcher'in bir sözü ile bitirmek istiyorum:
 
