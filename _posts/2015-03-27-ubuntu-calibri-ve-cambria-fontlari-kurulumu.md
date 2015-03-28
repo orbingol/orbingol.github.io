@@ -28,7 +28,7 @@ $ sudo apt-get install fonts-crosextra-carlito fonts-crosextra-caladea
  
 Unutmadan söyleyeyim, eğer LibreOffice açık ise kapatıp tekrardan açmamız gerekecektir. Bunun dışında özel olarak yapılması gereken birşey yok.
 
-Şimdi ise, kısa olarak detaylardan bahsedelim.
+Şimdi ise kısa olarak detaylardan bahsedelim.
 
 ### Detaylar
 
