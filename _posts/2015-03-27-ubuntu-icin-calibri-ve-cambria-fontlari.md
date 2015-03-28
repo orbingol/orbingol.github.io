@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Ubuntu'ya Calibri ve Cambria Fontlarının Kurulumu"
+title:  "Ubuntu'ya Calibri ve Cambria fontlarının kurulumu"
 description: "Ubuntu ve türevleri için yeni Microsoft Office sürümleri içinde gelen Calibri ve Cambria fontlarının kurulması"
 date:   2015-03-28 19:55:00
 categories:
