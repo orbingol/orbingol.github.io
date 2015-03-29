@@ -2,7 +2,7 @@
 layout: post
 title:  "Yazılımcı olmayanlar için yazılım projelerine giriş"
 description: "Yazılımcı olmayan ve olmak istemeyen kişiler için basit anlamda yazılım projelerine giriş ve bu tür projelerin planlanması"
-date:   2015-03-28 19:55:00
+date:   2015-03-30 02:21:00
 categories:
 - software project management
 - planning
