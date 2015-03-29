@@ -8,9 +8,9 @@ categories:
 - fonts
 ---
 
-Başlığın aslında "Debian ve türevleri için Calibri ve Cambria font alternatiflerinin kurulumu" olması gerekiyordu, çünkü Calibri ve Cambria fontları, mevcut lisansları itibarıyla, internet üzerinde dağıtılamıyor. Ancak bu durum, Microsoft ürünlerini kullanan arkadaşların bizlere gönderdiği bazı dosyaları düzenlemekte sorun çıkarabiliyor.
+Bu yazıda Microsoft'un bazı yeni ürünlerinde gelen Calibri ve Cambria fontlarını Ubuntu'ya kurmayı öğreneceğiz. Başlığın aslında "Debian ve türevleri için Calibri ve Cambria font alternatiflerinin kurulumu" olması gerekiyordu, malum Ubuntu da bir Debian türevi ve paketlerinin büyük çoğunluğunu Debian'dan alıyor. Bu yüzden, Linux Mint veya diğer türevleri kullanan arkadaşlar da aşağıdaki anlatımı gönül rahatlığı ile uygulayabilir.
 
-Bu noktada sevgili Google, ünlü Chromebook'ları için aynı (veya yakın) boyutlarda ve aralıkta, [Carlito](http://openfontlibrary.org/en/font/carlito) ve [Caladea](http://openfontlibrary.org/en/font/caladea) isimli fontlar üretmiş ve fontconfig üzerindeki ayar dosyalarından bunların ismini Calibri ve Cambria olarak göstermiş. Oldukça şık bir hareket olmuş bence.
+Biliyorsunuz, Calibri ve Cambria fontları, mevcut lisansları itibarıyla, internet üzerinde dağıtılamıyor. Ancak bu durum, Microsoft ürünlerini kullanan arkadaşların bizlere gönderdiği bazı dosyaları düzenlemekte sorun çıkarabiliyor. Bu noktada sevgili Google, ünlü Chromebook'ları için aynı (veya yakın) boyutlarda ve aralıkta, [Carlito](http://openfontlibrary.org/en/font/carlito) ve [Caladea](http://openfontlibrary.org/en/font/caladea) isimli fontlar üretmiş ve fontconfig üzerindeki ayar dosyalarından bunların ismini Calibri ve Cambria olarak göstermiş. Oldukça şık bir hareket olmuş bence.
 
 Debian ve türevlerini kullanan arkadaşların bu fontları internette aramasına gerek yok. Doğrudan paket yöneticisinden kurabiliyorlar. Hemen adımları yazalım.
 
