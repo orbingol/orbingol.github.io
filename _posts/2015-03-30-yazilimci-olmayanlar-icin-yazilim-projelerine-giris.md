@@ -10,7 +10,7 @@ categories:
 
 Bu yazıda daha önceden sıkça başıma gelen ve bu yüzden çok fazla sorun yaşadığım *yazılım projelendirme* hakkında kısa bir bilgi vereceğim. Bu yazı çeşitli kitapların, üniversite master / doktora programlarının veya PMI standartlarının bir özeti değil, daha çok *bir de böyle deneyin, bakalım nasıl olacak?* şeklinde fikir vermeyi amaçlıyor olacak ve bazı araçlar ile işlerinizi kolaylaştırmanın yolunu anlatmaya çalışacak.
 
-Bu yazı **PHP ve jQuery ile yapılacak bir proje var, ilgilenir misin?** diye bana gelen kişilere ithafen yazılmıştır. Eğer bu kafadaysanız, lütfen okumaya devam edin.
+Bu yazı **PHP ve jQuery ile yapılacak bir proje var, ilgilenir misin?** kafasıyla proje yapabileceğini ve tamamlayabileceğini düşünen kişilere ithafen yazılmıştır. Eğer bu kafadaysanız, lütfen okumaya devam edin.
 
 Öncelikle *Proje nedir?* ile başlayalım.
 
