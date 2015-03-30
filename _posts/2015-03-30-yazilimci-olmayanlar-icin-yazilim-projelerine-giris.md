@@ -53,7 +53,7 @@ Yazılım projeleri düşünüldüğünde, kullanılacak programlama dilinden, �
 3. Projenizde olmasını düşündüğünüz ekranları çizin, akışları belirleyin. Bunları belirlemek için özel bir araç kullanmanıza gerek yok, *kurşun kalem, silgi ve kağıt* kullanarak çizimlerinizi yapabilirsiniz. Aynı zamanda akışların belirlenmesi de oldukça önemli, mesela *Sisteme giriş yapıldıktan sonra hangi ekrana yönlenecek?* sorusunun cevabına bu aşamada cevap vermelisiniz. (Low Fidelity Prototyping)
 4. Hoşunuza giden teknolojileri bir kenara not alın ve bir miktar araştırma yapın veya teknolojiyi sunan firmanın websitesindeki lansman videolarını izleyin. Böylelikle bu teknolojilerden faydalanıp faydalanamayacağınız hakkında fikirleriniz oluşacaktır. Siz teknik bir kişi olmayabilirsiniz ama bu aşamadan sonra sorularımızı soracağımız teknik arkadaş bu konularda sizi yönlendirebilecektir.
 
-Özet olarak, biz becerebildiğimiz kadar önçalışmayı yaptıktan sonra detaylar için teknik kişilere gitmelisiniz. Yoksa teknik arkadaşlar sizin sinirlerinizi bozabilir, demedi demeyin :)
+Özet olarak, elinizden gelebildiğini kadar önçalışmayı yaptıktan sonra detaylar için teknik kişilere gitmelisiniz. Yoksa teknik arkadaşlar sizin sinirlerinizi bozabilir, demedi demeyin :)
 
 ## Bu projeyi nasıl yöneteceğim ben?
 
