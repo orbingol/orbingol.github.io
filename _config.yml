@@ -15,7 +15,7 @@ avatar: http://www.gravatar.com/avatar/933fee328c75da3e4c63c264921a1c68
 feedname: Onur Rauf Bingöl'ün Kişisel Blogu
 
 # Enable pagination and its path
-paginate: 10
+paginate: 5
 paginate_path: "/page/:num/"
 
 #
