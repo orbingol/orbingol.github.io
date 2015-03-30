@@ -57,7 +57,7 @@ Yazılım projeleri düşünüldüğünde, kullanılacak programlama dilinden, �
 
 ## Bu projeyi nasıl yöneteceğim ben?
 
-Teknik kısımların değerlendirilmesi ve planlanması tamamlandıktan sonra, derin detaylar yani iş kırınımları belirlenmeli ve işlerin yapılıp yapılmadığı takip edilmelidir. Günümüzde *böl ve kazan* veya benzeridöngüsel yöntemleri izlemeniz uygun bir tercih olabilir. Sonuçta siz teknik bir kişi değilsiniz, ancak bu bir yazılım projesi yönetemeyeceğiniz anlamına gelmiyor. Uygun araçlar ve yöntemleri ile sizin de başarılı bir projeniz olabilir.
+Teknik kısımların değerlendirilmesi ve planlanması tamamlandıktan sonra, derin detaylar yani iş kırınımları belirlenmeli ve işlerin yapılıp yapılmadığı takip edilmelidir. Günümüzde *böl ve kazan* veya benzeri döngüsel yöntemleri izlemeniz uygun bir tercih olabilir. Sonuçta siz teknik bir kişi değilsiniz, ancak bu bir yazılım projesi yönetemeyeceğiniz anlamına gelmiyor. Uygun araçlar ve yöntemleri ile sizin de başarılı bir projeniz olabilir.
 
 Proje yönetmek, tabii ki de bir araçla olacak bir iş değil. Projeyi siz yönetiyor olacaksınız, araç ise sadece size yardımcı olacak. Bu noktada, seçmiş olduğunuz yazılım geliştirme döngüsüne göre bir araç kullanabilirsiniz. Örneğin;
 
