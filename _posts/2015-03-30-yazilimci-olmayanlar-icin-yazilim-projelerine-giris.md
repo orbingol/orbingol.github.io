@@ -72,6 +72,12 @@ Proje yönetmek, tabii ki de bir araçla olacak bir iş değil. Projeyi siz yön
 
 Evet biliyorum, bunların bir kısmı proje yönetim aracı değil. Zaten projeyi araç değil biz yönetiyoruz ve ihtiyacımız olan veya sevebileceğimiz / takımın sevebileceği - faydalanabileceği türden bir araç kullanmak, proje yönetmeyi eziyet olmaktan çıkarıp mutlu olabileceğiniz bir hale dönüştürebilir. Bu noktada bir bilene danışabilir veya firmaların sağladığı ücretsiz deneme sürümlerini veya online servisler için deneme periyotlarını kullanabilirsiniz.
 
+## Profesyonel örnekler
+
+Burada size *bilmemkimin bilmemne projesi süper gitmişti* şeklinde örnekler vermeyeceğim. Bu işin her zaman kitabına uygun gittiğini söylemem çok zor. Herkesin kendinden bir parçayı ortaya dökmesi ve diğerlerinin de bu dökülenlerin hakkını vermesi gerekiyor. Bu noktada **The Toyota Way** konusunda bir araştırma yapmanızı öneririm. Bence **gerçek anlamda profesyonel yaklaşım** budur, kendini profesyonel sanan unsurların herkesi hiçesayan davranışları değil...
+
+Yine de hızlıca bakıp görebileceğiniz bir örnekten bahsedeceğim: oDesk'te bulunan ilanların bir kısmında *I have specifications* şeklinde notlar görebilirsiniz. oDesk'in kendisi de, bu şekilde önçalışma yapılmayan projelere pek ilgi gösterilmediğini belirtmekte zaten. Her ne kadar yazılım işleri bir parça hor görülüp, yan işmiş gibi lanse edilse de, internet üzerinden verilen servislerde ve e-ticaret gibi uygulamalarda yazılım doğrudan bu işin belkemiği durumunda olabiliyor. Bu yüzden, yazılım yoğunluklu (software intensive) çalışma yapıldığında, buna gerekli özeni göstermek **zorundasınız**.
+
 ## Proje bitsin artık!
 
 Pek tabii bu yazıda, bir proje yöneticisi için oldukça önemli olan zaman ve iş planlamanın nasıl yapılacağı, bütçe hesaplamaları, zaman tahmini, proje yönetime yardımcı olan araçların nasıl kullanılması gerektiği, müşteri ilişkileri, çeşitli standartların belirlenmesi ve uygulanması gibi konulara değinmedik. Aslına bakarsak, *konuların şöyle bir üzerinden geçtik* demem daha doğru olacak.
