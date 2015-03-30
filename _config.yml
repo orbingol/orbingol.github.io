@@ -14,6 +14,10 @@ avatar: http://www.gravatar.com/avatar/933fee328c75da3e4c63c264921a1c68
 # Name displayed on the feed.xml
 feedname: Onur Rauf Bingöl'ün Kişisel Blogu
 
+# Enable pagination and its path
+pagination: 10
+paginate_path: "/page/:num/"
+
 #
 # Flags below are optional
 #
