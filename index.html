@@ -6,9 +6,8 @@ layout: default
     <article class="post">
       <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
       <div class="entry">
-        {{ post.excerpt }}
+        {{ post.excerpt }} <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Devamı</a>
       </div>
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Devamı</a>
     </article>
   {% endfor %}
 </div>
