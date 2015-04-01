@@ -74,7 +74,7 @@ Evet biliyorum, bunların bir kısmı proje yönetim aracı değil. Zaten projey
 
 ## Profesyonel örnekler
 
-Burada size *bilmemkimin bilmemne projesi süper gitmişti* şeklinde örnekler vermeyeceğim. Bu işin her zaman kitabına uygun gittiğini söylemem çok zor. Herkesin kendinden bir parçayı ortaya dökmesi ve diğerlerinin de bu dökülenlerin hakkını vermesi gerekiyor. Bu noktada **The Toyota Way** konusunda bir araştırma yapmanızı öneririm. Bence **gerçek anlamda profesyonel yaklaşım** budur, kendini profesyonel sanan unsurların herkesi hiçesayan davranışları değil...
+Burada size *bilmemkimin bilmemne projesi süper gitmişti* şeklinde örnekler vermeyeceğim. Bu işin her zaman kitabına uygun gittiğini söylemem çok zor. Herkesin kendinden bir parçayı ortaya dökmesi ve diğerlerinin de bu dökülenlerin hakkını vermesi gerekiyor. Bu noktada **The Toyota Way** konusunda bir araştırma yapmanızı öneririm. Bence **gerçek anlamda profesyonel yaklaşım** (en azından bu yaklaşımlardan biri) budur, kendini profesyonel sanan unsurların herkesi hiçesayan davranışları değil...
 
 Yine de hızlıca bakıp görebileceğiniz bir örnekten bahsedeceğim: oDesk'te bulunan ilanların bir kısmında *I have specifications* şeklinde notlar görebilirsiniz. oDesk'in kendisi de, bu şekilde önçalışma yapılmayan projelere pek ilgi gösterilmediğini belirtmekte zaten. Her ne kadar yazılım işleri bir parça hor görülüp, yan işmiş gibi lanse edilse de, internet üzerinden verilen servislerde ve e-ticaret gibi uygulamalarda yazılım doğrudan bu işin belkemiği durumunda olabiliyor. Bu yüzden, yazılım yoğunluklu (software intensive) bir çalışma yapıldığında, buna gerekli özeni göstermek **zorundasınız**.
 
@@ -84,7 +84,7 @@ Pek tabii bu yazıda, bir proje yöneticisi için oldukça önemli olan zaman ve
 
 Proje yönetmek ve bir takım halinde çalışabilmek pek kolay bir iş değil. Takımınızda olan kişilerin birer robot olmadığını unutmamanız gerekiyor. Ayrıca kendinizin de robot olmadığını bilmeniz gerekiyor. Bu yüzden, en başından itibaren elden geldiğince düzgün planlanmış ve kişilerden olabildiğince bağımsız olarak ilerleyebilmiş projeler, daha az sorunlu olacak ve sizi daha çok mutlu edecektir.
 
-Bu yazıda oldukça fazla eksik var, ama yazılımcı olmayanlar için önemli olarak gördüğüm bazı noktaları belirtmek istediğimden dolayı, şimdilik bu kadar yeterli olacaktır diye düşünüyorum.
+Yazılımcı olmayanlar için önemli olarak gördüğüm bazı noktaları belirtmek istediğimden dolayı, şimdilik bu kadar yeterli olacaktır diye düşünüyorum. Bu konularda sorularınız olursa aşağıdaki yorum kutusunu kullanabilirsiniz.
 
 Bu konuda sizlerin de yorumlarınızı duymak isterim.
 
