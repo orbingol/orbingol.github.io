@@ -86,6 +86,6 @@ Proje yönetmek ve bir takım halinde çalışabilmek pek kolay bir iş değil. 
 
 Yazılımcı olmayanlar için önemli olarak gördüğüm bazı noktaları belirtmek istediğimden dolayı, şimdilik bu kadar yeterli olacaktır diye düşünüyorum.
 
-Bu konularda sorularınız olursa aşağıdaki yorum kutusunu ile bana iletebilir veya [İletişim](http://onurraufbingol/iletisim/) sayfasında belirtilen yollarla bana doğrudan ulaşabilirsiniz.
+Bu konularda sorularınız olursa aşağıdaki yorum kutusunu ile bana iletebilir veya [İletişim](http://onurraufbingol.com/iletisim/) sayfasında belirtilen yollarla bana doğrudan ulaşabilirsiniz.
 
 *ORB.*
