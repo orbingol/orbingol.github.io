@@ -19,4 +19,6 @@ Genel olarak;
 
 ve hepsinden öte, güler yüzlü normal bir insanım. Başka ne bekliyordunuz ki? :)
 
-_ORB._
+Profesyonel çalışmalarım için [LinkedIn profilimi](https://www.linkedin.com/in/onurraufbingol) inceleyebilir, takıldığınız yerde benimle [iletişime geçebilirsiniz](http://onurraufbingol.com/iletisim/).
+
+Websiteme uğradığınız için teşekkürler :)
