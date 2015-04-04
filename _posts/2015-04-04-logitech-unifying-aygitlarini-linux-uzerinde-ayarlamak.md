@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Logitech Unifying aygıtlarını Linux ile ayarlamak"
+title:  "Logitech Unifying aygıtlarını Linux üzerinde ayarlamak"
 description: ""
 date:   2015-04-04 11:48:00
 categories:
