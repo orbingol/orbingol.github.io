@@ -6,7 +6,7 @@ menu: main
 permalink: /iletisim/
 ---
 
-Yakın zamanda buraya bir form koyacağım. O zamana kadar bana aşağıdaki yollardan ulaşabilirsiniz:
+Bana hızlı bir şekilde ulaşabilmek için aşağıdaki yolları kullanabilirsiniz. Telefon açsanız, e-postadan hızlı geri dönmem sanırım :)
 
 * **E-posta**: *contact-(at)-onurbingol-(dot)-net*
 * **Twitter**: [@orbingol](https://twitter.com/orbingol)
