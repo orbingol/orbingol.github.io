@@ -12,6 +12,6 @@ Bana hızlı bir şekilde ulaşabilmek için aşağıdaki yolları kullanabilirs
 * **Twitter**: [@orbingol](https://twitter.com/orbingol)
 * **LinkedIn**: [/in/onurraufbingol](https://tr.linkedin.com/in/onurraufbingol)
 
-**Not:** Yukarıda belirtilen e-posta adresinde *-* işaretleri silinmeli *(at)* bölümü **@** ve *(dot)* bölümü **.** ile değiştirilmelidir. Bunu çoğu kişi biliyor ve anlayabiliyor, ama ben yine de yazmak istedim.
+**Not:** Yukarıda belirtilen e-posta adresinde "-" (kısa çizgi) işaretleri silinmeli *(at)* bölümü **@** ve *(dot)* bölümü **.** (nokta) ile değiştirilmelidir. Bunu çoğu kişi biliyor ve anlayabiliyor, ama ben yine de yazmak istedim.
 
 _ORB._
