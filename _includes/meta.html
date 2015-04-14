@@ -6,9 +6,12 @@
     {% if page.excerpt %}
     <meta name="description" content="{{ page.excerpt| strip_html }}" />
     <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
-    {% else %}
+    {% elsif page.description %}
     <meta name="description" content="{{ page.description }}">
     <meta property="og:description" content="{{ page.description }}" />
+    {% else %}
+    <meta name="description" content="{{ site.description }}{% if paginator.page > 1 %} - Sayfa {{ paginator.page }}{% endif %}">
+    <meta property="og:description" content="{{ site.description }}" />
     {% endif %}
     <meta name="author" content="{{ site.name }}" />
 
