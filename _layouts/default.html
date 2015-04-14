@@ -2,7 +2,7 @@
 <html>
   <head>
 
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}{% if paginator.page > 1 %} - Sayfa {{ paginator.page }}{% endif %}</title>
 
     {% include meta.html %}
 
