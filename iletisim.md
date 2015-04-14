@@ -1,17 +1,13 @@
 ---
 layout: page
 title: İletişim
-description: "Onur Rauf Bingöl ile iletişime geçmenin yolları"
+description: "Onur Rauf Bingöl'ün iletişim bilgileri"
 menu: main
 permalink: /iletisim/
 ---
 
-Bana hızlı bir şekilde ulaşabilmek için aşağıdaki yolları kullanabilirsiniz. Telefon açsanız, e-postadan hızlı geri dönmem sanırım :)
+Bana hızlı bir şekilde ulaşmak için aşağıdaki yolları kullanabilirsiniz.
 
-* **E-posta**: *contact-(at)-onurbingol-(dot)-net*
+* **E-posta**: *contact@onurbingol.net*
 * **Twitter**: [@orbingol](https://twitter.com/orbingol)
 * **LinkedIn**: [/in/onurraufbingol](https://tr.linkedin.com/in/onurraufbingol)
-
-**Not:** Yukarıda belirtilen e-posta adresinde "-" (kısa çizgi) işaretleri silinmeli *(at)* bölümü **@** ve *(dot)* bölümü **.** (nokta) ile değiştirilmelidir. Bunu çoğu kişi biliyor ve anlayabiliyor, ama ben yine de yazmak istedim.
-
-_ORB._
