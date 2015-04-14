@@ -21,4 +21,4 @@ ve hepsinden öte, güler yüzlü normal bir insanım. Başka ne bekliyordunuz k
 
 Profesyonel çalışmalarım için [LinkedIn profilimi](https://www.linkedin.com/in/onurraufbingol) inceleyebilir ve dilediğiniz zaman benimle [iletişime geçebilirsiniz](http://onurraufbingol.com/iletisim/).
 
-Websiteme uğradığınız için teşekkürler :)
+Uğradığınız için teşekkürler :)
