@@ -22,7 +22,7 @@ Evet, DSLR fotoğraf makineniz olduğu zaman fotoğrafçı olamayacağınız gib
 
 ## Sosyal medya kullanımı örneği
 
-Çoğunuz gibi benim de çok çeşitli sosyal medya hesaplarım var ve bunları ne amaçla kullandığımı yazmak istiyorum.
+Çoğunuz gibi benim de çok çeşitli sosyal medya hesaplarım var ve bunları ne amaçla kullandığımı yazmak istiyorum. İletişime geçeceğiniz kişilerin de benzer bir algısı olabilir ve onlarla uygun bir yolla iletişime geçmek, size cevap dönülmesi şansını arttırabilir.
 
 **Facebook:** Tamamen kişisel, yüzyüze görmüş olduğum ve gerçekten tanıdığım insanları eklediğim bir mecra benim için. Çoğu tanıdığım kişi için de öyle. Biraz kişiye özel olunca, buraya iş veya yabancı kişileri karıştırmak istemiyorum. Baktığım zaman da iş görmeyeceğimi bildiğimden, kendimi daha rahat hissediyorum.
 
@@ -34,7 +34,7 @@ Evet, DSLR fotoğraf makineniz olduğu zaman fotoğrafçı olamayacağınız gib
 
 **Telefon:** Yazmanın çok aşırı vakit alacağı durumlarda (örn. proje ekibi ile toplantı) veya yukarıdakileri kullanamayan akrabalar ile karşılaştığımda kullandığım bir araç. Bir de *ben geldim, hadi aşağıya in* durumlarında, epostaya güvenmek pek doğru olmuyor :)
 
-Dikkat ederseniz, çoğumuz gibi ben de iş ve kişisel aktiviteleri ayırmaya çalışıyorum. Kullanabileceğim araçları da bu şekilde yönlendiriyorum. Böylelikle bir aracı açtığımda ne göreceğimi biliyorum.
+Dikkat ederseniz, çoğumuz gibi ben de iş ve kişisel aktiviteleri ayırmaya çalışıyorum. Kullanabileceğim araçları da bu şekilde yönlendiriyorum. Böylelikle bir aracı açtığımda ne göreceğimi biliyorum. Çoğu insanın, iş amaçlı konuları kişisel kullanım alanlarında görmek istememesi olasılığının oldukça yüksek olduğunu düşünüyorum. Bu yüzden, iletişime geçeceğiniz kişilerle yakın olmadıkça, kişisel sayılabilecek bir araç üzerinden iletişim sağlamak pek de doğru olmayabilir.
 
 ## Yazı yazma kuralları
 
