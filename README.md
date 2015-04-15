@@ -1,6 +1,8 @@
-## My Personal Website ##
+## My Personal Blog (in Turkish) ##
 
-This is the repository of my personal web page. It uses [Jekyll](http://jekyllrb.com) as the blog engine and [Jekyll Now](https://github.com/barryclark/jekyll-now/) as the template system.
+This is the Git repository of my personal blog on [onurraufbingol.com](http://onurraufbingol.com).
+
+I use [Jekyll](http://jekyllrb.com) as the blog engine and [Jekyll Now](https://github.com/barryclark/jekyll-now/) as the template system.
 
 ## License ##
 
