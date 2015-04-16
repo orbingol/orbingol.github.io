@@ -11,3 +11,4 @@ Bana hızlı bir şekilde ulaşmak için aşağıdaki yolları kullanabilirsiniz
 * **E-posta**: *contact@onurbingol.net*
 * **Twitter**: [@orbingol](https://twitter.com/orbingol)
 * **LinkedIn**: [/in/onurraufbingol](https://tr.linkedin.com/in/onurraufbingol)
+* **About.me**: [about.me/orbingol](https://about.me/orbingol)
