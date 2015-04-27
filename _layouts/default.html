@@ -14,8 +14,8 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.feedname }}" href="{{ site.baseurl }}/feed.xml" />
     <link rel="alternate" href="{{ site.baseurl }}" hreflang="tr-tr" />
 
-    {% if paginator.previous_page %}<link rel="prev" href="{{ paginator.previous_page_path }}" />{% endif %}
-    {% if paginator.next_page %}<link rel="next" href="{{ paginator.next_page_path }}" />{% endif %}
+    {% if paginator.previous_page %}<link rel="prev" href="{{ site.baseurl }}{{ paginator.previous_page_path }}" />{% endif %}
+    {% if paginator.next_page %}<link rel="next" href="{{ site.baseurl }}{{ paginator.next_page_path }}" />{% endif %}
 
   </head>
 
