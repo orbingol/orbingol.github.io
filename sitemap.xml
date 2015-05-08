@@ -5,17 +5,12 @@ title : "Sitemap"
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {% for post in site.posts %}
+    {% if post contains '/page/' or post == '/style.css' or post == '/feed.xml' or post == '/sitemap.xml 'or page ==  '/404.html' %}
+    {% else %}
     <url>
         <loc>{{site.url}}{{ post.url }}</loc>
     </url>
-    {% endfor %}
-
-    {% for page in site.pages %}
-    {% if page contains '/page/' or page == '/style.css' or page == '/feed.xml' or page == '/sitemap.xml 'or page ==  '/404.html' %}
-    {% else %}
-    <url>
-        <loc>{{site.url}}{{ page.url | remove: 'index.html' }}</loc>
-    </url>
     {% endif %}
     {% endfor %}
+
 </urlset>
