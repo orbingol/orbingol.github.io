@@ -11,7 +11,7 @@ title : "Sitemap"
     {% endfor %}
 
     {% for page in site.pages %}
-    {% if page contains 'page/' or page == 'style.css' or page == 'feed.xml' or page == 'sitemap.xml 'or page ==  '404.html' %}
+    {% if page contains '/page/' or page == '/style.css' or page == '/feed.xml' or page == '/sitemap.xml 'or page ==  '/404.html' %}
     {% else %}
     <url>
         <loc>{{site.url}}{{ page.url | remove: 'index.html' }}</loc>
