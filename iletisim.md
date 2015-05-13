@@ -1,7 +1,7 @@
 ---
 layout: page
 title: İletişim
-description: "Onur Rauf Bingöl'ün iletişim bilgileri"
+description: "Onur Rauf Bingöl'ün iletişim ve sosyal medya bilgileri"
 menu: main
 permalink: /iletisim/
 ---
