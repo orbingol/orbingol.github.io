@@ -76,19 +76,22 @@
           <div class="form-group row">
             <label for="emailInput" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Your email" required>
+              <input name="_replyto" type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Your email" required>
               <small id="emailHelp" class="form-text text-muted">This is how I will contact you back. No sharing with 3rd parties or no email advertisements.</small>
             </div>
           </div>
           <div class="form-group row">
             <label for="messageInput" class="col-sm-2 col-form-label">Message</label>
             <div class="col-sm-10">
-              <textarea class="form-control" id="messageInput" rows="3" placeholder="Your message" required></textarea>
+              <textarea name="Message" class="form-control" id="messageInput" rows="3" placeholder="Your message" required></textarea>
             </div>
           </div>
           <div class="form-group row">
             <div class="col-sm-2"></div>
             <div class="col-sm-10">
+              <input type="hidden" name="_subject" value="Website Contact Form">
+              <input type="hidden" name="_format" value="plain">
+              <input type="text" name="_gotcha" style="display:none">
               <button type="submit" class="btn btn-primary" aria-describedby="submitHelp">Send via Formspree.io</button>
               <small id="submitHelp" class="form-text text-muted">You'll be directed to Formspree.io for further processing of your message.</small>
             </div>
