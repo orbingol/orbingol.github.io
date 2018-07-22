@@ -1,4 +1,6 @@
-My personal website: https://onurraufbingol.com
+# Onur's Personal Website
+
+Repository of the webpage located at the web address https://onurraufbingol.com
 
 ## Privacy Policy
 
