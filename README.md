@@ -7,7 +7,7 @@ Repository of the webpage located at the web address https://onurraufbingol.com
 * This website is publicly hosted on GitHub. Accessing this website is subject to GitHub policies.
 * This website uses Content Delivery Services (CDNs) for accessing the HTML and Javascript frameworks. Accessing these services is subject to their policies.
 * This website implements Google Analytics __in anonymous mode__ to collect statistical data for personal viewing only.
-* This website does not explicitly use cookies but the hosting service, GitHub, or Google Analytics may use cookies to obtain personal information which is out of my control. I will try my best to make sure that the information collected is unidentifiable.
+* This website does not explicitly use cookies but the hosting service, GitHub, or Google Analytics may use cookies to obtain personal information which is out of my control. [Learn more](https://cookiesandyou.com)
 * The contact form requires a valid email address to get back to you. The email address you provide on the contact form will not be used for email advertising or will not be shared by someone else.
 * If you prefer to email me directly, you may use my public email on my [GitHub profile page](https://github.com/orbingol).
 
