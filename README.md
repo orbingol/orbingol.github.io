@@ -9,7 +9,6 @@ Repository of the webpage located at the web address https://onurraufbingol.com
 * This website implements Google Analytics __in anonymous mode__ for personal viewing only.
 * This website does not explicitly use cookies but the hosting service, GitHub, or Google Analytics may use cookies to obtain personal information which is out of my control. [Learn more](https://cookiesandyou.com)
 * The contact form requires a valid email address to get back to you. The email address you provide on the contact form will not be used for email advertising or will not be shared by someone else.
-* If you prefer to email me directly, you may use my public email on my [GitHub profile page](https://github.com/orbingol).
 
 ## License
 
