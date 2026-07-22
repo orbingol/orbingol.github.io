@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Onur Rauf Bingol',
+	description = 'Personal website of Onur Rauf Bingol.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		{/* Google Analytics — keep in sync with site privacy policy */}
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62775141-1"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-62775141-1', { anonymize_ip: true });
+		</script>
+	</head>
+	<body class="min-h-screen antialiased">
+		<slot />
+	</body>
+</html>

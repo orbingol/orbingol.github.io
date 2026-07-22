@@ -1,4 +1,17 @@
-.idea/
+# OS
 .DS_Store/
+
+# IDEs
+.idea/
 .vs*/
 .cursor/plans/
+
+# Astro / Node
+node_modules/
+dist/
+.astro/
+.astro-scaffold/
+npm-debug.log*
+.env
+.env.*
+!.env.example
