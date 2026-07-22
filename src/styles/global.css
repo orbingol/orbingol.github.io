@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Source Sans 3", "Segoe UI", sans-serif;
-  --font-display: "Fraunces", "Georgia", serif;
+  --font-sans: "Outfit", "Segoe UI", sans-serif;
+  --font-display: "Outfit", "Segoe UI", sans-serif;
   --color-ink: #1c2430;
   --color-muted: #5b6573;
   --color-accent: #2f6f7e;
@@ -15,11 +15,14 @@
 html {
   color: var(--color-ink);
   background-color: var(--color-surface);
+  font-size: 18px;
 }
 
 body {
   min-height: 100vh;
   font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.6;
   background:
     radial-gradient(1200px 600px at 10% -10%, #dce8ee 0%, transparent 55%),
     radial-gradient(900px 500px at 100% 0%, #e7eef5 0%, transparent 50%),
