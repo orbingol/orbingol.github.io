@@ -5,4 +5,4 @@ screenshot: /placeholders/screenshot.svg
 order: 3
 ---
 
-Soju Platform project page placeholder. Contents and URLs will be filled in later.
+Soju Platform is in progress. Project description, screenshots, and links will be added here later.

@@ -8,14 +8,7 @@ const projects = defineCollection({
     summary: z.string(),
     screenshot: z.string().optional(),
     order: z.number(),
-    links: z
-      .object({
-        github: z.string().url().optional(),
-        docs: z.string().url().optional(),
-        homepage: z.string().url().optional(),
-        pypi: z.string().url().optional(),
-      })
-      .optional(),
+    links: z.record(z.string(), z.string().url()).optional(),
   }),
 });
 

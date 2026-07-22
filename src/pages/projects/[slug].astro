@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await render(project);
-const links = project.data.links ?? {};
+const links = Object.entries(project.data.links ?? {});
 ---
 
 <Layout title={`${project.data.title} | Onur Rauf Bingol`} description={project.data.summary}>
@@ -37,61 +37,27 @@ const links = project.data.links ?? {};
 		}
 
 		{
-			Object.keys(links).length > 0 && (
+			links.length > 0 && (
 				<ul class="mt-6 flex flex-wrap gap-x-4 gap-y-2">
-					{links.github && (
+					{links.map(([label, href]) => (
 						<li>
 							<a
-								href={links.github}
+								href={href}
 								class="text-sm font-medium text-[var(--color-accent)] underline-offset-2 hover:underline"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								GitHub
+								{label}
 							</a>
 						</li>
-					)}
-					{links.docs && (
-						<li>
-							<a
-								href={links.docs}
-								class="text-sm font-medium text-[var(--color-accent)] underline-offset-2 hover:underline"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Docs
-							</a>
-						</li>
-					)}
-					{links.homepage && (
-						<li>
-							<a
-								href={links.homepage}
-								class="text-sm font-medium text-[var(--color-accent)] underline-offset-2 hover:underline"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Homepage
-							</a>
-						</li>
-					)}
-					{links.pypi && (
-						<li>
-							<a
-								href={links.pypi}
-								class="text-sm font-medium text-[var(--color-accent)] underline-offset-2 hover:underline"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								PyPI
-							</a>
-						</li>
-					)}
+					))}
 				</ul>
 			)
 		}
 
-		<div class="prose-site mt-8 space-y-4 text-base leading-relaxed text-[var(--color-ink)]/90">
+		<div
+			class="prose-site mt-8 space-y-4 text-base leading-relaxed text-[var(--color-ink)]/90 [&_h2]:mt-8 [&_h2]:font-[family-name:var(--font-display)] [&_h2]:text-2xl [&_h2]:text-[var(--color-ink)] [&_li]:mt-1 [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5"
+		>
 			<Content />
 		</div>
 	</article>
