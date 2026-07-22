@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-label="Screenshot placeholder">
+  <rect width="960" height="600" fill="#dfe7ec"/>
+  <rect x="36" y="36" width="888" height="528" fill="#f4f7f9" stroke="#9aabb8" stroke-width="2" stroke-dasharray="12 8"/>
+  <rect x="80" y="100" width="360" height="24" rx="4" fill="#c5d2da"/>
+  <rect x="80" y="150" width="520" height="16" rx="4" fill="#d5dee4"/>
+  <rect x="80" y="180" width="460" height="16" rx="4" fill="#d5dee4"/>
+  <rect x="80" y="240" width="800" height="240" rx="8" fill="#c9d6de"/>
+  <text x="480" y="370" text-anchor="middle" fill="#5b6573" font-family="Georgia, serif" font-size="32">Screenshot placeholder</text>
+</svg>

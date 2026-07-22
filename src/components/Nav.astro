@@ -1,0 +1,174 @@
+---
+import { getCollection } from 'astro:content';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const isHome = pathname === '/';
+const isProjects = pathname === '/projects' || pathname.startsWith('/projects/');
+const isContact = pathname === '/contact';
+
+const linkBase =
+  'block rounded-md px-3 py-2 text-base transition-colors md:inline-block md:px-2 md:py-1 md:text-[0.95rem]';
+const linkIdle = 'text-[var(--color-ink)]/80 hover:text-[var(--color-accent)]';
+const linkActive = 'font-semibold text-[var(--color-accent)]';
+---
+
+<header class="w-full border-b border-[var(--color-ink)]/8 bg-[var(--color-nav)]/90 backdrop-blur-sm">
+  <nav
+    class="site-nav flex w-full flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8"
+    aria-label="Primary"
+    data-nav
+  >
+    <a
+      href="/"
+      class="font-[family-name:var(--font-display)] text-lg tracking-tight text-[var(--color-ink)]"
+    >
+      Onur Rauf Bingol
+    </a>
+
+    <button
+      type="button"
+      class="inline-flex items-center justify-center rounded-md border border-[var(--color-ink)]/15 px-3 py-2 text-sm text-[var(--color-ink)] md:hidden"
+      aria-expanded="false"
+      aria-controls="primary-nav-panel"
+      data-nav-toggle
+    >
+      <span class="sr-only">Menu</span>
+      <span aria-hidden="true" class="flex flex-col gap-1.5">
+        <span class="block h-0.5 w-5 bg-current"></span>
+        <span class="block h-0.5 w-5 bg-current"></span>
+        <span class="block h-0.5 w-5 bg-current"></span>
+      </span>
+    </button>
+
+    <div
+      id="primary-nav-panel"
+      class="hidden w-full flex-col gap-1 md:flex md:w-auto md:flex-row md:items-center md:gap-4"
+      data-nav-panel
+    >
+      <a href="/" class:list={[linkBase, isHome ? linkActive : linkIdle]} aria-current={isHome ? 'page' : undefined}>
+        Home
+      </a>
+
+      <div class="relative" data-projects-menu>
+        <button
+          type="button"
+          class:list={[
+            linkBase,
+            'inline-flex w-full items-center justify-between gap-2 md:w-auto',
+            isProjects ? linkActive : linkIdle,
+          ]}
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="projects-menu"
+          data-projects-toggle
+        >
+          Projects
+          <span aria-hidden="true" class="text-xs opacity-70">▾</span>
+        </button>
+        <div
+          id="projects-menu"
+          class="relative z-20 mt-1 hidden w-full rounded-md border border-[var(--color-ink)]/10 bg-white py-1 shadow-md md:absolute md:left-0 md:mt-1 md:min-w-[14rem]"
+          data-projects-panel
+          hidden
+        >
+          <a
+            href="/projects"
+            class="block px-3 py-2 text-sm text-[var(--color-ink)] hover:bg-[var(--color-accent-soft)]"
+          >
+            All projects
+          </a>
+          {
+            projects.map((project) => (
+              <a
+                href={`/projects/${project.id}`}
+                class:list={[
+                  'block px-3 py-2 text-sm hover:bg-[var(--color-accent-soft)]',
+                  pathname === `/projects/${project.id}`
+                    ? 'font-semibold text-[var(--color-accent)]'
+                    : 'text-[var(--color-ink)]',
+                ]}
+              >
+                {project.data.title}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <a
+        href="/contact"
+        class:list={[linkBase, isContact ? linkActive : linkIdle]}
+        aria-current={isContact ? 'page' : undefined}
+      >
+        Contact
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  function initNav() {
+    const root = document.querySelector('[data-nav]');
+    if (!root || !(root instanceof HTMLElement)) return;
+
+    const toggle = root.querySelector('[data-nav-toggle]');
+    const panel = root.querySelector('[data-nav-panel]');
+    const projectsWrap = root.querySelector('[data-projects-menu]');
+    const projectsToggle = root.querySelector('[data-projects-toggle]');
+    const projectsPanel = root.querySelector('[data-projects-panel]');
+
+    if (
+      !(toggle instanceof HTMLButtonElement) ||
+      !(panel instanceof HTMLElement) ||
+      !(projectsWrap instanceof HTMLElement) ||
+      !(projectsToggle instanceof HTMLButtonElement) ||
+      !(projectsPanel instanceof HTMLElement)
+    ) {
+      return;
+    }
+
+    const setMobileOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      panel.classList.toggle('hidden', !open);
+      panel.classList.toggle('flex', open);
+    };
+
+    const setProjectsOpen = (open: boolean) => {
+      projectsToggle.setAttribute('aria-expanded', String(open));
+      projectsPanel.hidden = !open;
+      projectsPanel.classList.toggle('hidden', !open);
+    };
+
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      setMobileOpen(open);
+      if (!open) setProjectsOpen(false);
+    });
+
+    projectsToggle.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const open = projectsToggle.getAttribute('aria-expanded') !== 'true';
+      setProjectsOpen(open);
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!projectsWrap.contains(event.target as Node)) {
+        setProjectsOpen(false);
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        setProjectsOpen(false);
+        setMobileOpen(false);
+      }
+    });
+  }
+
+  initNav();
+  document.addEventListener('astro:page-load', initNav);
+</script>

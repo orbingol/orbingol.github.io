@@ -1,15 +1,109 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort(
+	(a, b) => a.data.order - b.data.order,
+);
 ---
 
-<Layout title="Onur Rauf Bingol" description="Personal website of Onur Rauf Bingol.">
-	<main class="w-full px-4 py-16 sm:px-6 lg:px-8">
-		<p class="text-sm uppercase tracking-[0.2em] text-[var(--color-muted)]">Scaffold</p>
-		<h1 class="mt-3 font-[family-name:var(--font-display)] text-4xl text-[var(--color-ink)] sm:text-5xl">
-			Onur Rauf Bingol
-		</h1>
-		<p class="mt-4 max-w-xl text-lg text-[var(--color-muted)]">
-			Astro + Tailwind scaffold is ready. Site pages come next.
-		</p>
-	</main>
+<Layout
+	title="Onur Rauf Bingol"
+	description="Hello, I am Onur — software, geometric modeling, and personal projects."
+>
+	<section class="animate-fade-up grid w-full gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(14rem,0.8fr)] lg:items-center lg:gap-14">
+		<div>
+			<h1 class="font-[family-name:var(--font-display)] text-4xl leading-tight tracking-tight text-[var(--color-ink)] sm:text-5xl lg:text-6xl">
+				Hello, I am Onur
+			</h1>
+			<div class="mt-5">
+				<SocialLinks />
+			</div>
+			<p class="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-muted)] sm:text-xl">
+				I work across software engineering, geometric modeling, and tools that make technical work clearer
+				and more practical.
+			</p>
+		</div>
+		<div class="mx-auto w-full max-w-sm lg:mx-0 lg:justify-self-end">
+			<img
+				src="/placeholders/photo.svg"
+				alt="Portrait placeholder for Onur Rauf Bingol"
+				class="aspect-[4/5] w-full rounded-md object-cover shadow-sm ring-1 ring-[var(--color-ink)]/10"
+				width="640"
+				height="800"
+			/>
+		</div>
+	</section>
+
+	<section class="mt-16 border-t border-[var(--color-ink)]/10 pt-12 sm:mt-20 sm:pt-16">
+		<h2 class="font-[family-name:var(--font-display)] text-3xl text-[var(--color-ink)]">About</h2>
+		<div class="mt-8 grid gap-10 md:grid-cols-2">
+			<div>
+				<h3 class="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-muted)]">Education</h3>
+				<ul class="prose-site mt-4 space-y-3 text-[var(--color-ink)]/90">
+					<li>
+						PhD, Mechanical Engineering,
+						<a href="https://www.iastate.edu" target="_blank" rel="noopener noreferrer">Iowa State University</a>
+						<ul class="mt-2 list-disc pl-5 text-[var(--color-muted)]">
+							<li>Received <em>Research Excellence Award</em> for outstanding research</li>
+						</ul>
+					</li>
+					<li>
+						MSc, Information Systems,
+						<a href="https://www.metu.edu.tr" target="_blank" rel="noopener noreferrer">METU</a>
+					</li>
+					<li>
+						MSc, Metallurgical and Materials Engineering,
+						<a href="https://www.metu.edu.tr" target="_blank" rel="noopener noreferrer">METU</a>
+					</li>
+					<li>
+						BSc, Metallurgical and Materials Engineering,
+						<a href="https://www.metu.edu.tr" target="_blank" rel="noopener noreferrer">METU</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3 class="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-muted)]">Interests</h3>
+				<ul class="mt-4 list-disc space-y-2 pl-5 text-[var(--color-ink)]/90">
+					<li>Computer graphics</li>
+					<li>Solid and geometric modeling</li>
+					<li>Finite element analysis</li>
+					<li>Isogeometric analysis</li>
+					<li>Composite materials</li>
+					<li>Robotics</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="mt-16 border-t border-[var(--color-ink)]/10 pt-12 sm:mt-20 sm:pt-16">
+		<div class="flex flex-wrap items-end justify-between gap-4">
+			<div>
+				<h2 class="font-[family-name:var(--font-display)] text-3xl text-[var(--color-ink)]">Projects</h2>
+				<p class="mt-2 max-w-2xl text-[var(--color-muted)]">
+					A few things I’ve built and continue to work on.
+				</p>
+			</div>
+			<a
+				href="/projects"
+				class="text-sm font-semibold text-[var(--color-accent)] underline-offset-2 hover:underline"
+			>
+				View all projects
+			</a>
+		</div>
+		<div class="mt-8 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+			{
+				projects.map((project) => (
+					<ProjectCard
+						title={project.data.title}
+						summary={project.data.summary}
+						href={`/projects/${project.id}`}
+						screenshot={project.data.screenshot}
+					/>
+				))
+			}
+		</div>
+	</section>
 </Layout>

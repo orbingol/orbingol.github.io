@@ -1,0 +1,98 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+	const projects = await getCollection('projects');
+	return projects.map((project) => ({
+		params: { slug: project.id },
+		props: { project },
+	}));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const links = project.data.links ?? {};
+---
+
+<Layout title={`${project.data.title} | Onur Rauf Bingol`} description={project.data.summary}>
+	<article class="mx-auto w-full max-w-3xl">
+		<p class="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-muted)]">
+			<a href="/projects" class="hover:text-[var(--color-accent)]">Projects</a>
+		</p>
+		<h1 class="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-tight text-[var(--color-ink)] sm:text-5xl">
+			{project.data.title}
+		</h1>
+		<p class="mt-4 text-lg text-[var(--color-muted)]">{project.data.summary}</p>
+
+		{
+			project.data.screenshot && (
+				<img
+					src={project.data.screenshot}
+					alt=""
+					class="mt-8 aspect-[16/10] w-full rounded-md object-cover ring-1 ring-[var(--color-ink)]/10"
+					loading="lazy"
+				/>
+			)
+		}
+
+		{
+			Object.keys(links).length > 0 && (
+				<ul class="mt-6 flex flex-wrap gap-x-4 gap-y-2">
+					{links.github && (
+						<li>
+							<a
+								href={links.github}
+								class="text-sm font-medium text-[var(--color-accent)] underline-offset-2 hover:underline"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								GitHub
+							</a>
+						</li>
+					)}
+					{links.docs && (
+						<li>
+							<a
+								href={links.docs}
+								class="text-sm font-medium text-[var(--color-accent)] underline-offset-2 hover:underline"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Docs
+							</a>
+						</li>
+					)}
+					{links.homepage && (
+						<li>
+							<a
+								href={links.homepage}
+								class="text-sm font-medium text-[var(--color-accent)] underline-offset-2 hover:underline"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Homepage
+							</a>
+						</li>
+					)}
+					{links.pypi && (
+						<li>
+							<a
+								href={links.pypi}
+								class="text-sm font-medium text-[var(--color-accent)] underline-offset-2 hover:underline"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								PyPI
+							</a>
+						</li>
+					)}
+				</ul>
+			)
+		}
+
+		<div class="prose-site mt-8 space-y-4 text-base leading-relaxed text-[var(--color-ink)]/90">
+			<Content />
+		</div>
+	</article>
+</Layout>

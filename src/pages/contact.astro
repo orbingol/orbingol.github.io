@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact | Onur Rauf Bingol" description="Contact Onur Rauf Bingol.">
+	<section class="mx-auto w-full max-w-2xl">
+		<h1 class="font-[family-name:var(--font-display)] text-4xl tracking-tight text-[var(--color-ink)] sm:text-5xl">
+			Contact
+		</h1>
+		<p class="mt-4 text-[var(--color-muted)]">
+			Please use <code class="rounded bg-white/70 px-1.5 py-0.5 text-sm">nurbs-python@googlegroups.com</code> for
+			questions related to NURBS-Python (geomdl) and its subprojects.
+		</p>
+
+		<form
+			id="contactForm"
+			class="mt-8 space-y-5"
+			action="https://formspree.io/contact@onurbingol.net"
+			method="POST"
+		>
+			<div>
+				<label for="emailInput" class="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">Email</label>
+				<input
+					name="_replyto"
+					type="email"
+					id="emailInput"
+					placeholder="Your email"
+					required
+					class="w-full rounded-md border border-[var(--color-ink)]/15 bg-white/80 px-3 py-2.5 text-[var(--color-ink)] outline-none ring-[var(--color-accent)] focus:ring-2"
+				/>
+			</div>
+
+			<div>
+				<label for="categoryInput" class="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">Category</label>
+				<select
+					name="category"
+					id="categoryInput"
+					required
+					class="w-full rounded-md border border-[var(--color-ink)]/15 bg-white/80 px-3 py-2.5 text-[var(--color-ink)] outline-none ring-[var(--color-accent)] focus:ring-2"
+				>
+					<option value="">(Please select)</option>
+					<option value="general">General inquiry</option>
+					<option value="geomdl-bug">NURBS-Python (geomdl) bugs</option>
+					<option value="geomdl-feature">NURBS-Python (geomdl) feature requests</option>
+				</select>
+			</div>
+
+			<div>
+				<label for="messageInput" class="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">Message</label>
+				<textarea
+					name="message"
+					id="messageInput"
+					rows="4"
+					placeholder="Your message"
+					required
+					class="w-full rounded-md border border-[var(--color-ink)]/15 bg-white/80 px-3 py-2.5 text-[var(--color-ink)] outline-none ring-[var(--color-accent)] focus:ring-2"
+				></textarea>
+			</div>
+
+			<input type="hidden" name="_subject" value="Website Contact Form" />
+			<input type="hidden" name="_format" value="plain" />
+			<input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
+			<div>
+				<button
+					type="submit"
+					class="rounded-md bg-[var(--color-accent)] px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+					aria-describedby="submitHelp"
+				>
+					Send via Formspree.io
+				</button>
+				<p id="submitHelp" class="mt-2 text-sm text-[var(--color-muted)]">
+					You'll be directed to Formspree.io for further processing of your message.
+				</p>
+			</div>
+		</form>
+	</section>
+</Layout>
