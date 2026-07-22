@@ -1,4 +1,10 @@
 ---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+
 const icons = [
   {
     href: 'https://github.com/orbingol/',
@@ -13,13 +19,12 @@ const icons = [
   {
     href: 'https://orcid.org/0000-0002-3139-5725',
     label: 'ORCID',
-    // Simplified ORCID “iD” mark
     orcid: true,
   },
 ] as const;
 ---
 
-<ul class="flex items-center gap-2.5">
+<ul class:list={['flex items-center gap-2.5', className]}>
   {
     icons.map((icon) => (
       <li>

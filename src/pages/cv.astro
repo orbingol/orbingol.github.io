@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import EducationTimeline from '../components/EducationTimeline.astro';
+---
+
+<Layout title="Curriculum Vitae | Onur Rauf Bingol" description="Curriculum vitae and education of Onur Rauf Bingol.">
+	<section class="mx-auto w-full max-w-3xl">
+		<h1 class="text-5xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-6xl">Curriculum Vitae</h1>
+		<p class="mt-4 text-xl text-[var(--color-muted)]">
+			Education and background. More sections can be added here later.
+		</p>
+
+		<div class="mt-12">
+			<h2 class="text-3xl font-semibold tracking-tight text-[var(--color-ink)]">Education</h2>
+			<div class="mt-8">
+				<EducationTimeline />
+			</div>
+		</div>
+	</section>
+</Layout>

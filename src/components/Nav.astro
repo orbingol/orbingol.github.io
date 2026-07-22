@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import HeaderSocials from './HeaderSocials.astro';
+import SocialIcons from './SocialIcons.astro';
 
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const projects = (await getCollection('projects')).sort(
@@ -9,6 +9,7 @@ const projects = (await getCollection('projects')).sort(
 
 const isHome = pathname === '/';
 const isProjects = pathname === '/projects' || pathname.startsWith('/projects/');
+const isCv = pathname === '/cv';
 const isContact = pathname === '/contact';
 
 const linkBase =
@@ -30,7 +31,7 @@ const linkActive = 'font-semibold text-[var(--color-accent)]';
       >
         Onur Rauf Bingol
       </a>
-      <HeaderSocials />
+      <SocialIcons />
     </div>
 
     <button
@@ -102,6 +103,14 @@ const linkActive = 'font-semibold text-[var(--color-accent)]';
           }
         </div>
       </div>
+
+      <a
+        href="/cv"
+        class:list={[linkBase, isCv ? linkActive : linkIdle]}
+        aria-current={isCv ? 'page' : undefined}
+      >
+        CV
+      </a>
 
       <a
         href="/contact"

@@ -12,65 +12,39 @@ const projects = (await getCollection('projects')).sort(
 	title="Onur Rauf Bingol"
 	description="Hello, I am Onur — software, geometric modeling, and personal projects."
 >
-	<section class="animate-fade-up relative z-0 grid w-full gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(14rem,0.8fr)] lg:items-center lg:gap-14">
-		<div>
-			<h1 class="text-5xl font-semibold leading-[1.1] tracking-tight text-[var(--color-ink)] sm:text-6xl lg:text-7xl">
-				Hello, I am Onur
-			</h1>
-			<p class="mt-6 max-w-2xl text-xl leading-relaxed text-[var(--color-muted)] sm:text-2xl">
-				I work across software engineering, geometric modeling, and tools that make technical work clearer
-				and more practical.
-			</p>
+	<section
+		class="animate-fade-up relative z-0 rounded-xl border border-[var(--color-ink)]/10 bg-[var(--color-panel)]/90 p-6 shadow-sm backdrop-blur-sm sm:p-8 lg:p-10"
+	>
+		<div class="grid w-full gap-x-10 gap-y-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-x-14">
+			<div>
+				<h1 class="text-5xl font-semibold leading-[1.1] tracking-tight text-[var(--color-ink)] sm:text-6xl lg:text-7xl">
+					Hello, I am Onur
+				</h1>
+				<p class="mt-6 max-w-2xl text-xl leading-relaxed text-[var(--color-muted)] sm:text-2xl">
+					I work across software engineering, geometric modeling, and tools that make technical work clearer
+					and more practical.
+				</p>
+			</div>
+			<div class="relative z-0 mx-auto w-full max-w-[12rem] lg:mx-0 lg:justify-self-end">
+				<img
+					src="/placeholders/photo.svg"
+					alt="Portrait placeholder for Onur Rauf Bingol"
+					class="relative z-0 aspect-[4/5] w-full rounded-md object-cover shadow-sm ring-1 ring-[var(--color-ink)]/10"
+					width="320"
+					height="400"
+				/>
+			</div>
 		</div>
-		<div class="relative z-0 mx-auto w-full max-w-sm lg:mx-0 lg:justify-self-end">
-			<img
-				src="/placeholders/photo.svg"
-				alt="Portrait placeholder for Onur Rauf Bingol"
-				class="relative z-0 aspect-[4/5] w-full rounded-md object-cover shadow-sm ring-1 ring-[var(--color-ink)]/10"
-				width="640"
-				height="800"
-			/>
-		</div>
-	</section>
 
-	<section class="mt-16 border-t border-[var(--color-ink)]/10 pt-12 sm:mt-20 sm:pt-16">
-		<h2 class="text-4xl font-semibold tracking-tight text-[var(--color-ink)]">About</h2>
-		<div class="mt-8 grid gap-10 md:grid-cols-2">
-			<div>
-				<h3 class="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-muted)]">Education</h3>
-				<ul class="prose-site mt-4 space-y-3 text-[var(--color-ink)]/90">
-					<li>
-						PhD, Mechanical Engineering,
-						<a href="https://www.iastate.edu" target="_blank" rel="noopener noreferrer">Iowa State University</a>
-						<ul class="mt-2 list-disc pl-5 text-[var(--color-muted)]">
-							<li>Received <em>Research Excellence Award</em> for outstanding research</li>
-						</ul>
-					</li>
-					<li>
-						MSc, Information Systems,
-						<a href="https://www.metu.edu.tr" target="_blank" rel="noopener noreferrer">METU</a>
-					</li>
-					<li>
-						MSc, Metallurgical and Materials Engineering,
-						<a href="https://www.metu.edu.tr" target="_blank" rel="noopener noreferrer">METU</a>
-					</li>
-					<li>
-						BSc, Metallurgical and Materials Engineering,
-						<a href="https://www.metu.edu.tr" target="_blank" rel="noopener noreferrer">METU</a>
-					</li>
-				</ul>
-			</div>
-			<div>
-				<h3 class="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-muted)]">Interests</h3>
-				<ul class="mt-4 list-disc space-y-2 pl-5 text-[var(--color-ink)]/90">
-					<li>Computer graphics</li>
-					<li>Solid and geometric modeling</li>
-					<li>Finite element analysis</li>
-					<li>Isogeometric analysis</li>
-					<li>Composite materials</li>
-					<li>Robotics</li>
-				</ul>
-			</div>
+		<hr class="my-8 border-0 border-t border-[var(--color-ink)]/12 sm:my-10" />
+
+		<div class="grid w-full gap-8 lg:grid-cols-[99fr_1fr] lg:gap-10">
+			<p class="text-lg leading-relaxed text-[var(--color-ink)]/85 sm:text-xl">
+				I’m especially interested in computer graphics, solid and geometric modeling, finite element and
+				isogeometric analysis, composite materials, and robotics — and in building software that connects
+				those ideas to real workflows.
+			</p>
+			<div aria-hidden="true"></div>
 		</div>
 	</section>
 

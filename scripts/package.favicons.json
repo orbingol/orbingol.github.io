@@ -1,0 +1,9 @@
+{
+  "name": "regen-favicons",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "png-to-ico": "2.1.8",
+    "sharp": "0.34.5"
+  }
+}
