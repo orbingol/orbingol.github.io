@@ -12,6 +12,10 @@ COPY . .
 FROM source AS build
 RUN npm run build
 
+# Export-only stage for CI: docker build --target export -o dist .
+FROM scratch AS export
+COPY --from=build /app/dist /
+
 # Default target: Astro dev server (bind-mount source via compose)
 FROM source AS web
 EXPOSE 4321
