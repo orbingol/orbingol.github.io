@@ -1,25 +1,28 @@
 ---
-import { getCollection } from 'astro:content';
-import SocialIcons from './SocialIcons.astro';
-import { SITE_NAME } from '../lib/site';
+import { getCollection } from "astro:content";
+import SocialIcons from "./SocialIcons.astro";
+import { SITE_NAME } from "../lib/site";
 
-const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
-const projects = (await getCollection('projects')).sort(
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+const projects = (await getCollection("projects")).sort(
   (a, b) => a.data.order - b.data.order,
 );
 
-const isHome = pathname === '/';
-const isProjects = pathname === '/projects' || pathname.startsWith('/projects/');
-const isCv = pathname === '/cv';
-const isContact = pathname === '/contact';
+const isHome = pathname === "/";
+const isProjects =
+  pathname === "/projects" || pathname.startsWith("/projects/");
+const isCv = pathname === "/cv";
+const isContact = pathname === "/contact";
 
 const linkBase =
-  'block rounded-md px-3 py-2.5 text-base transition-colors md:inline-block md:px-2.5 md:py-1.5 md:text-base';
-const linkIdle = 'text-[var(--color-ink)]/80 hover:text-[var(--color-accent)]';
-const linkActive = 'font-semibold text-[var(--color-accent)]';
+  "block rounded-md px-3 py-2.5 text-base transition-colors md:inline-block md:px-2.5 md:py-1.5 md:text-base";
+const linkIdle = "text-[var(--color-ink)]/80 hover:text-[var(--color-accent)]";
+const linkActive = "font-semibold text-[var(--color-accent)]";
 ---
 
-<header class="relative z-50 w-full border-b border-[var(--color-ink)]/8 bg-[var(--color-nav)]/95 backdrop-blur-sm">
+<header
+  class="relative z-50 w-full border-b border-[var(--color-ink)]/8 bg-[var(--color-nav)]/95 backdrop-blur-sm"
+>
   <nav
     class="site-nav flex w-full flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8"
     aria-label="Primary"
@@ -55,7 +58,11 @@ const linkActive = 'font-semibold text-[var(--color-accent)]';
       class="hidden w-full flex-col gap-1 md:flex md:w-auto md:flex-row md:items-center md:gap-4"
       data-nav-panel
     >
-      <a href="/" class:list={[linkBase, isHome ? linkActive : linkIdle]} aria-current={isHome ? 'page' : undefined}>
+      <a
+        href="/"
+        class:list={[linkBase, isHome ? linkActive : linkIdle]}
+        aria-current={isHome ? "page" : undefined}
+      >
         Home
       </a>
 
@@ -64,7 +71,7 @@ const linkActive = 'font-semibold text-[var(--color-accent)]';
           type="button"
           class:list={[
             linkBase,
-            'inline-flex w-full items-center justify-between gap-2 md:w-auto',
+            "inline-flex w-full items-center justify-between gap-2 md:w-auto",
             isProjects ? linkActive : linkIdle,
           ]}
           aria-expanded="false"
@@ -92,10 +99,10 @@ const linkActive = 'font-semibold text-[var(--color-accent)]';
               <a
                 href={`/projects/${project.id}`}
                 class:list={[
-                  'block px-3 py-2 text-base hover:bg-[var(--color-accent-soft)]',
+                  "block px-3 py-2 text-base hover:bg-[var(--color-accent-soft)]",
                   pathname === `/projects/${project.id}`
-                    ? 'font-semibold text-[var(--color-accent)]'
-                    : 'text-[var(--color-ink)]',
+                    ? "font-semibold text-[var(--color-accent)]"
+                    : "text-[var(--color-ink)]",
                 ]}
               >
                 {project.data.title}
@@ -108,7 +115,7 @@ const linkActive = 'font-semibold text-[var(--color-accent)]';
       <a
         href="/cv"
         class:list={[linkBase, isCv ? linkActive : linkIdle]}
-        aria-current={isCv ? 'page' : undefined}
+        aria-current={isCv ? "page" : undefined}
       >
         CV
       </a>
@@ -116,7 +123,7 @@ const linkActive = 'font-semibold text-[var(--color-accent)]';
       <a
         href="/contact"
         class:list={[linkBase, isContact ? linkActive : linkIdle]}
-        aria-current={isContact ? 'page' : undefined}
+        aria-current={isContact ? "page" : undefined}
       >
         Contact
       </a>
@@ -126,14 +133,14 @@ const linkActive = 'font-semibold text-[var(--color-accent)]';
 
 <script>
   function initNav() {
-    const root = document.querySelector('[data-nav]');
+    const root = document.querySelector("[data-nav]");
     if (!root || !(root instanceof HTMLElement)) return;
 
-    const toggle = root.querySelector('[data-nav-toggle]');
-    const panel = root.querySelector('[data-nav-panel]');
-    const projectsWrap = root.querySelector('[data-projects-menu]');
-    const projectsToggle = root.querySelector('[data-projects-toggle]');
-    const projectsPanel = root.querySelector('[data-projects-panel]');
+    const toggle = root.querySelector("[data-nav-toggle]");
+    const panel = root.querySelector("[data-nav-panel]");
+    const projectsWrap = root.querySelector("[data-projects-menu]");
+    const projectsToggle = root.querySelector("[data-projects-toggle]");
+    const projectsPanel = root.querySelector("[data-projects-panel]");
 
     if (
       !(toggle instanceof HTMLButtonElement) ||
@@ -146,37 +153,37 @@ const linkActive = 'font-semibold text-[var(--color-accent)]';
     }
 
     const setMobileOpen = (open: boolean) => {
-      toggle.setAttribute('aria-expanded', String(open));
-      panel.classList.toggle('hidden', !open);
-      panel.classList.toggle('flex', open);
+      toggle.setAttribute("aria-expanded", String(open));
+      panel.classList.toggle("hidden", !open);
+      panel.classList.toggle("flex", open);
     };
 
     const setProjectsOpen = (open: boolean) => {
-      projectsToggle.setAttribute('aria-expanded', String(open));
+      projectsToggle.setAttribute("aria-expanded", String(open));
       projectsPanel.hidden = !open;
-      projectsPanel.classList.toggle('hidden', !open);
+      projectsPanel.classList.toggle("hidden", !open);
     };
 
-    toggle.addEventListener('click', () => {
-      const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") !== "true";
       setMobileOpen(open);
       if (!open) setProjectsOpen(false);
     });
 
-    projectsToggle.addEventListener('click', (event) => {
+    projectsToggle.addEventListener("click", (event) => {
       event.stopPropagation();
-      const open = projectsToggle.getAttribute('aria-expanded') !== 'true';
+      const open = projectsToggle.getAttribute("aria-expanded") !== "true";
       setProjectsOpen(open);
     });
 
-    document.addEventListener('click', (event) => {
+    document.addEventListener("click", (event) => {
       if (!projectsWrap.contains(event.target as Node)) {
         setProjectsOpen(false);
       }
     });
 
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
         setProjectsOpen(false);
         setMobileOpen(false);
       }
@@ -184,5 +191,5 @@ const linkActive = 'font-semibold text-[var(--color-accent)]';
   }
 
   initNav();
-  document.addEventListener('astro:page-load', initNav);
+  document.addEventListener("astro:page-load", initNav);
 </script>

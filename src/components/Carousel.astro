@@ -1,202 +1,215 @@
 ---
 interface Slide {
-	src: string;
-	alt?: string;
-	caption?: string;
+  src: string;
+  alt?: string;
+  caption?: string;
 }
 
 interface Props {
-	slides: Slide[];
-	class?: string;
-	/** Auto-advance interval in ms. Set 0 to disable (default: 6000). */
-	autoplayMs?: number;
+  slides: Slide[];
+  class?: string;
+  /** Auto-advance interval in ms. Set 0 to disable (default: 6000). */
+  autoplayMs?: number;
 }
 
-const { slides, class: className = '', autoplayMs = 6000 } = Astro.props;
+const { slides, class: className = "", autoplayMs = 6000 } = Astro.props;
 const id = `carousel-${Math.random().toString(36).slice(2, 9)}`;
 ---
 
 {
-	slides.length > 0 && (
-		<div
-			class:list={['project-carousel relative', className]}
-			data-carousel
-			data-autoplay-ms={String(autoplayMs)}
-			aria-roledescription="carousel"
-			aria-label="Project gallery"
-			tabindex="0"
-		>
-			<div class="overflow-hidden rounded-md ring-1 ring-[var(--color-ink)]/10 bg-white">
-				{
-					slides.map((slide, index) => (
-						<figure
-							class:list={['carousel-slide m-0', index === 0 ? 'block' : 'hidden']}
-							data-carousel-slide
-							aria-hidden={index === 0 ? 'false' : 'true'}
-						>
-							<img
-								src={slide.src}
-								alt={slide.alt ?? slide.caption ?? ''}
-								class="aspect-[16/10] w-full object-contain bg-white"
-								loading={index === 0 ? 'eager' : 'lazy'}
-								width="960"
-								height="600"
-							/>
-						</figure>
-					))
-				}
-			</div>
+  slides.length > 0 && (
+    <div
+      class:list={["project-carousel relative", className]}
+      data-carousel
+      data-autoplay-ms={String(autoplayMs)}
+      aria-roledescription="carousel"
+      aria-label="Project gallery"
+      tabindex="0"
+    >
+      <div class="overflow-hidden rounded-md ring-1 ring-[var(--color-ink)]/10 bg-white">
+        {slides.map((slide, index) => (
+          <figure
+            class:list={[
+              "carousel-slide m-0",
+              index === 0 ? "block" : "hidden",
+            ]}
+            data-carousel-slide
+            aria-hidden={index === 0 ? "false" : "true"}
+          >
+            <img
+              src={slide.src}
+              alt={slide.alt ?? slide.caption ?? ""}
+              class="aspect-[16/10] w-full object-contain bg-white"
+              loading={index === 0 ? "eager" : "lazy"}
+              width="960"
+              height="600"
+            />
+          </figure>
+        ))}
+      </div>
 
-			{
-				slides.length > 1 && (
-					<>
-						<div class="mt-3 flex items-center justify-between gap-3">
-							<button
-								type="button"
-								class="rounded-md border border-[var(--color-ink)]/15 px-3 py-1.5 text-sm font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-accent-soft)] hover:text-[var(--color-accent)]"
-								data-carousel-prev
-								aria-controls={id}
-							>
-								Previous
-							</button>
-							<p
-								id={id}
-								class="min-h-[1.5rem] flex-1 text-center text-sm text-[var(--color-muted)]"
-								data-carousel-caption
-								aria-live="polite"
-							>
-								{slides[0]?.caption ?? ''}
-							</p>
-							<button
-								type="button"
-								class="rounded-md border border-[var(--color-ink)]/15 px-3 py-1.5 text-sm font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-accent-soft)] hover:text-[var(--color-accent)]"
-								data-carousel-next
-								aria-controls={id}
-							>
-								Next
-							</button>
-						</div>
-						<div class="mt-3 flex justify-center gap-2" role="tablist" aria-label="Slides">
-							{slides.map((slide, index) => (
-								<button
-									type="button"
-									class:list={[
-										'h-2.5 w-2.5 rounded-full transition-colors',
-										index === 0 ? 'bg-[var(--color-accent)]' : 'bg-[var(--color-ink)]/25',
-									]}
-									data-carousel-dot
-									aria-label={`Show slide ${index + 1}${slide.caption ? `: ${slide.caption}` : ''}`}
-									aria-selected={index === 0 ? 'true' : 'false'}
-								/>
-							))}
-						</div>
-					</>
-				)
-			}
+      {slides.length > 1 && (
+        <>
+          <div class="mt-3 flex items-center justify-between gap-3">
+            <button
+              type="button"
+              class="rounded-md border border-[var(--color-ink)]/15 px-3 py-1.5 text-sm font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-accent-soft)] hover:text-[var(--color-accent)]"
+              data-carousel-prev
+              aria-controls={id}
+            >
+              Previous
+            </button>
+            <p
+              id={id}
+              class="min-h-[1.5rem] flex-1 text-center text-sm text-[var(--color-muted)]"
+              data-carousel-caption
+              aria-live="polite"
+            >
+              {slides[0]?.caption ?? ""}
+            </p>
+            <button
+              type="button"
+              class="rounded-md border border-[var(--color-ink)]/15 px-3 py-1.5 text-sm font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-accent-soft)] hover:text-[var(--color-accent)]"
+              data-carousel-next
+              aria-controls={id}
+            >
+              Next
+            </button>
+          </div>
+          <div
+            class="mt-3 flex justify-center gap-2"
+            role="tablist"
+            aria-label="Slides"
+          >
+            {slides.map((slide, index) => (
+              <button
+                type="button"
+                class:list={[
+                  "h-2.5 w-2.5 rounded-full transition-colors",
+                  index === 0
+                    ? "bg-[var(--color-accent)]"
+                    : "bg-[var(--color-ink)]/25",
+                ]}
+                data-carousel-dot
+                aria-label={`Show slide ${index + 1}${slide.caption ? `: ${slide.caption}` : ""}`}
+                aria-selected={index === 0 ? "true" : "false"}
+              />
+            ))}
+          </div>
+        </>
+      )}
 
-			{slides.length === 1 && slides[0]?.caption && (
-				<p class="mt-3 text-center text-sm text-[var(--color-muted)]">{slides[0].caption}</p>
-			)}
-		</div>
-	)
+      {slides.length === 1 && slides[0]?.caption && (
+        <p class="mt-3 text-center text-sm text-[var(--color-muted)]">
+          {slides[0].caption}
+        </p>
+      )}
+    </div>
+  )
 }
 
 <script>
-	function initCarousels() {
-		document.querySelectorAll('[data-carousel]').forEach((root) => {
-			if (!(root instanceof HTMLElement) || root.dataset.carouselReady === '1') return;
-			root.dataset.carouselReady = '1';
+  function initCarousels() {
+    document.querySelectorAll("[data-carousel]").forEach((root) => {
+      if (!(root instanceof HTMLElement) || root.dataset.carouselReady === "1")
+        return;
+      root.dataset.carouselReady = "1";
 
-			const slides = [...root.querySelectorAll('[data-carousel-slide]')];
-			const dots = [...root.querySelectorAll('[data-carousel-dot]')];
-			const caption = root.querySelector('[data-carousel-caption]');
-			const prev = root.querySelector('[data-carousel-prev]');
-			const next = root.querySelector('[data-carousel-next]');
-			const captions = slides.map((slide) => {
-				const img = slide.querySelector('img');
-				return img?.getAttribute('alt') ?? '';
-			});
-			let index = 0;
-			const autoplayMs = Number(root.dataset.autoplayMs || '0');
-			const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-			let timer: ReturnType<typeof setInterval> | undefined;
+      const slides = [...root.querySelectorAll("[data-carousel-slide]")];
+      const dots = [...root.querySelectorAll("[data-carousel-dot]")];
+      const caption = root.querySelector("[data-carousel-caption]");
+      const prev = root.querySelector("[data-carousel-prev]");
+      const next = root.querySelector("[data-carousel-next]");
+      const captions = slides.map((slide) => {
+        const img = slide.querySelector("img");
+        return img?.getAttribute("alt") ?? "";
+      });
+      let index = 0;
+      const autoplayMs = Number(root.dataset.autoplayMs || "0");
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      let timer: ReturnType<typeof setInterval> | undefined;
 
-			const show = (nextIndex: number) => {
-				index = (nextIndex + slides.length) % slides.length;
-				slides.forEach((slide, i) => {
-					const active = i === index;
-					slide.classList.toggle('hidden', !active);
-					slide.classList.toggle('block', active);
-					slide.setAttribute('aria-hidden', active ? 'false' : 'true');
-				});
-				dots.forEach((dot, i) => {
-					const active = i === index;
-					dot.setAttribute('aria-selected', active ? 'true' : 'false');
-					dot.classList.toggle('bg-[var(--color-accent)]', active);
-					dot.classList.toggle('bg-[var(--color-ink)]/25', !active);
-				});
-				if (caption) caption.textContent = captions[index] ?? '';
-			};
+      const show = (nextIndex: number) => {
+        index = (nextIndex + slides.length) % slides.length;
+        slides.forEach((slide, i) => {
+          const active = i === index;
+          slide.classList.toggle("hidden", !active);
+          slide.classList.toggle("block", active);
+          slide.setAttribute("aria-hidden", active ? "false" : "true");
+        });
+        dots.forEach((dot, i) => {
+          const active = i === index;
+          dot.setAttribute("aria-selected", active ? "true" : "false");
+          dot.classList.toggle("bg-[var(--color-accent)]", active);
+          dot.classList.toggle("bg-[var(--color-ink)]/25", !active);
+        });
+        if (caption) caption.textContent = captions[index] ?? "";
+      };
 
-			const stop = () => {
-				if (timer) {
-					clearInterval(timer);
-					timer = undefined;
-				}
-			};
+      const stop = () => {
+        if (timer) {
+          clearInterval(timer);
+          timer = undefined;
+        }
+      };
 
-			const start = () => {
-				stop();
-				if (reduceMotion || autoplayMs <= 0 || slides.length < 2) return;
-				timer = setInterval(() => show(index + 1), autoplayMs);
-			};
+      const start = () => {
+        stop();
+        if (reduceMotion || autoplayMs <= 0 || slides.length < 2) return;
+        timer = setInterval(() => show(index + 1), autoplayMs);
+      };
 
-			prev?.addEventListener('click', () => {
-				show(index - 1);
-				start();
-			});
-			next?.addEventListener('click', () => {
-				show(index + 1);
-				start();
-			});
-			dots.forEach((dot, i) =>
-				dot.addEventListener('click', () => {
-					show(i);
-					start();
-				}),
-			);
+      prev?.addEventListener("click", () => {
+        show(index - 1);
+        start();
+      });
+      next?.addEventListener("click", () => {
+        show(index + 1);
+        start();
+      });
+      dots.forEach((dot, i) =>
+        dot.addEventListener("click", () => {
+          show(i);
+          start();
+        }),
+      );
 
-			root.addEventListener('keydown', (event) => {
-				if (!(event instanceof KeyboardEvent)) return;
-				if (event.key === 'ArrowLeft') {
-					event.preventDefault();
-					show(index - 1);
-					start();
-				}
-				if (event.key === 'ArrowRight') {
-					event.preventDefault();
-					show(index + 1);
-					start();
-				}
-			});
+      root.addEventListener("keydown", (event) => {
+        if (!(event instanceof KeyboardEvent)) return;
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          show(index - 1);
+          start();
+        }
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          show(index + 1);
+          start();
+        }
+      });
 
-			root.addEventListener('mouseenter', stop);
-			root.addEventListener('mouseleave', start);
-			root.addEventListener('focusin', stop);
-			root.addEventListener('focusout', (event) => {
-				if (event instanceof FocusEvent && !root.contains(event.relatedTarget as Node | null)) {
-					start();
-				}
-			});
-			document.addEventListener('visibilitychange', () => {
-				if (document.hidden) stop();
-				else start();
-			});
+      root.addEventListener("mouseenter", stop);
+      root.addEventListener("mouseleave", start);
+      root.addEventListener("focusin", stop);
+      root.addEventListener("focusout", (event) => {
+        if (
+          event instanceof FocusEvent &&
+          !root.contains(event.relatedTarget as Node | null)
+        ) {
+          start();
+        }
+      });
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stop();
+        else start();
+      });
 
-			start();
-		});
-	}
+      start();
+    });
+  }
 
-	initCarousels();
-	document.addEventListener('astro:page-load', initCarousels);
+  initCarousels();
+  document.addEventListener("astro:page-load", initCarousels);
 </script>

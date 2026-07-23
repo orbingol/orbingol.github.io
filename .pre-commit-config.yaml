@@ -1,26 +1,26 @@
 # See https://pre-commit.com for more information
 repos:
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v6.0.0
-  hooks:
-    - id: trailing-whitespace
-    - id: end-of-file-fixer
-    - id: check-yaml
-    - id: check-toml
-- repo: https://github.com/Lucas-C/pre-commit-hooks
-  rev: v1.5.6
-  hooks:
-    - id: forbid-crlf
-    - id: remove-crlf
-    - id: forbid-tabs
-    - id: remove-tabs
-- repo: local
-  hooks:
-    - id: prettier-astro
-      name: prettier (astro)
-      language: node
-      entry: bash scripts/pre-commit-prettier.sh
-      files: ^.*\.(astro|js|mjs|cjs|ts|css|html|json|md|yml|yaml)$
-      additional_dependencies:
-        - prettier@3.9.6
-        - prettier-plugin-astro@0.14.1
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.5.6
+    hooks:
+      - id: forbid-crlf
+      - id: remove-crlf
+      - id: forbid-tabs
+      - id: remove-tabs
+  - repo: local
+    hooks:
+      - id: prettier-astro
+        name: prettier (astro)
+        language: node
+        entry: bash scripts/pre-commit-prettier.sh
+        files: ^.*\.(astro|js|mjs|cjs|ts|css|html|json|md|yml|yaml)$
+        additional_dependencies:
+          - prettier@3.9.6
+          - prettier-plugin-astro@0.14.1

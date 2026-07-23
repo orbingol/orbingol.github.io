@@ -23,8 +23,8 @@ COPY --from=build /app/dist /
 # Favicon rasterizer: docker compose run --rm favicons
 FROM node:24-bookworm AS favicons
 RUN apt-get update -qq \
-	&& apt-get install -y -qq --no-install-recommends fonts-dejavu-core \
-	&& rm -rf /var/lib/apt/lists/*
+    && apt-get install -y -qq --no-install-recommends fonts-dejavu-core \
+    && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt/favicons
 COPY scripts/package.favicons.json ./package.json
 COPY scripts/regen-favicons.mjs ./regen-favicons.mjs

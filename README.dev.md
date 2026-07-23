@@ -4,7 +4,6 @@ Astro + Tailwind site. **Use Docker** — you do not need Node installed on the 
 
 Docker images use **Node.js 24 LTS** (`node:24-bookworm`). Astro telemetry is disabled via `ASTRO_TELEMETRY_DISABLED=1` (Dockerfile, Compose, and npm scripts). The Astro Dev Toolbar appears only during `docker compose up web` (`astro dev`); production builds (`astro build` / GitHub Pages) are static HTML and never include it.
 
-
 ## Prerequisites
 
 - Docker Desktop (or another Docker engine with Compose)
@@ -45,16 +44,16 @@ docker build -f docker/Dockerfile --target export --output type=local,dest=dist 
 
 ## Where to edit
 
-| Path | Purpose |
-|------|---------|
-| `src/pages/` | Routes (`/`, `/cv`, `/contact`, `/projects`, …) |
-| `src/components/` | Nav, footer, cards, etc. |
-| `src/layouts/Layout.astro` | Shared shell, SEO head, GA, fonts |
-| `src/lib/site.ts` | Site name, default OG, `sameAs`, title helpers |
-| `src/content/projects/*.md` | Project pages (frontmatter + body) |
-| `src/styles/global.css` | Design tokens / global CSS |
-| `public/` | Static SEO/crawl files, OG image, favicons, placeholders |
-| `CNAME` | Custom domain; copied into `dist/` by `npm run build` |
+| Path                        | Purpose                                                  |
+| --------------------------- | -------------------------------------------------------- |
+| `src/pages/`                | Routes (`/`, `/cv`, `/contact`, `/projects`, …)          |
+| `src/components/`           | Nav, footer, cards, etc.                                 |
+| `src/layouts/Layout.astro`  | Shared shell, SEO head, GA, fonts                        |
+| `src/lib/site.ts`           | Site name, default OG, `sameAs`, title helpers           |
+| `src/content/projects/*.md` | Project pages (frontmatter + body)                       |
+| `src/styles/global.css`     | Design tokens / global CSS                               |
+| `public/`                   | Static SEO/crawl files, OG image, favicons, placeholders |
+| `CNAME`                     | Custom domain; copied into `dist/` by `npm run build`    |
 
 Add a project by creating a Markdown file in `src/content/projects/` and filling the frontmatter (`title`, `summary`, `order`, optional `screenshot` / `links` / `videos` / SEO fields below).
 
@@ -62,12 +61,12 @@ Add a project by creating a Markdown file in `src/content/projects/` and filling
 
 `dist/` is **build output only** (gitignored). Edit sources; let the build copy them.
 
-| Artifact | Source of truth | How it reaches `dist/` |
-|----------|-----------------|------------------------|
-| `robots.txt`, `llms.txt`, OG images, verify HTML files | `public/` | Astro copies `public/` → `dist/` on `astro build` |
-| Favicons / `og-default.png` | `public/` (regen via `docker compose run --rm favicons`) | Same |
-| Custom domain `CNAME` | Repo-root `CNAME` | `npm run build` → `astro build && cp CNAME dist/CNAME` |
-| Sitemap XML | `@astrojs/sitemap` | Written at build time only |
+| Artifact                                               | Source of truth                                          | How it reaches `dist/`                                 |
+| ------------------------------------------------------ | -------------------------------------------------------- | ------------------------------------------------------ |
+| `robots.txt`, `llms.txt`, OG images, verify HTML files | `public/`                                                | Astro copies `public/` → `dist/` on `astro build`      |
+| Favicons / `og-default.png`                            | `public/` (regen via `docker compose run --rm favicons`) | Same                                                   |
+| Custom domain `CNAME`                                  | Repo-root `CNAME`                                        | `npm run build` → `astro build && cp CNAME dist/CNAME` |
+| Sitemap XML                                            | `@astrojs/sitemap`                                       | Written at build time only                             |
 
 After a local build, confirm `dist/` contains `robots.txt`, `llms.txt`, `CNAME`, and `sitemap*.xml` — and that `git status` does **not** stage `dist/`. Never `git add dist/`.
 
@@ -79,16 +78,16 @@ Home, projects, and contact are indexable. Layout emits canonical URLs, title te
 
 **Project frontmatter (optional):**
 
-| Field | Role |
-|-------|------|
-| `description` | Meta / OG description (falls back to `summary`) |
-| `seoTitle` | Document title override (Layout still appends site name) |
-| `screenshot` | On-page image when there is no `gallery` |
-| `cardImage` | Optional card/list thumbnail (falls back to `screenshot`) |
-| `image` | Dedicated OG image path under `public/` (raster: png/jpg/webp/gif) |
-| `gallery` | Optional carousel slides `{ src, caption?, alt? }` |
-| `videos` | Optional list of `{ title, url, description? }` (YouTube embeds after page body) |
-| `schemaType` | Optional JSON-LD type: `SoftwareApplication` (default) or `CreativeWork` |
+| Field         | Role                                                                             |
+| ------------- | -------------------------------------------------------------------------------- |
+| `description` | Meta / OG description (falls back to `summary`)                                  |
+| `seoTitle`    | Document title override (Layout still appends site name)                         |
+| `screenshot`  | On-page image when there is no `gallery`                                         |
+| `cardImage`   | Optional card/list thumbnail (falls back to `screenshot`)                        |
+| `image`       | Dedicated OG image path under `public/` (raster: png/jpg/webp/gif)               |
+| `gallery`     | Optional carousel slides `{ src, caption?, alt? }`                               |
+| `videos`      | Optional list of `{ title, url, description? }` (YouTube embeds after page body) |
+| `schemaType`  | Optional JSON-LD type: `SoftwareApplication` (default) or `CreativeWork`         |
 
 SVG placeholders are **not** used as `og:image` — public pages fall back to `/og-default.png`.
 
@@ -96,12 +95,12 @@ SVG placeholders are **not** used as `og:image` — public pages fall back to `/
 
 `/cv` is for humans with the link — not for search snippets or AI training ingestion via this domain. LinkedIn is the public professional / CV surface.
 
-| Mechanism | Where |
-|-----------|--------|
-| `noindex, follow` | `src/pages/cv.astro` → Layout |
-| Omitted from sitemap | `astro.config.mjs` sitemap `filter` |
-| `Disallow: /cv` | `public/robots.txt` (including named AI crawlers) |
-| Not listed | `public/llms.txt`, JSON-LD |
+| Mechanism            | Where                                             |
+| -------------------- | ------------------------------------------------- |
+| `noindex, follow`    | `src/pages/cv.astro` → Layout                     |
+| Omitted from sitemap | `astro.config.mjs` sitemap `filter`               |
+| `Disallow: /cv`      | `public/robots.txt` (including named AI crawlers) |
+| Not listed           | `public/llms.txt`, JSON-LD                        |
 
 Honest limit: scrapers that ignore robots/noindex can still fetch a public URL. Do not put unique sensitive data on `/cv` that would be unacceptable if leaked.
 
@@ -127,12 +126,12 @@ That writes `favicon-16.png`, `favicon-32.png`, `favicon.ico`, `apple-touch-icon
 
 ## Docker targets
 
-| Target | Role |
-|--------|------|
-| `web` (default) | `astro dev` for local preview |
-| `build` | `astro build` → `/app/dist` |
-| `export` | Scratch stage used by CI to copy only `dist` |
-| `favicons` | Rasterize `public/favicon.svg` (+ `og-default.svg`) → PNG/ICO |
+| Target          | Role                                                          |
+| --------------- | ------------------------------------------------------------- |
+| `web` (default) | `astro dev` for local preview                                 |
+| `build`         | `astro build` → `/app/dist`                                   |
+| `export`        | Scratch stage used by CI to copy only `dist`                  |
+| `favicons`      | Rasterize `public/favicon.svg` (+ `og-default.svg`) → PNG/ICO |
 
 ## Lint / pre-commit
 

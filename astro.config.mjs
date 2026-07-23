@@ -1,14 +1,14 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://onurraufbingol.com',
+  site: "https://onurraufbingol.com",
   integrations: [
     sitemap({
-      filter: (page) => !page.endsWith('/cv') && !page.endsWith('/cv/'),
+      filter: (page) => !page.endsWith("/cv") && !page.endsWith("/cv/"),
     }),
   ],
   // Dev Toolbar is only injected by `astro dev`. Production `astro build` never ships it.

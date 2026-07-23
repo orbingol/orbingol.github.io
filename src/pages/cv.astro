@@ -1,30 +1,34 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import EducationTimeline from '../components/EducationTimeline.astro';
+import Layout from "../layouts/Layout.astro";
+import EducationTimeline from "../components/EducationTimeline.astro";
 
 // /cv is private-by-link: noindex, omitted from sitemap/robots/llms/JSON-LD. LinkedIn is the public CV.
 ---
 
 <Layout
-	title="Curriculum Vitae"
-	description="Curriculum vitae and education of Onur Rauf Bingol."
-	noindex
-	breadcrumbs={[
-		{ label: 'Home', href: '/' },
-		{ label: 'CV' },
-	]}
+  title="Curriculum Vitae"
+  description="Curriculum vitae and education of Onur Rauf Bingol."
+  noindex
+  breadcrumbs={[{ label: "Home", href: "/" }, { label: "CV" }]}
 >
-	<section class="mx-auto w-full max-w-3xl">
-		<h1 class="text-5xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-6xl">Curriculum Vitae</h1>
-		<p class="mt-4 text-xl text-[var(--color-muted)]">
-			Senior software engineer with a Ph.D. degree. Focuses on computational geometry, solid modeling, HPC, and simulations.
-		</p>
+  <section class="mx-auto w-full max-w-3xl">
+    <h1
+      class="text-5xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-6xl"
+    >
+      Curriculum Vitae
+    </h1>
+    <p class="mt-4 text-xl text-[var(--color-muted)]">
+      Senior software engineer with a Ph.D. degree. Focuses on computational
+      geometry, solid modeling, HPC, and simulations.
+    </p>
 
-		<div class="mt-12">
-			<h2 class="text-3xl font-semibold tracking-tight text-[var(--color-ink)]">Education</h2>
-			<div class="mt-8">
-				<EducationTimeline />
-			</div>
-		</div>
-	</section>
+    <div class="mt-12">
+      <h2 class="text-3xl font-semibold tracking-tight text-[var(--color-ink)]">
+        Education
+      </h2>
+      <div class="mt-8">
+        <EducationTimeline />
+      </div>
+    </div>
+  </section>
 </Layout>

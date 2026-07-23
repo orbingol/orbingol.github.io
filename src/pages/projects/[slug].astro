@@ -1,17 +1,22 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Carousel from '../../components/Carousel.astro';
-import ProjectLinks from '../../components/ProjectLinks.astro';
-import { getCollection, render } from 'astro:content';
-import { absoluteUrl, isUsableOgImage, SITE_NAME, SITE_URL } from '../../lib/site';
-import { youtubeEmbedUrl } from '../../lib/youtube';
+import Layout from "../../layouts/Layout.astro";
+import Carousel from "../../components/Carousel.astro";
+import ProjectLinks from "../../components/ProjectLinks.astro";
+import { getCollection, render } from "astro:content";
+import {
+  absoluteUrl,
+  isUsableOgImage,
+  SITE_NAME,
+  SITE_URL,
+} from "../../lib/site";
+import { youtubeEmbedUrl } from "../../lib/youtube";
 
 export async function getStaticPaths() {
-	const projects = await getCollection('projects');
-	return projects.map((project) => ({
-		params: { slug: project.id },
-		props: { project },
-	}));
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
 }
 
 const { project } = Astro.props;
@@ -20,119 +25,126 @@ const links = project.data.links ?? {};
 
 const pageTitle = project.data.seoTitle ?? project.data.title;
 const description = project.data.description ?? project.data.summary;
-const ogCandidate = project.data.image ?? project.data.screenshot ?? project.data.gallery?.[0]?.src;
+const ogCandidate =
+  project.data.image ??
+  project.data.screenshot ??
+  project.data.gallery?.[0]?.src;
 const image = isUsableOgImage(ogCandidate) ? ogCandidate : undefined;
 
 const gallery = project.data.gallery ?? [];
 const videos = (project.data.videos ?? [])
-	.map((video) => ({
-		title: video.title,
-		url: video.url,
-		description: video.description,
-		embed: youtubeEmbedUrl(video.url),
-	}))
-	.filter((video) => video.embed);
+  .map((video) => ({
+    title: video.title,
+    url: video.url,
+    description: video.description,
+    embed: youtubeEmbedUrl(video.url),
+  }))
+  .filter((video) => video.embed);
 
 const sameAs = Object.values(links);
-const schemaType = project.data.schemaType ?? 'SoftwareApplication';
+const schemaType = project.data.schemaType ?? "SoftwareApplication";
 const jsonLd = {
-	'@context': 'https://schema.org',
-	'@type': schemaType,
-	name: project.data.title,
-	description,
-	url: absoluteUrl(`/projects/${project.id}`, SITE_URL),
-	author: {
-		'@type': 'Person',
-		name: SITE_NAME,
-		url: SITE_URL,
-	},
-	...(sameAs.length > 0 ? { sameAs } : {}),
-	...(image ? { image: absoluteUrl(image, SITE_URL) } : {}),
-	...(videos.length > 0
-		? {
-				video: videos.map((video) => ({
-					'@type': 'VideoObject',
-					name: video.title,
-					url: video.url,
-					embedUrl: video.embed,
-					...(video.description ? { description: video.description } : {}),
-				})),
-			}
-		: {}),
+  "@context": "https://schema.org",
+  "@type": schemaType,
+  name: project.data.title,
+  description,
+  url: absoluteUrl(`/projects/${project.id}`, SITE_URL),
+  author: {
+    "@type": "Person",
+    name: SITE_NAME,
+    url: SITE_URL,
+  },
+  ...(sameAs.length > 0 ? { sameAs } : {}),
+  ...(image ? { image: absoluteUrl(image, SITE_URL) } : {}),
+  ...(videos.length > 0
+    ? {
+        video: videos.map((video) => ({
+          "@type": "VideoObject",
+          name: video.title,
+          url: video.url,
+          embedUrl: video.embed,
+          ...(video.description ? { description: video.description } : {}),
+        })),
+      }
+    : {}),
 };
 ---
 
 <Layout
-	title={pageTitle}
-	description={description}
-	image={image}
-	jsonLd={jsonLd}
-	breadcrumbs={[
-		{ label: 'Home', href: '/' },
-		{ label: 'Projects', href: '/projects' },
-		{ label: project.data.title },
-	]}
+  title={pageTitle}
+  description={description}
+  image={image}
+  jsonLd={jsonLd}
+  breadcrumbs={[
+    { label: "Home", href: "/" },
+    { label: "Projects", href: "/projects" },
+    { label: project.data.title },
+  ]}
 >
-	<article class="mx-auto w-full max-w-3xl">
-		<h1 class="text-5xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-6xl">
-			{project.data.title}
-		</h1>
-		{Object.keys(links).length > 0 && <ProjectLinks links={links} class="mt-4" />}
-		<p class="mt-4 text-lg text-[var(--color-muted)]">{project.data.summary}</p>
+  <article class="mx-auto w-full max-w-3xl">
+    <h1
+      class="text-5xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-6xl"
+    >
+      {project.data.title}
+    </h1>
+    {
+      Object.keys(links).length > 0 && (
+        <ProjectLinks links={links} class="mt-4" />
+      )
+    }
+    <p class="mt-4 text-lg text-[var(--color-muted)]">{project.data.summary}</p>
 
-		{
-			gallery.length > 0 ? (
-				<div class="mt-8">
-					<Carousel slides={gallery} />
-				</div>
-			) : (
-				project.data.screenshot && (
-					<img
-						src={project.data.screenshot}
-						alt=""
-						class="mt-8 aspect-[16/10] w-full rounded-md object-contain bg-white ring-1 ring-[var(--color-ink)]/10"
-						loading="lazy"
-					/>
-				)
-			)
-		}
+    {
+      gallery.length > 0 ? (
+        <div class="mt-8">
+          <Carousel slides={gallery} />
+        </div>
+      ) : (
+        project.data.screenshot && (
+          <img
+            src={project.data.screenshot}
+            alt=""
+            class="mt-8 aspect-[16/10] w-full rounded-md object-contain bg-white ring-1 ring-[var(--color-ink)]/10"
+            loading="lazy"
+          />
+        )
+      )
+    }
 
-		<div
-			class="prose-site mt-8 space-y-4 text-lg leading-relaxed text-[var(--color-ink)]/90 [&_h2]:mt-8 [&_h2]:text-3xl [&_h2]:font-semibold [&_h2]:text-[var(--color-ink)] [&_li]:mt-1 [&_pre]:overflow-x-auto [&_pre]:rounded-md [&_pre]:bg-[var(--color-ink)]/5 [&_pre]:p-4 [&_pre]:text-sm [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5"
-		>
-			<Content />
-		</div>
+    <div
+      class="prose-site mt-8 space-y-4 text-lg leading-relaxed text-[var(--color-ink)]/90 [&_h2]:mt-8 [&_h2]:text-3xl [&_h2]:font-semibold [&_h2]:text-[var(--color-ink)] [&_li]:mt-1 [&_pre]:overflow-x-auto [&_pre]:rounded-md [&_pre]:bg-[var(--color-ink)]/5 [&_pre]:p-4 [&_pre]:text-sm [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5"
+    >
+      <Content />
+    </div>
 
-		{
-			videos.length > 0 && (
-				<section class="mt-12 space-y-12" aria-label="Videos">
-					{videos.map((video) => (
-						<figure class="space-y-4">
-							<h2 class="text-2xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-3xl">
-								{video.title}
-							</h2>
-							<div class="aspect-video overflow-hidden rounded-md ring-1 ring-[var(--color-ink)]/10">
-								<iframe
-									src={video.embed}
-									title={video.title}
-									class="h-full w-full"
-									loading="lazy"
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-									referrerpolicy="strict-origin-when-cross-origin"
-									allowfullscreen
-								/>
-							</div>
-							{
-								video.description && (
-									<figcaption class="text-base leading-relaxed text-[var(--color-muted)]">
-										{video.description}
-									</figcaption>
-								)
-							}
-						</figure>
-					))}
-				</section>
-			)
-		}
-	</article>
+    {
+      videos.length > 0 && (
+        <section class="mt-12 space-y-12" aria-label="Videos">
+          {videos.map((video) => (
+            <figure class="space-y-4">
+              <h2 class="text-2xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-3xl">
+                {video.title}
+              </h2>
+              <div class="aspect-video overflow-hidden rounded-md ring-1 ring-[var(--color-ink)]/10">
+                <iframe
+                  src={video.embed}
+                  title={video.title}
+                  class="h-full w-full"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                />
+              </div>
+              {video.description && (
+                <figcaption class="text-base leading-relaxed text-[var(--color-muted)]">
+                  {video.description}
+                </figcaption>
+              )}
+            </figure>
+          ))}
+        </section>
+      )
+    }
+  </article>
 </Layout>
