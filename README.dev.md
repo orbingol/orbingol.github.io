@@ -8,6 +8,7 @@ Docker images use **Node.js 24 LTS** (`node:24-bookworm`). Astro telemetry is di
 ## Prerequisites
 
 - Docker Desktop (or another Docker engine with Compose)
+- [uv](https://docs.astral.sh/uv/) — for lint / pre-commit (optional locally; used in CI)
 
 ## Start the dev server
 
@@ -132,6 +133,33 @@ That writes `favicon-16.png`, `favicon-32.png`, `favicon.ico`, `apple-touch-icon
 | `build` | `astro build` → `/app/dist` |
 | `export` | Scratch stage used by CI to copy only `dist` |
 | `favicons` | Rasterize `public/favicon.svg` (+ `og-default.svg`) → PNG/ICO |
+
+## Lint / pre-commit
+
+Hooks are defined in [`.pre-commit-config.yaml`](.pre-commit-config.yaml) (trailing whitespace / EOF, CRLF / tabs, Prettier for Astro). Install [pre-commit](https://pre-commit.com/) with [uv](https://docs.astral.sh/uv/) — no project Python env required (the Prettier hook uses pre-commit’s isolated Node env).
+
+One-shot (no install):
+
+```bash
+uvx pre-commit run --all-files
+```
+
+Or install the tool once, then use it like a normal CLI:
+
+```bash
+uv tool install pre-commit
+pre-commit install                 # optional: enable the git commit hook
+pre-commit run --all-files
+```
+
+CI runs the same checks on every push via [`.github/workflows/pre-commit.yml`](.github/workflows/pre-commit.yml) (`uvx pre-commit run --all-files`).
+
+Format only through the site’s Node toolchain (rebuild the image after adding Prettier deps if needed):
+
+```bash
+docker compose run --rm web npm run format
+docker compose run --rm web npm run format:check
+```
 
 ## Deploy
 
