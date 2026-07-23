@@ -31,3 +31,10 @@ await sharp(Buffer.from(svg)).resize(180, 180).png().toFile(outApple);
 fs.writeFileSync(outIco, await pngToIco([out16, out32]));
 
 console.log('Regenerated favicon-16.png, favicon-32.png, favicon.ico, apple-touch-icon.png');
+
+const ogSvgPath = path.join(publicDir, 'og-default.svg');
+const ogPngPath = path.join(publicDir, 'og-default.png');
+if (fs.existsSync(ogSvgPath)) {
+	await sharp(ogSvgPath).resize(1200, 630).png().toFile(ogPngPath);
+	console.log('Regenerated og-default.png');
+}

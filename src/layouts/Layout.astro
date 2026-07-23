@@ -2,16 +2,58 @@
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import {
+	SITE_NAME,
+	DEFAULT_DESCRIPTION,
+	DEFAULT_OG_IMAGE,
+	absoluteUrl,
+	formatPageTitle,
+	isUsableOgImage,
+} from '../lib/site';
 
 interface Props {
 	title?: string;
 	description?: string;
+	/** Path or absolute URL for og:image / twitter:image (raster preferred). */
+	image?: string;
+	ogType?: 'website' | 'article' | 'profile';
+	/** When true, emit noindex (used for /cv and 404). */
+	noindex?: boolean;
+	/** Override path for canonical (defaults to current pathname). */
+	canonicalPath?: string;
+	/** Home uses brand-only title. */
+	isHome?: boolean;
+	/** Optional JSON-LD object or array (public pages only — never /cv). */
+	jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
-	title = 'Onur Rauf Bingol',
-	description = 'Personal website of Onur Rauf Bingol.',
+	title,
+	description = DEFAULT_DESCRIPTION,
+	image,
+	ogType = 'website',
+	noindex = false,
+	canonicalPath,
+	isHome = false,
+	jsonLd,
 } = Astro.props;
+
+const pageTitle = formatPageTitle(title, isHome);
+const path = canonicalPath ?? Astro.url.pathname;
+const canonical = absoluteUrl(path, Astro.site?.href ?? undefined);
+const ogImagePath = isUsableOgImage(image) ? image! : DEFAULT_OG_IMAGE;
+const ogImage = ogImagePath.startsWith('http')
+	? ogImagePath
+	: absoluteUrl(ogImagePath, Astro.site?.href ?? undefined);
+
+const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION as string | undefined;
+const bingVerification = import.meta.env.PUBLIC_BING_VERIFICATION as string | undefined;
+
+const jsonLdBlocks = jsonLd
+	? Array.isArray(jsonLd)
+		? jsonLd
+		: [jsonLd]
+	: [];
 ---
 
 <!doctype html>
@@ -33,7 +75,40 @@ const {
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
-		<title>{title}</title>
+		<link rel="canonical" href={canonical} />
+		{
+			noindex ? (
+				<meta name="robots" content="noindex, follow" />
+			) : (
+				<meta name="robots" content="index, follow" />
+			)
+		}
+		{gscVerification && <meta name="google-site-verification" content={gscVerification} />}
+		{bingVerification && <meta name="msvalidate.01" content={bingVerification} />}
+
+		<!-- Open Graph -->
+		<meta property="og:type" content={ogType} />
+		<meta property="og:site_name" content={SITE_NAME} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		{!noindex && <meta property="og:image" content={ogImage} />}
+		<meta property="og:locale" content="en_US" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content={noindex ? 'summary' : 'summary_large_image'} />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={description} />
+		{!noindex && <meta name="twitter:image" content={ogImage} />}
+
+		<title>{pageTitle}</title>
+
+		{
+			jsonLdBlocks.map((block) => (
+				<script type="application/ld+json" set:html={JSON.stringify(block)} />
+			))
+		}
+
 		{/* Google Analytics — keep in sync with site privacy policy */}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62775141-1"></script>
 		<script is:inline>

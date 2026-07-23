@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
+import { absoluteUrl, isUsableOgImage, SITE_NAME, SITE_URL } from '../../lib/site';
 
 export async function getStaticPaths() {
 	const projects = await getCollection('projects');
@@ -13,9 +14,30 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 const { Content } = await render(project);
 const links = Object.entries(project.data.links ?? {});
+
+const pageTitle = project.data.seoTitle ?? project.data.title;
+const description = project.data.description ?? project.data.summary;
+const ogCandidate = project.data.image ?? project.data.screenshot;
+const image = isUsableOgImage(ogCandidate) ? ogCandidate : undefined;
+
+const sameAs = links.map(([, href]) => href);
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'SoftwareApplication',
+	name: project.data.title,
+	description,
+	url: absoluteUrl(`/projects/${project.id}`, SITE_URL),
+	author: {
+		'@type': 'Person',
+		name: SITE_NAME,
+		url: SITE_URL,
+	},
+	...(sameAs.length > 0 ? { sameAs } : {}),
+	...(image ? { image: absoluteUrl(image, SITE_URL) } : {}),
+};
 ---
 
-<Layout title={`${project.data.title} | Onur Rauf Bingol`} description={project.data.summary}>
+<Layout title={pageTitle} description={description} image={image} jsonLd={jsonLd}>
 	<article class="mx-auto w-full max-w-3xl">
 		<p class="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-muted)]">
 			<a href="/projects" class="hover:text-[var(--color-accent)]">Projects</a>

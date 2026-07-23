@@ -2,15 +2,41 @@
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { getCollection } from 'astro:content';
+import {
+	SAME_AS,
+	SITE_NAME,
+	SITE_URL,
+	SITE_TAGLINE,
+	DEFAULT_DESCRIPTION,
+} from '../lib/site';
 
 const projects = (await getCollection('projects')).sort(
 	(a, b) => a.data.order - b.data.order,
 );
+
+const jsonLd = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		name: SITE_NAME,
+		url: SITE_URL,
+		description: DEFAULT_DESCRIPTION,
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'Person',
+		name: SITE_NAME,
+		url: SITE_URL,
+		sameAs: [...SAME_AS],
+	},
+];
 ---
 
 <Layout
-	title="Onur Rauf Bingol"
-	description="Hello, I am Onur — software, geometric modeling, and personal projects."
+	isHome
+	title={SITE_NAME}
+	description={`${SITE_NAME} — ${SITE_TAGLINE}.`}
+	jsonLd={jsonLd}
 >
 	<section
 		class="animate-fade-up relative z-0 rounded-xl border border-[var(--color-ink)]/10 bg-[var(--color-panel)]/90 p-6 shadow-sm backdrop-blur-sm sm:p-8 lg:p-10"

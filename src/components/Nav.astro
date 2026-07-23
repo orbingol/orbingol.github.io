@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import SocialIcons from './SocialIcons.astro';
+import { SITE_NAME } from '../lib/site';
 
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const projects = (await getCollection('projects')).sort(
@@ -29,7 +30,7 @@ const linkActive = 'font-semibold text-[var(--color-accent)]';
         href="/"
         class="truncate text-xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-2xl"
       >
-        Onur Rauf Bingol
+        {SITE_NAME}
       </a>
       <SocialIcons />
     </div>

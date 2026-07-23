@@ -1,0 +1,49 @@
+# Public site — search engines
+User-agent: *
+Allow: /
+Disallow: /cv
+
+# Common AI / training crawlers (polite agents only)
+User-agent: GPTBot
+Disallow: /cv
+
+User-agent: ChatGPT-User
+Disallow: /cv
+
+User-agent: OAI-SearchBot
+Disallow: /cv
+
+User-agent: ClaudeBot
+Disallow: /cv
+
+User-agent: anthropic-ai
+Disallow: /cv
+
+User-agent: Google-Extended
+Disallow: /cv
+
+User-agent: Applebot-Extended
+Disallow: /cv
+
+User-agent: CCBot
+Disallow: /cv
+
+User-agent: Bytespider
+Disallow: /cv
+
+User-agent: PerplexityBot
+Disallow: /cv
+
+User-agent: Amazonbot
+Disallow: /cv
+
+User-agent: cohere-ai
+Disallow: /cv
+
+User-agent: Diffbot
+Disallow: /cv
+
+User-agent: AI2Bot
+Disallow: /cv
+
+Sitemap: https://onurraufbingol.com/sitemap-index.xml

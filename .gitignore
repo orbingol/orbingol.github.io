@@ -13,5 +13,3 @@ dist/
 .astro-scaffold/
 npm-debug.log*
 .env
-.env.*
-!.env.example
