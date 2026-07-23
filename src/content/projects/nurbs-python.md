@@ -26,7 +26,8 @@ gallery:
     caption: Toroidal surface w/ control points grid
 ---
 
-NURBS-Python (**geomdl**) is a pure Python object-oriented B-spline and NURBS library with convenient data structures and extensible algorithms. The work is described in our [SoftwareX article](https://doi.org/10.1016/j.softx.2018.12.005).
+NURBS-Python (**geomdl**) is a pure Python object-oriented B-spline and NURBS library with convenient data structures and extensible algorithms.
+The work is described in our [SoftwareX article](https://doi.org/10.1016/j.softx.2018.12.005).
 
 ## Features
 
@@ -38,7 +39,7 @@ NURBS-Python (**geomdl**) is a pure Python object-oriented B-spline and NURBS li
 - Customizable visualization and animation with [Matplotlib](https://matplotlib.org/), [Plotly](https://plot.ly/python/), and [VTK](https://www.vtk.org/)
 - Export to JSON, YAML, Libconfig, STL, OBJ, and VTK
 - Complete documentation with references, examples, and illustrations
-- Pure Python implementation (no required C/C++ or Fortran dependencies); optional Cython build for higher performance
+- Pure Python implementation (no C/C++ or Fortran dependencies required); optional Cython build for higher performance
 - Install from [PyPI](https://pypi.org/project/geomdl/)
 - Rhino `.3dm` import/export via [rw3dm](https://nurbs-python.readthedocs.io/en/latest/modules_rhino.html)
 

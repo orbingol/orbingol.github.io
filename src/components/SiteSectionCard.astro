@@ -22,6 +22,9 @@ const { href, title, description } = Astro.props;
 		{title}
 	</h2>
 	<p class="text-center text-lg leading-relaxed text-[var(--color-muted)] sm:text-xl">
-		{description}<span class="font-bold text-[var(--color-accent)]" aria-hidden="true">&nbsp;&nbsp;&gt;&gt;</span>
+		{description}<span
+			class="ml-2 inline-block text-[1.15em] font-bold tracking-wide text-[var(--color-accent)]"
+			aria-hidden="true"
+		>&gt;&gt;</span>
 	</p>
 </a>
