@@ -7,10 +7,10 @@
     "node": ">=24.0.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build && cp CNAME dist/CNAME",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && cp CNAME dist/CNAME",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "astro": "ASTRO_TELEMETRY_DISABLED=1 astro"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

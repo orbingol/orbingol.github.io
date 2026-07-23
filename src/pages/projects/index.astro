@@ -1,18 +1,42 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort(
+	(a, b) => a.data.order - b.data.order,
+);
 ---
 
 <Layout
 	title="Projects"
-	description="Software and research projects by Onur Rauf Bingol, including NURBS-Python, AiToS, and more."
+	description="Software and research projects by Onur Rauf Bingol, Ph.D."
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'Projects' },
+	]}
 >
-	<section class="w-full max-w-3xl">
-		<h1 class="text-5xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-6xl">
-			Projects
-		</h1>
-		<p class="mt-4 text-lg text-[var(--color-muted)]">
-			This page is a placeholder. Contents will be filled in later. Use the Projects menu to open individual
-			project pages for now.
-		</p>
+	<section class="w-full">
+		<div class="max-w-3xl">
+			<h1 class="text-5xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-6xl">
+				Projects
+			</h1>
+			<p class="mt-4 text-lg text-[var(--color-muted)]">
+				Open-source libraries, experimental tools, and selected simulation demos.
+			</p>
+		</div>
+
+		<div class="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+			{
+				projects.map((project) => (
+					<ProjectCard
+						title={project.data.title}
+						summary={project.data.summary}
+						href={`/projects/${project.id}`}
+						screenshot={project.data.cardImage ?? project.data.screenshot}
+					/>
+				))
+			}
+		</div>
 	</section>
 </Layout>

@@ -3,6 +3,7 @@
 # Latest Node.js LTS (currently 24.x)
 # Build from repo root: docker build -f docker/Dockerfile --target export ...
 FROM node:24-bookworm AS deps
+ENV ASTRO_TELEMETRY_DISABLED=1
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci

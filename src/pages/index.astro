@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import { getCollection } from 'astro:content';
+import SiteSectionCard from '../components/SiteSectionCard.astro';
 import {
 	SAME_AS,
 	SITE_NAME,
@@ -9,10 +8,6 @@ import {
 	SITE_TAGLINE,
 	DEFAULT_DESCRIPTION,
 } from '../lib/site';
-
-const projects = (await getCollection('projects')).sort(
-	(a, b) => a.data.order - b.data.order,
-);
 
 const jsonLd = [
 	{
@@ -74,32 +69,70 @@ const jsonLd = [
 		</div>
 	</section>
 
-	<section class="mt-16 border-t border-[var(--color-ink)]/10 pt-12 sm:mt-20 sm:pt-16">
-		<div class="flex flex-wrap items-end justify-between gap-4">
-			<div>
-				<h2 class="text-4xl font-semibold tracking-tight text-[var(--color-ink)]">Projects</h2>
-				<p class="mt-2 max-w-2xl text-[var(--color-muted)]">
-					A few things I’ve built and continue to work on.
-				</p>
-			</div>
-			<a
-				href="/projects"
-				class="text-sm font-semibold text-[var(--color-accent)] underline-offset-2 hover:underline"
+	<section
+		class="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3"
+		aria-label="Main sections"
+	>
+		<SiteSectionCard
+			href="/projects"
+			title="Projects"
+			description="A few things I've built and continue to work on"
+		>
+			<svg
+				slot="icon"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="1.75"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="size-7 sm:size-8"
 			>
-				View all projects
-			</a>
-		</div>
-		<div class="mt-8 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-			{
-				projects.map((project) => (
-					<ProjectCard
-						title={project.data.title}
-						summary={project.data.summary}
-						href={`/projects/${project.id}`}
-						screenshot={project.data.screenshot}
-					/>
-				))
-			}
-		</div>
+				<path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
+				<path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
+				<path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" />
+			</svg>
+		</SiteSectionCard>
+
+		<SiteSectionCard
+			href="/cv"
+			title="CV"
+			description="My educational and professional background"
+		>
+			<svg
+				slot="icon"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="1.75"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="size-7 sm:size-8"
+			>
+				<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+				<path d="M14 2v6h6" />
+				<path d="M8 13h8" />
+				<path d="M8 17h5" />
+			</svg>
+		</SiteSectionCard>
+
+		<SiteSectionCard href="/contact" title="Contact" description="Get in touch with me">
+			<svg
+				slot="icon"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="1.75"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="size-7 sm:size-8"
+			>
+				<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+				<path d="m22 6-10 7L2 6" />
+			</svg>
+		</SiteSectionCard>
 	</section>
 </Layout>

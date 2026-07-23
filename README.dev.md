@@ -2,7 +2,7 @@
 
 Astro + Tailwind site. **Use Docker** — you do not need Node installed on the host.
 
-Docker images use **Node.js 24 LTS** (`node:24-bookworm`). The Astro Dev Toolbar appears only during `docker compose up web` (`astro dev`); production builds (`astro build` / GitHub Pages) are static HTML and never include it.
+Docker images use **Node.js 24 LTS** (`node:24-bookworm`). Astro telemetry is disabled via `ASTRO_TELEMETRY_DISABLED=1` (Dockerfile, Compose, and npm scripts). The Astro Dev Toolbar appears only during `docker compose up web` (`astro dev`); production builds (`astro build` / GitHub Pages) are static HTML and never include it.
 
 
 ## Prerequisites
@@ -55,7 +55,7 @@ docker build -f docker/Dockerfile --target export --output type=local,dest=dist 
 | `public/` | Static SEO/crawl files, OG image, favicons, placeholders |
 | `CNAME` | Custom domain; copied into `dist/` by `npm run build` |
 
-Add a project by creating a Markdown file in `src/content/projects/` and filling the frontmatter (`title`, `summary`, `order`, optional `screenshot` / `links` / SEO fields below).
+Add a project by creating a Markdown file in `src/content/projects/` and filling the frontmatter (`title`, `summary`, `order`, optional `screenshot` / `links` / `videos` / SEO fields below).
 
 ## Build artifacts — never commit `dist/`
 
@@ -82,8 +82,12 @@ Home, projects, and contact are indexable. Layout emits canonical URLs, title te
 |-------|------|
 | `description` | Meta / OG description (falls back to `summary`) |
 | `seoTitle` | Document title override (Layout still appends site name) |
+| `screenshot` | On-page image when there is no `gallery` |
+| `cardImage` | Optional card/list thumbnail (falls back to `screenshot`) |
 | `image` | Dedicated OG image path under `public/` (raster: png/jpg/webp/gif) |
-| `screenshot` | On-page image; used for OG only if it is a raster file |
+| `gallery` | Optional carousel slides `{ src, caption?, alt? }` |
+| `videos` | Optional list of `{ title, url, description? }` (YouTube embeds after page body) |
+| `schemaType` | Optional JSON-LD type: `SoftwareApplication` (default) or `CreativeWork` |
 
 SVG placeholders are **not** used as `og:image` — public pages fall back to `/og-default.png`.
 

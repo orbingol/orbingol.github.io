@@ -2,7 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Page not found" description="The requested page could not be found." noindex>
+<Layout
+	title="Page not found"
+	description="The requested page could not be found."
+	noindex
+	breadcrumbs={[
+		{ label: 'Home', href: '/' },
+		{ label: 'Page not found' },
+	]}
+>
 	<section class="mx-auto w-full max-w-xl py-8 text-center">
 		<h1 class="text-5xl font-semibold tracking-tight text-[var(--color-ink)]">Page not found</h1>
 		<p class="mt-4 text-[var(--color-muted)]">

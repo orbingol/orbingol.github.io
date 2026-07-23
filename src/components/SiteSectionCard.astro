@@ -1,0 +1,27 @@
+---
+interface Props {
+	href: string;
+	title: string;
+	description: string;
+}
+
+const { href, title, description } = Astro.props;
+---
+
+<a
+	href={href}
+	class="group flex flex-col gap-4 rounded-2xl border border-[var(--color-ink)]/12 bg-[var(--color-panel)]/90 p-7 shadow-sm backdrop-blur-sm transition duration-150 hover:-translate-y-0.5 hover:border-[var(--color-accent)] hover:shadow-md sm:gap-5 sm:p-9 lg:p-10"
+>
+	<span
+		class="mx-auto inline-flex size-14 items-center justify-center rounded-2xl bg-[var(--color-accent-soft)] text-[var(--color-accent)] sm:size-16"
+		aria-hidden="true"
+	>
+		<slot name="icon" />
+	</span>
+	<h2 class="text-center text-2xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-3xl">
+		{title}
+	</h2>
+	<p class="text-center text-lg leading-relaxed text-[var(--color-muted)] sm:text-xl">
+		{description}<span class="font-bold text-[var(--color-accent)]" aria-hidden="true">&nbsp;&nbsp;&gt;&gt;</span>
+	</p>
+</a>

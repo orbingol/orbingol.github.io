@@ -13,12 +13,14 @@ https://www.linkedin.com/in/orbingol/
 
 ## Key projects
 
-- NURBS-Python (geomdl): https://onurraufbingol.com/projects/nurbs-python — object-oriented B-spline and NURBS library in Python
-- AiToS: https://onurraufbingol.com/projects/aitos — resume analysis against job descriptions with local AI models
-- Soju Platform: https://onurraufbingol.com/projects/soju-platform — platform project in progress
+- NURBS-Python (geomdl): https://onurraufbingol.com/projects/nurbs-python — object-oriented B-spline and NURBS library in Python ([GitHub](https://github.com/orbingol/NURBS-Python))
+- NVIDIA Omniverse: https://onurraufbingol.com/projects/omniverse — digital twin and robotics simulation demos
+- AiToS: https://onurraufbingol.com/projects/aitos — experimental ATS-style resume analyzer ([GitHub](https://github.com/orbingol/aitos))
+- Soju Platform: https://onurraufbingol.com/projects/soju-platform — experimental Korean learning platform ([GitHub](https://github.com/orbingol/soju-platform))
 
 ## Profiles
 
 - GitHub: https://github.com/orbingol/
 - LinkedIn: https://www.linkedin.com/in/orbingol/
 - ORCID: https://orcid.org/0000-0002-3139-5725
+- YouTube: https://www.youtube.com/@orbingol
