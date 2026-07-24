@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="800" viewBox="0 0 640 800" role="img" aria-label="Photo placeholder">
+  <rect width="640" height="800" fill="#d9e3e9"/>
+  <rect x="40" y="40" width="560" height="720" fill="#e8eef2" stroke="#9aabb8" stroke-width="2" stroke-dasharray="10 8"/>
+  <circle cx="320" cy="300" r="90" fill="#b7c6d0"/>
+  <ellipse cx="320" cy="520" rx="150" ry="110" fill="#b7c6d0"/>
+  <text x="320" y="700" text-anchor="middle" fill="#5b6573" font-family="Georgia, serif" font-size="28">Photo placeholder</text>
+</svg>

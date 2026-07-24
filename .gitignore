@@ -1,2 +1,21 @@
+# OS
+.DS_Store
+
+# IDEs
 .idea/
-.DS_Store/
+.vs*/
+.cursor/plans/
+
+# Astro / Node
+node_modules/
+dist/
+.astro/
+.astro-scaffold/
+npm-debug.log*
+.env
+
+# Python project files
+.venv/
+.python-version
+pyproject.toml
+uv.lock

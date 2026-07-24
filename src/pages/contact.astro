@@ -1,0 +1,172 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const RECAPTCHA_SITE_KEY = "6LfO8mMtAAAAAGuMRbJpNxSZFmSTm3YnMyA9VwHH";
+const FORMSPREE_FORM_ID = "xkodpnqr";
+---
+
+<Layout title="Contact" description="Contact Onur Rauf Bingol." breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}>
+  <section class="mx-auto w-full max-w-2xl">
+    <h1 class="text-5xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-6xl">Contact</h1>
+    <p class="mt-4 text-[var(--color-muted)]">Have a question or an idea? Just want to reach out? Send a note and I’ll get back to you.</p>
+
+    <div id="formSuccess" hidden class="mt-8 rounded-md border border-emerald-600/20 bg-emerald-50 px-4 py-3 text-emerald-900">Thanks for your submission!</div>
+    <div id="formError" hidden class="mt-8 rounded-md border border-red-600/20 bg-red-50 px-4 py-3 text-red-900"></div>
+
+    <form id="contactForm" class="mt-8 space-y-5" action={`https://formspree.io/f/${FORMSPREE_FORM_ID}`} method="POST">
+      <div>
+        <label for="email" class="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          required
+          class="w-full rounded-md border border-[var(--color-ink)]/15 bg-white/80 px-3 py-2.5 text-[var(--color-ink)] outline-none ring-[var(--color-accent)] focus:ring-2"
+        />
+      </div>
+
+      <div>
+        <label for="subject" class="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">Subject</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="What is this about?"
+          required
+          class="w-full rounded-md border border-[var(--color-ink)]/15 bg-white/80 px-3 py-2.5 text-[var(--color-ink)] outline-none ring-[var(--color-accent)] focus:ring-2"
+        />
+      </div>
+
+      <div>
+        <label for="message" class="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">Message</label>
+        <textarea
+          name="message"
+          id="message"
+          rows="4"
+          placeholder="Tell me a bit more"
+          required
+          class="w-full rounded-md border border-[var(--color-ink)]/15 bg-white/80 px-3 py-2.5 text-[var(--color-ink)] outline-none ring-[var(--color-accent)] focus:ring-2"
+        ></textarea>
+      </div>
+
+      <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+      <div>
+        <button
+          type="submit"
+          id="submitBtn"
+          class="rounded-md bg-[var(--color-accent)] px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          Send message
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <script is:inline src={`https://www.google.com/recaptcha/enterprise.js?render=${RECAPTCHA_SITE_KEY}`}></script>
+  <script is:inline>
+    (function () {
+      var RECAPTCHA_SITE_KEY = "6LfO8mMtAAAAAGuMRbJpNxSZFmSTm3YnMyA9VwHH";
+      var FORMSPREE_FORM_ID = "xkodpnqr";
+      var form = document.getElementById("contactForm");
+      var successEl = document.getElementById("formSuccess");
+      var errorEl = document.getElementById("formError");
+      var submitBtn = document.getElementById("submitBtn");
+      if (!form || !successEl || !errorEl || !submitBtn) return;
+
+      function showError(message) {
+        successEl.hidden = true;
+        errorEl.hidden = false;
+        errorEl.textContent = message || "Oops! There was a problem submitting your form.";
+      }
+
+      function showSuccess() {
+        errorEl.hidden = true;
+        successEl.hidden = false;
+        form.reset();
+      }
+
+      function getRecaptchaToken() {
+        return new Promise(function (resolve, reject) {
+          var timedOut = false;
+          var timer = setTimeout(function () {
+            timedOut = true;
+            reject(new Error("reCAPTCHA timed out. Please refresh and try again."));
+          }, 10000);
+
+          function done(token) {
+            if (timedOut) return;
+            clearTimeout(timer);
+            resolve(token);
+          }
+
+          function fail(err) {
+            if (timedOut) return;
+            clearTimeout(timer);
+            reject(err instanceof Error ? err : new Error(String(err)));
+          }
+
+          if (!window.grecaptcha) {
+            fail(new Error("reCAPTCHA failed to load. Please refresh and try again."));
+            return;
+          }
+
+          var api = window.grecaptcha.enterprise || window.grecaptcha;
+          api.ready(function () {
+            api.execute(RECAPTCHA_SITE_KEY, { action: "contact" }).then(done).catch(fail);
+          });
+        });
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        successEl.hidden = true;
+        errorEl.hidden = true;
+        submitBtn.disabled = true;
+
+        getRecaptchaToken()
+          .then(function (token) {
+            var data = new FormData(form);
+            data.set("g-recaptcha-response", token);
+
+            return fetch("https://formspree.io/f/" + FORMSPREE_FORM_ID, {
+              method: "POST",
+              body: data,
+              headers: { Accept: "application/json" },
+            });
+          })
+          .then(function (response) {
+            return response.json().then(function (payload) {
+              return { ok: response.ok, payload: payload };
+            });
+          })
+          .then(function (result) {
+            if (result.ok) {
+              showSuccess();
+              return;
+            }
+
+            var message = "Oops! There was a problem submitting your form.";
+            if (result.payload && result.payload.errors && result.payload.errors.length) {
+              message = result.payload.errors
+                .map(function (err) {
+                  return err.message;
+                })
+                .join(" ");
+            } else if (result.payload && result.payload.error) {
+              message = result.payload.error;
+            }
+            showError(message);
+          })
+          .catch(function (err) {
+            console.error("[contact form]", err);
+            showError(err && err.message ? err.message : "An unexpected error occurred. Please try again.");
+          })
+          .finally(function () {
+            submitBtn.disabled = false;
+          });
+      });
+    })();
+  </script>
+</Layout>

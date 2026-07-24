@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  summary: string;
+  href: string;
+  screenshot?: string;
+}
+
+const { title, summary, href, screenshot = "/placeholders/screenshot.svg" } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group block w-full transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+>
+  <div class="overflow-hidden rounded-md border border-[var(--color-ink)]/10 bg-white">
+    <img src={screenshot} alt="" class="aspect-[16/10] w-full object-contain bg-white opacity-90 transition-opacity group-hover:opacity-100" loading="lazy" />
+  </div>
+  <h3 class="mt-3 text-2xl font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-accent)]">
+    {title}
+  </h3>
+  <p class="mt-1 text-lg text-[var(--color-muted)]">{summary}</p>
+</a>

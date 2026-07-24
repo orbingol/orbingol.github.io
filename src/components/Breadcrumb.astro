@@ -1,0 +1,42 @@
+---
+export interface Crumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  crumbs: Crumb[];
+}
+
+const { crumbs } = Astro.props;
+---
+
+{
+  crumbs.length > 0 && (
+    <nav class="w-full border-b border-[var(--color-ink)]/10 bg-[var(--color-nav)]" aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center gap-x-1 px-4 py-2.5 text-sm text-[var(--color-muted)] sm:px-6 lg:px-8">
+        {crumbs.map((crumb, index) => {
+          const isLast = index === crumbs.length - 1;
+          return (
+            <li class="inline-flex items-center gap-x-1">
+              {index > 0 && (
+                <span class="text-[var(--color-ink)]/35" aria-hidden="true">
+                  /
+                </span>
+              )}
+              {crumb.href && !isLast ? (
+                <a href={crumb.href} class="text-[var(--color-muted)] transition-colors hover:text-[var(--color-accent)]">
+                  {crumb.label}
+                </a>
+              ) : (
+                <span class={isLast ? "font-medium text-[var(--color-ink)]" : undefined} aria-current={isLast ? "page" : undefined}>
+                  {crumb.label}
+                </span>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
+  )
+}

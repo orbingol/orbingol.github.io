@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="oRb — periodic-table style monogram">
+  <rect width="32" height="32" fill="#2f6f7e"/>
+  <rect x="1.25" y="1.25" width="29.5" height="29.5" rx="1.75" fill="none" stroke="#f7fafb" stroke-width="0.25"/>
+  <text
+    x="2.2"
+    y="4.8"
+    font-family="Helvetica Neue, Helvetica, Arial, DejaVu Sans, sans-serif"
+    font-size="3.4"
+    font-weight="600"
+    fill="#f7fafb"
+  >37</text>
+  <circle cx="16" cy="16.5" r="12.35" fill="none" stroke="#f7fafb" stroke-width="1.5"/>
+  <text
+    x="16.1"
+    y="21.35"
+    text-anchor="middle"
+    font-family="Helvetica Neue, Helvetica, Arial, DejaVu Sans, sans-serif"
+    font-size="14.5"
+    font-weight="700"
+    letter-spacing="0"
+    fill="#f7fafb"
+  >Rb</text>
+</svg>

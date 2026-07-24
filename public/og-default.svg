@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Onur Rauf Bingol, Ph.D.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7fafb"/>
+      <stop offset="55%" stop-color="#e8eef2"/>
+      <stop offset="100%" stop-color="#d7e6eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1080" cy="-40" r="320" fill="#dce8ee" opacity="0.85"/>
+  <circle cx="-40" cy="680" r="280" fill="#e7eef5" opacity="0.9"/>
+  <text x="72" y="250" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="58" font-weight="700" fill="#1c2430">Onur Rauf Bingol, Ph.D.</text>
+  <text x="72" y="330" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="26" font-weight="500" fill="#5b6573">Software Engineering &#183; Computational Geometry &#183; Simulations</text>
+  <text x="72" y="540" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="22" font-weight="500" fill="#2f6f7e">onurraufbingol.com</text>
+</svg>

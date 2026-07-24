@@ -1,0 +1,42 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: web
+    ports:
+      - "4321:4321"
+    volumes:
+      - .:/app
+      - web_node_modules:/app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - ASTRO_TELEMETRY_DISABLED=1
+    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0 --port 4321"
+
+  # Writes static site to ./dist on the host
+  build:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: source
+    volumes:
+      - .:/app
+      - build_node_modules:/app/node_modules
+      - ./dist:/app/dist
+    environment:
+      - ASTRO_TELEMETRY_DISABLED=1
+    command: sh -c "npm ci && npm run build"
+
+  # Regenerates public/favicon-{16,32}.png, favicon.ico, apple-touch-icon.png from public/favicon.svg
+  favicons:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: favicons
+    volumes:
+      - ./public:/work
+
+volumes:
+  web_node_modules:
+  build_node_modules:
