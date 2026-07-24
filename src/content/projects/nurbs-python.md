@@ -49,3 +49,4 @@ The work is described in our [SoftwareX article](https://doi.org/10.1016/j.softx
 - Documentation: [https://nurbs-python.readthedocs.io/](https://nurbs-python.readthedocs.io/)
 - PyPI: [https://pypi.org/project/geomdl/](https://pypi.org/project/geomdl/)
 - SoftwareX article: [https://doi.org/10.1016/j.softx.2018.12.005](https://doi.org/10.1016/j.softx.2018.12.005)
+- For questions: `nurbs-python@googlegroups.com`
