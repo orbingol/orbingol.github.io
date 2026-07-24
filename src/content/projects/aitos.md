@@ -17,7 +17,7 @@ AiToS is a full-stack web app and CLI that scores resumes against job descriptio
 - ATS-style scoring: keyword match, parsing clarity, and formatting safety
 - Manage CVs, job descriptions, and analysis reports in a web interface
 - Standalone CLI tools for quick analysis and tailored CV generation
-- Fully containerized — bring your own AI models
+- Fully containerized application, so that you can bring your own AI models
 
 ## References
 

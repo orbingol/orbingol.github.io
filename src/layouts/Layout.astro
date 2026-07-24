@@ -4,14 +4,7 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 import type { Crumb } from "../components/Breadcrumb.astro";
-import {
-  SITE_NAME,
-  DEFAULT_DESCRIPTION,
-  DEFAULT_OG_IMAGE,
-  absoluteUrl,
-  formatPageTitle,
-  isUsableOgImage,
-} from "../lib/site";
+import { SITE_NAME, DEFAULT_DESCRIPTION, DEFAULT_OG_IMAGE, absoluteUrl, formatPageTitle, isUsableOgImage } from "../lib/site";
 
 interface Props {
   title?: string;
@@ -31,30 +24,16 @@ interface Props {
   breadcrumbs?: Crumb[];
 }
 
-const {
-  title,
-  description = DEFAULT_DESCRIPTION,
-  image,
-  ogType = "website",
-  noindex = false,
-  canonicalPath,
-  isHome = false,
-  jsonLd,
-  breadcrumbs,
-} = Astro.props;
+const { title, description = DEFAULT_DESCRIPTION, image, ogType = "website", noindex = false, canonicalPath, isHome = false, jsonLd, breadcrumbs } = Astro.props;
 
 const pageTitle = formatPageTitle(title, isHome);
 const path = canonicalPath ?? Astro.url.pathname;
 const canonical = absoluteUrl(path, Astro.site?.href ?? undefined);
 const ogImagePath = isUsableOgImage(image) ? image! : DEFAULT_OG_IMAGE;
-const ogImage = ogImagePath.startsWith("http")
-  ? ogImagePath
-  : absoluteUrl(ogImagePath, Astro.site?.href ?? undefined);
+const ogImage = ogImagePath.startsWith("http") ? ogImagePath : absoluteUrl(ogImagePath, Astro.site?.href ?? undefined);
 
-const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION as
-  string | undefined;
-const bingVerification = import.meta.env.PUBLIC_BING_VERIFICATION as
-  string | undefined;
+const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION as string | undefined;
+const bingVerification = import.meta.env.PUBLIC_BING_VERIFICATION as string | undefined;
 
 const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
@@ -72,30 +51,13 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <meta name="theme-color" content="#2f6f7e" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    {
-      noindex ? (
-        <meta name="robots" content="noindex, follow" />
-      ) : (
-        <meta name="robots" content="index, follow" />
-      )
-    }
-    {
-      gscVerification && (
-        <meta name="google-site-verification" content={gscVerification} />
-      )
-    }
-    {
-      bingVerification && (
-        <meta name="msvalidate.01" content={bingVerification} />
-      )
-    }
+    {noindex ? <meta name="robots" content="noindex, follow" /> : <meta name="robots" content="index, follow" />}
+    {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
+    {bingVerification && <meta name="msvalidate.01" content={bingVerification} />}
 
     <!-- Open Graph -->
     <meta property="og:type" content={ogType} />
@@ -107,26 +69,17 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
-    <meta
-      name="twitter:card"
-      content={noindex ? "summary" : "summary_large_image"}
-    />
+    <meta name="twitter:card" content={noindex ? "summary" : "summary_large_image"} />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     {!noindex && <meta name="twitter:image" content={ogImage} />}
 
     <title>{pageTitle}</title>
 
-    {
-      jsonLdBlocks.map((block) => (
-        <script type="application/ld+json" set:html={JSON.stringify(block)} />
-      ))
-    }
+    {jsonLdBlocks.map((block) => <script type="application/ld+json" set:html={JSON.stringify(block)} />)}
 
     {/* Google Analytics — keep in sync with site privacy policy */}
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-62775141-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62775141-1"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -138,11 +91,7 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
   </head>
   <body class="flex min-h-screen flex-col antialiased">
     <Nav />
-    {
-      breadcrumbs && breadcrumbs.length > 0 && (
-        <Breadcrumb crumbs={breadcrumbs} />
-      )
-    }
+    {breadcrumbs && breadcrumbs.length > 0 && <Breadcrumb crumbs={breadcrumbs} />}
     <main class="w-full flex-1 px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
       <slot />
     </main>

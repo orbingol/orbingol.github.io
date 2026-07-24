@@ -64,61 +64,33 @@ function formatYears(item: EducationItem) {
 function flagEmoji(countryCode: string) {
   const code = countryCode.trim().toUpperCase();
   if (!/^[A-Z]{2}$/.test(code)) return "";
-  return [...code]
-    .map((char) => String.fromCodePoint(0x1f1e6 + char.charCodeAt(0) - 65))
-    .join("");
+  return [...code].map((char) => String.fromCodePoint(0x1f1e6 + char.charCodeAt(0) - 65)).join("");
 }
 ---
 
 <div class="relative">
-  <ol
-    class="relative m-0 list-none border-l-2 border-[var(--color-accent)]/35 pl-0"
-  >
+  <ol class="relative m-0 list-none border-l-2 border-[var(--color-accent)]/35 pl-0">
     {
       education.map((item) => {
         const years = formatYears(item);
         const flag = flagEmoji(item.countryCode);
-        const countryName =
-          countryNames[item.countryCode.toUpperCase()] ?? item.countryCode;
+        const countryName = countryNames[item.countryCode.toUpperCase()] ?? item.countryCode;
         return (
           <li class="relative pb-10 pl-8 last:pb-3">
-            <span
-              class="absolute top-1.5 -left-[0.4rem] size-3 rounded-full bg-[var(--color-accent)] ring-4 ring-[var(--color-surface)]"
-              aria-hidden="true"
-            />
-            {years && (
-              <p class="mb-1 text-sm font-medium tracking-wide text-[var(--color-muted)]">
-                {years}
-              </p>
-            )}
-            <h3 class="text-xl font-semibold text-[var(--color-ink)] sm:text-2xl">
-              {item.degree}
-            </h3>
+            <span class="absolute top-1.5 -left-[0.4rem] size-3 rounded-full bg-[var(--color-accent)] ring-4 ring-[var(--color-surface)]" aria-hidden="true" />
+            {years && <p class="mb-1 text-sm font-medium tracking-wide text-[var(--color-muted)]">{years}</p>}
+            <h3 class="text-xl font-semibold text-[var(--color-ink)] sm:text-2xl">{item.degree}</h3>
             <p class="mt-1 flex flex-wrap items-center gap-2 text-lg text-[var(--color-muted)]">
-              <a
-                href={item.schoolUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="font-medium text-[var(--color-accent)] underline-offset-2 hover:underline"
-              >
+              <a href={item.schoolUrl} target="_blank" rel="noopener noreferrer" class="font-medium text-[var(--color-accent)] underline-offset-2 hover:underline">
                 {item.school}
               </a>
               {flag && (
-                <span
-                  class="text-xl leading-none"
-                  title={countryName}
-                  aria-label={countryName}
-                  role="img"
-                >
+                <span class="text-xl leading-none" title={countryName} aria-label={countryName} role="img">
                   {flag}
                 </span>
               )}
             </p>
-            {item.note && (
-              <p class="mt-2 text-base text-[var(--color-ink)]/80 italic">
-                {item.note}
-              </p>
-            )}
+            {item.note && <p class="mt-2 text-base text-[var(--color-ink)]/80 italic">{item.note}</p>}
           </li>
         );
       })
@@ -126,12 +98,7 @@ function flagEmoji(countryCode: string) {
   </ol>
 
   {/* End-cap: short stem and horizontal bar */}
-  <div
-    class="relative h-6 border-l-2 border-[var(--color-accent)]/35"
-    aria-hidden="true"
-  >
-    <span
-      class="absolute bottom-0 left-0 h-0.5 w-10 -translate-x-1/2 bg-[var(--color-accent)]/50"
-    ></span>
+  <div class="relative h-6 border-l-2 border-[var(--color-accent)]/35" aria-hidden="true">
+    <span class="absolute bottom-0 left-0 h-0.5 w-10 -translate-x-1/2 bg-[var(--color-accent)]/50"></span>
   </div>
 </div>

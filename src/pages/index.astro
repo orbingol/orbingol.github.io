@@ -1,13 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SiteSectionCard from "../components/SiteSectionCard.astro";
-import {
-  SAME_AS,
-  SITE_NAME,
-  SITE_URL,
-  SITE_TAGLINE,
-  DEFAULT_DESCRIPTION,
-} from "../lib/site";
+import { SAME_AS, SITE_NAME, SITE_URL, SITE_TAGLINE, DEFAULT_DESCRIPTION } from "../lib/site";
 
 const jsonLd = [
   {
@@ -27,34 +21,16 @@ const jsonLd = [
 ];
 ---
 
-<Layout
-  isHome
-  title={SITE_NAME}
-  description={`${SITE_NAME} — ${SITE_TAGLINE}.`}
-  jsonLd={jsonLd}
->
-  <section
-    class="animate-fade-up relative z-0 rounded-xl border border-[var(--color-ink)]/10 bg-[var(--color-panel)]/90 p-6 shadow-sm backdrop-blur-sm sm:p-8 lg:p-10"
-  >
-    <div
-      class="grid w-full gap-x-10 gap-y-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-x-14"
-    >
+<Layout isHome title={SITE_NAME} description={`${SITE_NAME} — ${SITE_TAGLINE}.`} jsonLd={jsonLd}>
+  <section class="animate-fade-up relative z-0 rounded-xl border border-[var(--color-ink)]/10 bg-[var(--color-panel)]/90 p-6 shadow-sm backdrop-blur-sm sm:p-8 lg:p-10">
+    <div class="grid w-full gap-x-10 gap-y-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-x-14">
       <div>
-        <h1
-          class="text-5xl font-semibold leading-[1.1] tracking-tight text-[var(--color-ink)] sm:text-6xl lg:text-7xl"
-        >
-          Hello, I am Onur.
-        </h1>
-        <p
-          class="mt-6 max-w-2xl text-xl leading-relaxed text-[var(--color-muted)] sm:text-2xl"
-        >
-          I work across software engineering, geometric modeling, and tools that
-          make technical work clearer and more practical.
+        <h1 class="text-5xl font-semibold leading-[1.1] tracking-tight text-[var(--color-ink)] sm:text-6xl lg:text-7xl">Hello, I am Onur.</h1>
+        <p class="mt-6 max-w-2xl text-xl leading-relaxed text-[var(--color-muted)] sm:text-2xl">
+          I work across software engineering, geometric modeling, and tools that make technical work clearer and more practical.
         </p>
       </div>
-      <div
-        class="relative z-0 mx-auto w-full max-w-[12rem] lg:mx-0 lg:justify-self-end"
-      >
+      <div class="relative z-0 mx-auto w-full max-w-[12rem] lg:mx-0 lg:justify-self-end">
         <img
           src="/placeholders/photo.svg"
           alt="Portrait placeholder for Onur Rauf Bingol"
@@ -69,24 +45,15 @@ const jsonLd = [
 
     <div class="grid w-full gap-8 lg:grid-cols-[99fr_1fr] lg:gap-10">
       <p class="text-lg leading-relaxed text-[var(--color-ink)]/85 sm:text-xl">
-        I’m especially interested in computer graphics, solid and geometric
-        modeling, finite element and isogeometric analysis, composite materials,
-        and robotics — and in building software that connects those ideas to
-        real workflows.
+        I’m especially interested in computer graphics, solid and geometric modeling, finite element and isogeometric analysis, composite materials, and robotics — and in building
+        software that connects those ideas to real workflows.
       </p>
       <div aria-hidden="true"></div>
     </div>
   </section>
 
-  <section
-    class="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3"
-    aria-label="Main sections"
-  >
-    <SiteSectionCard
-      href="/projects"
-      title="Projects"
-      description="A few things I've built and continue to work on"
-    >
+  <section class="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3" aria-label="Main sections">
+    <SiteSectionCard href="/projects" title="Projects" description="A few things I've built and continue to work on">
       <svg
         slot="icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -98,23 +65,13 @@ const jsonLd = [
         stroke-linejoin="round"
         class="size-7 sm:size-8"
       >
-        <path
-          d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"
-        ></path>
-        <path
-          d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"
-        ></path>
-        <path
-          d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"
-        ></path>
+        <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path>
+        <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path>
+        <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path>
       </svg>
     </SiteSectionCard>
 
-    <SiteSectionCard
-      href="/cv"
-      title="CV"
-      description="My educational and professional background"
-    >
+    <SiteSectionCard href="/cv" title="CV" description="My educational and professional background">
       <svg
         slot="icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -126,19 +83,14 @@ const jsonLd = [
         stroke-linejoin="round"
         class="size-7 sm:size-8"
       >
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-        ></path>
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
         <path d="M14 2v6h6"></path>
         <path d="M8 13h8"></path>
         <path d="M8 17h5"></path>
       </svg>
     </SiteSectionCard>
 
-    <SiteSectionCard
-      href="/contact"
-      title="Contact"
-      description="Get in touch with me"
-    >
+    <SiteSectionCard href="/contact" title="Contact" description="Get in touch with me">
       <svg
         slot="icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -150,9 +102,7 @@ const jsonLd = [
         stroke-linejoin="round"
         class="size-7 sm:size-8"
       >
-        <path
-          d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-        ></path>
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
         <path d="m22 6-10 7L2 6"></path>
       </svg>
     </SiteSectionCard>

@@ -3,12 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Carousel from "../../components/Carousel.astro";
 import ProjectLinks from "../../components/ProjectLinks.astro";
 import { getCollection, render } from "astro:content";
-import {
-  absoluteUrl,
-  isUsableOgImage,
-  SITE_NAME,
-  SITE_URL,
-} from "../../lib/site";
+import { absoluteUrl, isUsableOgImage, SITE_NAME, SITE_URL } from "../../lib/site";
 import { youtubeEmbedUrl } from "../../lib/youtube";
 
 export async function getStaticPaths() {
@@ -25,10 +20,7 @@ const links = project.data.links ?? {};
 
 const pageTitle = project.data.seoTitle ?? project.data.title;
 const description = project.data.description ?? project.data.summary;
-const ogCandidate =
-  project.data.image ??
-  project.data.screenshot ??
-  project.data.gallery?.[0]?.src;
+const ogCandidate = project.data.image ?? project.data.screenshot ?? project.data.gallery?.[0]?.src;
 const image = isUsableOgImage(ogCandidate) ? ogCandidate : undefined;
 
 const gallery = project.data.gallery ?? [];
@@ -75,23 +67,13 @@ const jsonLd = {
   description={description}
   image={image}
   jsonLd={jsonLd}
-  breadcrumbs={[
-    { label: "Home", href: "/" },
-    { label: "Projects", href: "/projects" },
-    { label: project.data.title },
-  ]}
+  breadcrumbs={[{ label: "Home", href: "/" }, { label: "Projects", href: "/projects" }, { label: project.data.title }]}
 >
   <article class="mx-auto w-full max-w-3xl">
-    <h1
-      class="text-5xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-6xl"
-    >
+    <h1 class="text-5xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-6xl">
       {project.data.title}
     </h1>
-    {
-      Object.keys(links).length > 0 && (
-        <ProjectLinks links={links} class="mt-4" />
-      )
-    }
+    {Object.keys(links).length > 0 && <ProjectLinks links={links} class="mt-4" />}
     <p class="mt-4 text-lg text-[var(--color-muted)]">{project.data.summary}</p>
 
     {
@@ -101,12 +83,7 @@ const jsonLd = {
         </div>
       ) : (
         project.data.screenshot && (
-          <img
-            src={project.data.screenshot}
-            alt=""
-            class="mt-8 aspect-[16/10] w-full rounded-md object-contain bg-white ring-1 ring-[var(--color-ink)]/10"
-            loading="lazy"
-          />
+          <img src={project.data.screenshot} alt="" class="mt-8 aspect-[16/10] w-full rounded-md object-contain bg-white ring-1 ring-[var(--color-ink)]/10" loading="lazy" />
         )
       )
     }
@@ -122,9 +99,7 @@ const jsonLd = {
         <section class="mt-12 space-y-12" aria-label="Videos">
           {videos.map((video) => (
             <figure class="space-y-4">
-              <h2 class="text-2xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-3xl">
-                {video.title}
-              </h2>
+              <h2 class="text-2xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-3xl">{video.title}</h2>
               <div class="aspect-video overflow-hidden rounded-md ring-1 ring-[var(--color-ink)]/10">
                 <iframe
                   src={video.embed}
@@ -136,11 +111,7 @@ const jsonLd = {
                   allowfullscreen
                 />
               </div>
-              {video.description && (
-                <figcaption class="text-base leading-relaxed text-[var(--color-muted)]">
-                  {video.description}
-                </figcaption>
-              )}
+              {video.description && <figcaption class="text-base leading-relaxed text-[var(--color-muted)]">{video.description}</figcaption>}
             </figure>
           ))}
         </section>

@@ -9,20 +9,12 @@ export function youtubeIdFromUrl(url: string): string | undefined {
       return id || undefined;
     }
 
-    if (
-      host === "youtube.com" ||
-      host === "m.youtube.com" ||
-      host === "music.youtube.com"
-    ) {
+    if (host === "youtube.com" || host === "m.youtube.com" || host === "music.youtube.com") {
       const v = u.searchParams.get("v");
       if (v) return v;
 
       const parts = u.pathname.split("/").filter(Boolean);
-      if (
-        parts[0] === "embed" ||
-        parts[0] === "shorts" ||
-        parts[0] === "live"
-      ) {
+      if (parts[0] === "embed" || parts[0] === "shorts" || parts[0] === "live") {
         return parts[1] || undefined;
       }
     }

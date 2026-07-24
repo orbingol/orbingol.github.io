@@ -13,12 +13,13 @@ Soju Platform is a language-learning companion that brings vocabulary, grammar, 
 
 ## Features
 
-- Browse verbs — dictionary forms, common conjugations, and example sentences
-- Browse words — vocabulary by word type and by topic
-- Grammar — particles, patterns, connectors, and question words with short explanations
-- Flashcards — flip cards to review vocabulary
-- Listen — text-to-speech for Korean on supported browsers
-- Practice and Chat — optional AI-assisted features when the AI / LLM model server is available
+- Browse verbs: dictionary forms, common conjugations, and example sentences
+- Browse words: vocabulary by word type and by topic
+- Browse grammar: particles, patterns, connectors, and question words with short explanations
+- Flashcards: flip cards to review vocabulary
+- Listen: text-to-speech for Korean on supported browsers
+- Practice (AI-assisted): generate questions, fill in the blanks, listening exercises, write / evaluate short stories and more
+- Chat (AI-assisted): instant help from your virtual Korean tutor
 
 ## References
 

@@ -25,8 +25,7 @@ body {
   font-size: 1.05rem;
   line-height: 1.6;
   background:
-    radial-gradient(1200px 600px at 10% -10%, #dce8ee 0%, transparent 55%),
-    radial-gradient(900px 500px at 100% 0%, #e7eef5 0%, transparent 50%),
+    radial-gradient(1200px 600px at 10% -10%, #dce8ee 0%, transparent 55%), radial-gradient(900px 500px at 100% 0%, #e7eef5 0%, transparent 50%),
     linear-gradient(180deg, #f7fafb 0%, var(--color-surface) 45%, #eef3f6 100%);
   background-attachment: fixed;
 }

@@ -2,35 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout
-  title="Contact"
-  description="Contact Onur Rauf Bingol about general inquiries or NURBS-Python (geomdl)."
-  breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
->
+<Layout title="Contact" description="Contact Onur Rauf Bingol about general inquiries or NURBS-Python (geomdl)." breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}>
   <section class="mx-auto w-full max-w-2xl">
-    <h1
-      class="text-5xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-6xl"
-    >
-      Contact
-    </h1>
+    <h1 class="text-5xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-6xl">Contact</h1>
     <p class="mt-4 text-[var(--color-muted)]">
-      Please use <code class="rounded bg-white/70 px-1.5 py-0.5 text-sm"
-        >nurbs-python@googlegroups.com</code
-      > for questions related to NURBS-Python (geomdl) and its subprojects.
+      Please use <code class="rounded bg-white/70 px-1.5 py-0.5 text-sm">nurbs-python@googlegroups.com</code> for questions related to NURBS-Python (geomdl) and its subprojects.
     </p>
 
-    <form
-      id="contactForm"
-      class="mt-8 space-y-5"
-      action="https://formspree.io/contact@onurbingol.net"
-      method="POST"
-    >
+    <form id="contactForm" class="mt-8 space-y-5" action="https://formspree.io/contact@onurbingol.net" method="POST">
       <div>
-        <label
-          for="emailInput"
-          class="mb-1.5 block text-sm font-medium text-[var(--color-ink)]"
-          >Email</label
-        >
+        <label for="emailInput" class="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">Email</label>
         <input
           name="_replyto"
           type="email"
@@ -42,11 +23,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
 
       <div>
-        <label
-          for="categoryInput"
-          class="mb-1.5 block text-sm font-medium text-[var(--color-ink)]"
-          >Category</label
-        >
+        <label for="categoryInput" class="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">Category</label>
         <select
           name="category"
           id="categoryInput"
@@ -56,18 +33,12 @@ import Layout from "../layouts/Layout.astro";
           <option value="">(Please select)</option>
           <option value="general">General inquiry</option>
           <option value="geomdl-bug">NURBS-Python (geomdl) bugs</option>
-          <option value="geomdl-feature"
-            >NURBS-Python (geomdl) feature requests</option
-          >
+          <option value="geomdl-feature">NURBS-Python (geomdl) feature requests</option>
         </select>
       </div>
 
       <div>
-        <label
-          for="messageInput"
-          class="mb-1.5 block text-sm font-medium text-[var(--color-ink)]"
-          >Message</label
-        >
+        <label for="messageInput" class="mb-1.5 block text-sm font-medium text-[var(--color-ink)]">Message</label>
         <textarea
           name="message"
           id="messageInput"
@@ -80,13 +51,7 @@ import Layout from "../layouts/Layout.astro";
 
       <input type="hidden" name="_subject" value="Website Contact Form" />
       <input type="hidden" name="_format" value="plain" />
-      <input
-        type="text"
-        name="_gotcha"
-        class="hidden"
-        tabindex="-1"
-        autocomplete="off"
-      />
+      <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
 
       <div>
         <button
@@ -96,10 +61,7 @@ import Layout from "../layouts/Layout.astro";
         >
           Send via Formspree.io
         </button>
-        <p id="submitHelp" class="mt-2 text-sm text-[var(--color-muted)]">
-          You'll be directed to Formspree.io for further processing of your
-          message.
-        </p>
+        <p id="submitHelp" class="mt-2 text-sm text-[var(--color-muted)]">You'll be directed to Formspree.io for further processing of your message.</p>
       </div>
     </form>
   </section>

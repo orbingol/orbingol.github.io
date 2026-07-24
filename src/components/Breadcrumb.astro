@@ -13,10 +13,7 @@ const { crumbs } = Astro.props;
 
 {
   crumbs.length > 0 && (
-    <nav
-      class="w-full border-b border-[var(--color-ink)]/10 bg-[var(--color-nav)]"
-      aria-label="Breadcrumb"
-    >
+    <nav class="w-full border-b border-[var(--color-ink)]/10 bg-[var(--color-nav)]" aria-label="Breadcrumb">
       <ol class="flex flex-wrap items-center gap-x-1 px-4 py-2.5 text-sm text-[var(--color-muted)] sm:px-6 lg:px-8">
         {crumbs.map((crumb, index) => {
           const isLast = index === crumbs.length - 1;
@@ -28,19 +25,11 @@ const { crumbs } = Astro.props;
                 </span>
               )}
               {crumb.href && !isLast ? (
-                <a
-                  href={crumb.href}
-                  class="text-[var(--color-muted)] transition-colors hover:text-[var(--color-accent)]"
-                >
+                <a href={crumb.href} class="text-[var(--color-muted)] transition-colors hover:text-[var(--color-accent)]">
                   {crumb.label}
                 </a>
               ) : (
-                <span
-                  class={
-                    isLast ? "font-medium text-[var(--color-ink)]" : undefined
-                  }
-                  aria-current={isLast ? "page" : undefined}
-                >
+                <span class={isLast ? "font-medium text-[var(--color-ink)]" : undefined} aria-current={isLast ? "page" : undefined}>
                   {crumb.label}
                 </span>
               )}
