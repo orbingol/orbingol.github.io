@@ -13,3 +13,9 @@ dist/
 .astro-scaffold/
 npm-debug.log*
 .env
+
+# Python project files
+.venv/
+.python-version
+pyproject.toml
+uv.lock
