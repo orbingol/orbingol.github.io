@@ -2,7 +2,9 @@
 
 Astro + Tailwind site. **Use Docker** — you do not need Node installed on the host.
 
-Docker images use **Node.js 24 LTS** (`node:24-bookworm`). Astro telemetry is disabled via `ASTRO_TELEMETRY_DISABLED=1` (Dockerfile, Compose, and npm scripts). The Astro Dev Toolbar appears only during `docker compose up web` (`astro dev`); production builds (`astro build` / GitHub Pages) are static HTML and never include it.
+Docker images use **Node.js 24 LTS** (`node:24-bookworm`). Astro telemetry is disabled via `ASTRO_TELEMETRY_DISABLED=1`
+(Dockerfile, Compose, and npm scripts). The Astro Dev Toolbar appears only during `docker compose up web` (`astro dev`);
+production builds (`astro build` / GitHub Pages) are static HTML and never include it.
 
 ## Prerequisites
 
@@ -55,7 +57,8 @@ docker build -f docker/Dockerfile --target export --output type=local,dest=dist 
 | `public/`                   | Static SEO/crawl files, OG image, favicons, placeholders |
 | `CNAME`                     | Custom domain; copied into `dist/` by `npm run build`    |
 
-Add a project by creating a Markdown file in `src/content/projects/` and filling the frontmatter (`title`, `summary`, `order`, optional `screenshot` / `links` / `videos` / SEO fields below).
+Add a project by creating a Markdown file in `src/content/projects/` and filling the frontmatter
+(`title`, `summary`, `order`, optional `screenshot` / `links` / `videos` / SEO fields below).
 
 ## Build artifacts — never commit `dist/`
 
@@ -74,7 +77,9 @@ After a local build, confirm `dist/` contains `robots.txt`, `llms.txt`, `CNAME`,
 
 ### Public pages
 
-Home, projects, and contact are indexable. Layout emits canonical URLs, title template (`Page \| Onur Rauf Bingol, Ph.D.`, brand-only on home), Open Graph / Twitter tags, and optional JSON-LD. Identity defaults live in `src/lib/site.ts` (`SITE_NAME`, `SITE_TAGLINE`).
+Home, projects, and contact are indexable. Layout emits canonical URLs, title template
+(`Page \| Onur Rauf Bingol, Ph.D.`, brand-only on home), Open Graph / Twitter tags, and optional JSON-LD.
+Identity defaults live in `src/lib/site.ts` (`SITE_NAME`, `SITE_TAGLINE`).
 
 **Project frontmatter (optional):**
 
@@ -104,15 +109,22 @@ SVG placeholders are **not** used as `og:image` — public pages fall back to `/
 
 Honest limit: scrapers that ignore robots/noindex can still fetch a public URL. Do not put unique sensitive data on `/cv` that would be unacceptable if leaked.
 
-**Google Disallow vs noindex gotcha:** If Google already indexed `/cv` and you only `Disallow` it in `robots.txt`, Google may keep the listing and stop crawling — so it never sees `noindex`. Prefer shipping `noindex` + sitemap omit; use [Search Console URL Inspection / Removals](https://search.google.com/search-console) if a stale snippet remains. If stuck indexed, temporarily allow crawl while `noindex` is present until GSC shows excluded, then restore `Disallow`.
+**Google Disallow vs noindex gotcha:** If Google already indexed `/cv` and you only `Disallow` it in `robots.txt`,
+Google may keep the listing and stop crawling — so it never sees `noindex`. Prefer shipping `noindex` + sitemap omit;
+use [Search Console URL Inspection / Removals](https://search.google.com/search-console) if a stale snippet remains.
+If stuck indexed, temporarily allow crawl while `noindex` is present until GSC shows excluded, then restore `Disallow`.
 
 ### Webmaster verification
 
 Prefer **DNS TXT** for [Google Search Console](https://search.google.com/search-console) and [Bing Webmaster Tools](https://www.bing.com/webmasters).
 
-HTML meta fallback: set `PUBLIC_GSC_VERIFICATION` / `PUBLIC_BING_VERIFICATION` in the build environment. Layout injects the meta tags when those env vars are present. Alternatively place Google/Bing HTML verify files under `public/` (never only under `dist/`).
+HTML meta fallback: set `PUBLIC_GSC_VERIFICATION` / `PUBLIC_BING_VERIFICATION` in the build environment.
+Layout injects the meta tags when those env vars are present. Alternatively place Google/Bing HTML verify files under
+`public/` (never only under `dist/`).
 
-After deploy: submit `https://onurraufbingol.com/sitemap-index.xml`, confirm `/cv` is absent from the sitemap and not indexed. Validators: [Rich Results Test](https://search.google.com/test/rich-results), social share debuggers on **public** URLs only.
+After deploy: submit `https://onurraufbingol.com/sitemap-index.xml`, confirm `/cv` is absent from the sitemap and not
+indexed. Validators: [Rich Results Test](https://search.google.com/test/rich-results), social share debuggers on
+**public** URLs only.
 
 ## Favicons & default OG image
 
@@ -122,7 +134,8 @@ Edit `public/favicon.svg` and/or `public/og-default.svg`, then regenerate raster
 docker compose run --rm favicons
 ```
 
-That writes `favicon-16.png`, `favicon-32.png`, `favicon.ico`, `apple-touch-icon.png`, and `og-default.png` under `public/`. Browsers cache favicons aggressively — hard-refresh (or clear site data) after regenerating.
+That writes `favicon-16.png`, `favicon-32.png`, `favicon.ico`, `apple-touch-icon.png`, and `og-default.png` under
+`public/`. Browsers cache favicons aggressively — hard-refresh (or clear site data) after regenerating.
 
 ## Docker targets
 
@@ -135,7 +148,9 @@ That writes `favicon-16.png`, `favicon-32.png`, `favicon.ico`, `apple-touch-icon
 
 ## Lint / pre-commit
 
-Hooks are defined in [`.pre-commit-config.yaml`](.pre-commit-config.yaml) (trailing whitespace / EOF, CRLF / tabs, Prettier for Astro). Install [pre-commit](https://pre-commit.com/) with [uv](https://docs.astral.sh/uv/) — no project Python env required (the Prettier hook uses pre-commit’s isolated Node env).
+Hooks are defined in [`.pre-commit-config.yaml`](.pre-commit-config.yaml) (trailing whitespace / EOF, CRLF / tabs,
+markdownlint, Prettier for Astro). Install [pre-commit](https://pre-commit.com/) with [uv](https://docs.astral.sh/uv/)
+— no project Python env required (the Prettier hook uses pre-commit’s isolated Node env).
 
 One-shot (no install):
 
