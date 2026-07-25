@@ -68,7 +68,7 @@ The `others` project uses `order: 999` so it sorts last when enabled; avoid conf
 
 | Artifact                                               | Source of truth                                          | How it reaches `dist/`                                 |
 | ------------------------------------------------------ | -------------------------------------------------------- | ------------------------------------------------------ |
-| `robots.txt`, `llms.txt`, OG images, verify HTML files | `public/`                                                | Astro copies `public/` → `dist/` on `astro build`      |
+| `robots.txt`, `llms.txt`, OG images                   | `public/`                                                | Astro copies `public/` → `dist/` on `astro build`      |
 | Favicons / `og-default.png`                            | `public/` (regen via `docker compose run --rm favicons`) | Same                                                   |
 | Custom domain `CNAME`                                  | Repo-root `CNAME`                                        | `npm run build` → `astro build && cp CNAME dist/CNAME` |
 | Sitemap XML                                            | `@astrojs/sitemap`                                       | Written at build time only                             |
@@ -119,11 +119,10 @@ If stuck indexed, temporarily allow crawl while `noindex` is present until GSC s
 
 ### Webmaster verification
 
-Prefer **DNS TXT** for [Google Search Console](https://search.google.com/search-console) and [Bing Webmaster Tools](https://www.bing.com/webmasters).
+[Google Search Console](https://search.google.com/search-console) is verified via **DNS TXT** (no HTML meta / file needed).
 
-HTML meta fallback: set `PUBLIC_GSC_VERIFICATION` / `PUBLIC_BING_VERIFICATION` in the build environment.
-Layout injects the meta tags when those env vars are present. Alternatively place Google/Bing HTML verify files under
-`public/` (never only under `dist/`).
+[Bing Webmaster Tools](https://www.bing.com/webmasters): prefer DNS TXT; optional HTML meta fallback via `PUBLIC_BING_VERIFICATION`
+in the build environment (Layout injects `msvalidate.01` when set).
 
 After deploy: submit `https://onurraufbingol.com/sitemap-index.xml`, confirm `/cv` is absent from the sitemap and not
 indexed. Validators: [Rich Results Test](https://search.google.com/test/rich-results), social share debuggers on
