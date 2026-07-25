@@ -5,6 +5,7 @@ description: NURBS-Python (geomdl) — pure Python B-spline and NURBS library fo
 screenshot: /projects/nurbs-python/carousel/surf1_decompose.png
 image: /projects/nurbs-python/carousel/ex_circle.png
 order: 1
+enabled: true
 links:
   GitHub: https://github.com/orbingol/NURBS-Python
   Docs: https://nurbs-python.readthedocs.io/

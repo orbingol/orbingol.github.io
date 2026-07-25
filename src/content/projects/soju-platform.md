@@ -5,6 +5,7 @@ description: Soju Platform is an AI-assisted language learning platform with Pyt
 screenshot: /projects/soju-platform/education.png
 image: /projects/soju-platform/education.png
 order: 4
+enabled: true
 links:
   GitHub: https://github.com/orbingol/soju-platform
 ---
