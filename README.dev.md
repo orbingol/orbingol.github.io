@@ -37,16 +37,16 @@ docker build -f docker/Dockerfile --target export --output type=local,dest=dist 
 
 ## Where to edit
 
-| Path                        | Purpose                                           |
-| --------------------------- | ------------------------------------------------- |
-| `src/pages/`                | Routes (`/`, `/cv`, `/contact`, `/projects`, …)   |
-| `src/components/`           | Nav, footer, cards, etc.                          |
-| `src/layouts/Layout.astro`  | Shared shell, SEO head, GA, fonts                 |
-| `src/lib/site.ts`           | Site name, default OG, `sameAs`, title helpers    |
-| `src/content/projects/*.md` | Project pages (frontmatter + body)                |
-| `src/styles/global.css`     | Design tokens / global CSS                        |
-| `public/`                   | Static files, OG image, favicons                  |
-| `CNAME`                     | Custom domain; copied into `dist/` on build       |
+| Path                        | Purpose                                         |
+| --------------------------- | ----------------------------------------------- |
+| `src/pages/`                | Routes (`/`, `/cv`, `/contact`, `/projects`, …) |
+| `src/components/`           | Nav, footer, cards, etc.                        |
+| `src/layouts/Layout.astro`  | Shared shell, SEO head, GA, fonts               |
+| `src/lib/site.ts`           | Site name, default OG, `sameAs`, title helpers  |
+| `src/content/projects/*.md` | Project pages (frontmatter + body)              |
+| `src/styles/global.css`     | Design tokens / global CSS                      |
+| `public/`                   | Static files, OG image, favicons                |
+| `CNAME`                     | Custom domain; copied into `dist/` on build     |
 
 Add a project by copying an existing file under `src/content/projects/`. Use `enabled: false` for drafts
 (omitted from nav, listings, routes, and sitemap). The `others` project uses `order: 999` so it sorts last.
@@ -63,11 +63,11 @@ Hard-refresh (or clear site data) after regenerating — browsers cache favicons
 
 ## Docker targets
 
-| Target          | Role                                         |
-| --------------- | -------------------------------------------- |
-| `web` (default) | `astro dev` for local preview                |
-| `build`         | `astro build` → `/app/dist`                  |
-| `export`        | Scratch stage used by CI to copy only `dist` |
+| Target          | Role                                            |
+| --------------- | ----------------------------------------------- |
+| `web` (default) | `astro dev` for local preview                   |
+| `build`         | `astro build` → `/app/dist`                     |
+| `export`        | Scratch stage used by CI to copy only `dist`    |
 | `favicons`      | Rasterize SVG sources → PNG/ICO under `public/` |
 
 ## Lint / pre-commit
