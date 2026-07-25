@@ -39,7 +39,8 @@ The work is described in our [SoftwareX article](https://doi.org/10.1016/j.softx
 - Customizable visualization and animation with [Matplotlib](https://matplotlib.org/), [Plotly](https://plot.ly/python/), and [VTK](https://www.vtk.org/)
 - Export to JSON, YAML, Libconfig, STL, OBJ, and VTK
 - Complete documentation with references, examples, and illustrations
-- Pure Python implementation (no C/C++ or Fortran dependencies required); optional Cython build for higher performance
+- Pure Python implementation (no C/C++ or Fortran dependencies required)
+- Optional Cython build for higher performance
 - Install from [PyPI](https://pypi.org/project/geomdl/)
 - Rhino `.3dm` import/export via [rw3dm](https://nurbs-python.readthedocs.io/en/latest/modules_rhino.html)
 
