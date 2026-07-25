@@ -58,7 +58,9 @@ docker build -f docker/Dockerfile --target export --output type=local,dest=dist 
 | `CNAME`                     | Custom domain; copied into `dist/` by `npm run build`    |
 
 Add a project by creating a Markdown file in `src/content/projects/` and filling the frontmatter
-(`title`, `summary`, `order`, optional `screenshot` / `links` / `videos` / SEO fields below).
+(`title`, `summary`, `order`, `enabled`, optional `screenshot` / `links` / `videos` / SEO fields below).
+Use `enabled: false` to keep a draft out of the nav, `/projects` listing, detail routes, and sitemap.
+The `others` project uses `order: 999` so it sorts last when enabled; avoid conflicting high orders on other projects.
 
 ## Build artifacts — never commit `dist/`
 
@@ -85,6 +87,7 @@ Identity defaults live in `src/lib/site.ts` (`SITE_NAME`, `SITE_TAGLINE`).
 
 | Field         | Role                                                                             |
 | ------------- | -------------------------------------------------------------------------------- |
+| `enabled`     | When `false`, omitted from nav, `/projects`, detail routes, and sitemap          |
 | `description` | Meta / OG description (falls back to `summary`)                                  |
 | `seoTitle`    | Document title override (Layout still appends site name)                         |
 | `screenshot`  | On-page image when there is no `gallery`                                         |
