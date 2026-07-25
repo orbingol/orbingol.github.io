@@ -1,10 +1,10 @@
 ---
-import { getCollection } from "astro:content";
 import SocialIcons from "./SocialIcons.astro";
 import { SITE_NAME } from "../lib/site";
+import { getEnabledProjects } from "../lib/projects";
 
 const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
-const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+const projects = await getEnabledProjects();
 
 const isHome = pathname === "/";
 const isProjects = pathname === "/projects" || pathname.startsWith("/projects/");

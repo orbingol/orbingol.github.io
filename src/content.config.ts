@@ -16,6 +16,8 @@ const projects = defineCollection({
     /** Dedicated OG/Twitter image (raster preferred). Falls back to screenshot if raster. */
     image: z.string().optional(),
     order: z.number(),
+    /** When false, omitted from nav, listings, detail routes, and sitemap. */
+    enabled: z.boolean().default(true),
     links: z.record(z.string(), z.string().url()).optional(),
     /** Image gallery / carousel slides for the project page. */
     gallery: z

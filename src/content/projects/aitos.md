@@ -5,6 +5,7 @@ description: AiToS analyzes resumes against job descriptions with AI models, sim
 screenshot: /projects/aitos/dashboard.png
 image: /projects/aitos/dashboard.png
 order: 3
+enabled: true
 links:
   GitHub: https://github.com/orbingol/aitos
 ---

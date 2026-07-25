@@ -2,12 +2,13 @@
 import Layout from "../../layouts/Layout.astro";
 import Carousel from "../../components/Carousel.astro";
 import ProjectLinks from "../../components/ProjectLinks.astro";
-import { getCollection, render } from "astro:content";
+import { render } from "astro:content";
 import { absoluteUrl, isUsableOgImage, SITE_NAME, SITE_URL } from "../../lib/site";
+import { getEnabledProjects } from "../../lib/projects";
 import { youtubeEmbedUrl } from "../../lib/youtube";
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
+  const projects = await getEnabledProjects();
   return projects.map((project) => ({
     params: { slug: project.id },
     props: { project },
