@@ -1,0 +1,3 @@
+# Keep in sync with prettier.config.mjs printWidth
+MD013:
+  line_length: 180
