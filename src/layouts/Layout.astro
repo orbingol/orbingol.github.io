@@ -32,9 +32,6 @@ const canonical = absoluteUrl(path, Astro.site?.href ?? undefined);
 const ogImagePath = isUsableOgImage(image) ? image! : DEFAULT_OG_IMAGE;
 const ogImage = ogImagePath.startsWith("http") ? ogImagePath : absoluteUrl(ogImagePath, Astro.site?.href ?? undefined);
 
-const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION as string | undefined;
-const bingVerification = import.meta.env.PUBLIC_BING_VERIFICATION as string | undefined;
-
 const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 
@@ -56,8 +53,6 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex ? <meta name="robots" content="noindex, follow" /> : <meta name="robots" content="index, follow" />}
-    {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
-    {bingVerification && <meta name="msvalidate.01" content={bingVerification} />}
 
     <!-- Open Graph -->
     <meta property="og:type" content={ogType} />
@@ -78,15 +73,15 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
     {jsonLdBlocks.map((block) => <script type="application/ld+json" set:html={JSON.stringify(block)} />)}
 
-    {/* Google Analytics — keep in sync with site privacy policy */}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62775141-1"></script>
+    {/* Google Analytics 4 — keep in sync with site privacy policy (IP anonymized by default in GA4) */}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTV3820TE0"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "UA-62775141-1", { anonymize_ip: true });
+      gtag("config", "G-BTV3820TE0");
     </script>
   </head>
   <body class="flex min-h-screen flex-col antialiased">
