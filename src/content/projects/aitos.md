@@ -9,7 +9,8 @@ links:
   GitHub: https://github.com/orbingol/aitos
 ---
 
-AiToS is a full-stack web app and CLI that scores resumes against job descriptions with local AI models via Ollama. It roughly mimics Applicant Tracking System (ATS) checks so job seekers can see how a resume might be parsed and ranked.
+AiToS is a full-stack web app and CLI that scores resumes against job descriptions with local AI models via Ollama.
+It roughly mimics Applicant Tracking System (ATS) checks so job seekers can see how a resume might be parsed and ranked.
 
 ## Features
 

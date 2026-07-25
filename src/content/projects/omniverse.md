@@ -20,6 +20,9 @@ videos:
       a digital twin of the Schmalz FXCB area gripper.
 ---
 
-You can find the selected demos from my work on digital twins, factory & manufacturing simulation, and robotics using the [NVIDIA Omniverse](https://www.nvidia.com/en-us/omniverse/) and [OpenUSD](https://openusd.org) platforms.
+You can find the selected demos from my work on digital twins, factory & manufacturing simulation, and robotics using
+the [NVIDIA Omniverse](https://www.nvidia.com/en-us/omniverse/) and [OpenUSD](https://openusd.org) platforms.
 
-These work highlight simulation pipelines, Omniverse integration, digital twin generation and robotics. They also illustrate the themes from my roles focused on computational geometry, digital twins, computer graphics and GPU-accelerated workflows.
+These work highlight simulation pipelines, Omniverse integration, digital twin generation and robotics.
+They also illustrate the themes from my roles focused on computational geometry, digital twins, computer graphics and
+GPU-accelerated workflows.
