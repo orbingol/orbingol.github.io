@@ -32,8 +32,6 @@ const canonical = absoluteUrl(path, Astro.site?.href ?? undefined);
 const ogImagePath = isUsableOgImage(image) ? image! : DEFAULT_OG_IMAGE;
 const ogImage = ogImagePath.startsWith("http") ? ogImagePath : absoluteUrl(ogImagePath, Astro.site?.href ?? undefined);
 
-const bingVerification = import.meta.env.PUBLIC_BING_VERIFICATION as string | undefined;
-
 const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 
@@ -55,7 +53,6 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex ? <meta name="robots" content="noindex, follow" /> : <meta name="robots" content="index, follow" />}
-    {bingVerification && <meta name="msvalidate.01" content={bingVerification} />}
 
     <!-- Open Graph -->
     <meta property="og:type" content={ogType} />
