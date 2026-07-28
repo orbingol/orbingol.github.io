@@ -1,5 +1,13 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
+import { PROJECT_CATEGORY_IDS } from "./lib/project-categories";
+
+const projectCategorySchema = z
+  .number()
+  .int()
+  .refine((value): value is (typeof PROJECT_CATEGORY_IDS)[number] => PROJECT_CATEGORY_IDS.includes(value as (typeof PROJECT_CATEGORY_IDS)[number]), {
+    message: `category must be one of: ${PROJECT_CATEGORY_IDS.join(", ")}`,
+  });
 
 const projects = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
@@ -16,6 +24,11 @@ const projects = defineCollection({
     /** Dedicated OG/Twitter image (raster preferred). Falls back to screenshot if raster. */
     image: z.string().optional(),
     order: z.number(),
+    /**
+     * Project category ID (see `PROJECT_CATEGORIES` in `src/lib/projects.ts`).
+     * Shown on the projects listing only.
+     */
+    category: projectCategorySchema.optional(),
     /** When false, omitted from nav, listings, detail routes, and sitemap. */
     enabled: z.boolean().default(true),
     links: z.record(z.string(), z.string().url()).optional(),

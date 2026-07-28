@@ -4,6 +4,7 @@ summary: Digital twin and robotics applications built with NVIDIA Omniverse and 
 description: Factory simulation and robotics applications using NVIDIA Omniverse Platform.
 screenshot: /projects/omniverse/factory-sims.jpg
 order: 2
+category: 1
 enabled: true
 schemaType: CreativeWork
 videos:
