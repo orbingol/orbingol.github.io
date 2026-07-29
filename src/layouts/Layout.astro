@@ -50,12 +50,7 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
             return null;
           }
         })();
-        const theme =
-          stored === "dark" || stored === "light"
-            ? stored
-            : window.matchMedia("(prefers-color-scheme: dark)").matches
-              ? "dark"
-              : "light";
+        const theme = stored === "dark" || stored === "light" ? stored : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
         document.documentElement.dataset.theme = theme;
         document.documentElement.style.colorScheme = theme;
       })();

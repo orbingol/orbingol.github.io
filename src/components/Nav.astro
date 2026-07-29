@@ -47,11 +47,7 @@ const linkActive = "font-semibold text-[var(--color-accent)]";
       </div>
     </div>
 
-    <div
-      id="primary-nav-panel"
-      class="hidden w-full flex-col gap-1 md:flex md:w-auto md:flex-1 md:flex-row md:items-center md:justify-end md:gap-4"
-      data-nav-panel
-    >
+    <div id="primary-nav-panel" class="hidden w-full flex-col gap-1 md:flex md:w-auto md:flex-1 md:flex-row md:items-center md:justify-end md:gap-4" data-nav-panel>
       <a href="/" class:list={[linkBase, isHome ? linkActive : linkIdle]} aria-current={isHome ? "page" : undefined}> Home </a>
 
       <div class="relative z-50" data-projects-menu>
