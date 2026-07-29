@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import EducationTimeline from "../components/EducationTimeline.astro";
+import { ORCID_URL } from "../lib/site";
 
 // /cv is private-by-link: noindex, omitted from sitemap/robots/llms/JSON-LD. LinkedIn is the public CV.
 ---
@@ -9,12 +10,21 @@ import EducationTimeline from "../components/EducationTimeline.astro";
   <section class="mx-auto w-full max-w-3xl">
     <h1 class="text-5xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-6xl">Curriculum Vitae</h1>
     <p class="mt-4 text-xl text-[var(--color-muted)]">Senior software engineer with a Ph.D. degree. Focuses on computational geometry, simulations, HPC and GPU programming.</p>
-
     <div class="mt-12">
       <h2 class="text-3xl font-semibold tracking-tight text-[var(--color-ink)]">Education</h2>
       <div class="mt-8">
         <EducationTimeline />
       </div>
+    </div>
+
+    <div class="mt-12">
+      <h2 class="text-3xl font-semibold tracking-tight text-[var(--color-ink)]">Profiles</h2>
+      <ul class="mt-6 list-none space-y-2 text-lg text-[var(--color-muted)]">
+        <li>
+          ORCID:
+          <a href={ORCID_URL} target="_blank" rel="noopener noreferrer" class="font-medium text-[var(--color-accent)] underline-offset-2 hover:underline"> 0000-0002-3139-5725 </a>
+        </li>
+      </ul>
     </div>
   </section>
 </Layout>

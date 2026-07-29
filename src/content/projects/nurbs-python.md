@@ -1,6 +1,6 @@
 ---
 title: NURBS-Python
-summary: Object-oriented B-spline and NURBS library in Python with convenient data structures and extensible algorithms.
+summary: A pure Python open-source computational geometry library for NURBS modeling and evaluation.
 description: NURBS-Python (geomdl) — pure Python B-spline and NURBS library for curves, surfaces, and volumes.
 screenshot: /projects/nurbs-python/carousel/surf1_decompose.png
 image: /projects/nurbs-python/carousel/ex_circle.png

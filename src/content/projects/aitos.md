@@ -1,6 +1,6 @@
 ---
 title: AiToS
-summary: Experimental ATS-style resume analyzer with a web UI and CLI, powered by AI.
+summary: An AI-assisted ATS-style resume analyzer with a web UI and CLI.
 description: AiToS analyzes resumes against job descriptions with AI models, simulating ATS-style scoring.
 screenshot: /projects/aitos/dashboard.png
 image: /projects/aitos/dashboard.png

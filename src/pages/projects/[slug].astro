@@ -95,7 +95,12 @@ const jsonLd = {
         </div>
       ) : (
         project.data.screenshot && (
-          <img src={project.data.screenshot} alt="" class="mt-8 aspect-[16/10] w-full rounded-md object-contain bg-white ring-1 ring-[var(--color-ink)]/10" loading="lazy" />
+          <img
+            src={project.data.screenshot}
+            alt=""
+            class="mt-8 aspect-[16/10] w-full rounded-md object-contain bg-[var(--color-panel)] ring-1 ring-[var(--color-ink)]/10"
+            loading="lazy"
+          />
         )
       )
     }

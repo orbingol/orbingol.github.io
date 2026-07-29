@@ -26,13 +26,13 @@ const id = `carousel-${Math.random().toString(36).slice(2, 9)}`;
       aria-label="Project gallery"
       tabindex="0"
     >
-      <div class="overflow-hidden rounded-md ring-1 ring-[var(--color-ink)]/10 bg-white">
+      <div class="overflow-hidden rounded-md ring-1 ring-[var(--color-ink)]/10 bg-[var(--color-panel)]">
         {slides.map((slide, index) => (
           <figure class:list={["carousel-slide m-0", index === 0 ? "block" : "hidden"]} data-carousel-slide aria-hidden={index === 0 ? "false" : "true"}>
             <img
               src={slide.src}
               alt={slide.alt ?? slide.caption ?? ""}
-              class="aspect-[16/10] w-full object-contain bg-white"
+              class="aspect-[16/10] w-full object-contain bg-[var(--color-panel)]"
               loading={index === 0 ? "eager" : "lazy"}
               width="960"
               height="600"

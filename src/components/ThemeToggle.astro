@@ -1,0 +1,117 @@
+---
+/**
+ * Follows system preference until the user toggles once;
+ * then persists light/dark in localStorage.
+ */
+---
+
+<button
+  type="button"
+  class="inline-flex size-9 shrink-0 items-center justify-center rounded-md border-0 text-[var(--color-ink)] transition-colors hover:bg-[var(--color-accent-soft)] hover:text-[var(--color-accent)] md:border md:border-[var(--color-ink)]/15"
+  data-theme-toggle
+  aria-label="Toggle color theme"
+  title="Toggle theme"
+>
+  <!-- Shown when page is light: switch to dark -->
+  <svg
+    data-theme-icon="moon"
+    viewBox="0 0 24 24"
+    class="size-5"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.75"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+  </svg>
+  <!-- Shown when page is dark: switch to light -->
+  <svg
+    data-theme-icon="sun"
+    viewBox="0 0 24 24"
+    class="hidden size-5"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.75"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2"></path>
+    <path d="M12 20v2"></path>
+    <path d="m4.93 4.93 1.41 1.41"></path>
+    <path d="m17.66 17.66 1.41 1.41"></path>
+    <path d="M2 12h2"></path>
+    <path d="M20 12h2"></path>
+    <path d="m6.34 17.66-1.41 1.41"></path>
+    <path d="m19.07 4.93-1.41 1.41"></path>
+  </svg>
+</button>
+
+<script>
+  const STORAGE_KEY = "theme";
+
+  function systemTheme() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  function getStored() {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      return stored === "dark" || stored === "light" ? stored : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function resolveTheme() {
+    return getStored() ?? systemTheme();
+  }
+
+  function apply(theme) {
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+  }
+
+  function syncToggle(button, theme) {
+    button.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
+    button.title = theme === "dark" ? "Light theme" : "Dark theme";
+    const moon = button.querySelector('[data-theme-icon="moon"]');
+    const sun = button.querySelector('[data-theme-icon="sun"]');
+    if (moon instanceof SVGElement) moon.classList.toggle("hidden", theme === "dark");
+    if (sun instanceof SVGElement) sun.classList.toggle("hidden", theme !== "dark");
+  }
+
+  function initThemeToggle() {
+    const button = document.querySelector("[data-theme-toggle]");
+    if (!(button instanceof HTMLButtonElement)) return;
+
+    const theme = resolveTheme();
+    apply(theme);
+    syncToggle(button, theme);
+
+    button.onclick = () => {
+      const next = resolveTheme() === "dark" ? "light" : "dark";
+      try {
+        localStorage.setItem(STORAGE_KEY, next);
+      } catch {
+        /* ignore quota / private mode */
+      }
+      apply(next);
+      syncToggle(button, next);
+    };
+  }
+
+  initThemeToggle();
+  document.addEventListener("astro:page-load", initThemeToggle);
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (getStored() !== null) return;
+    const theme = systemTheme();
+    apply(theme);
+    const button = document.querySelector("[data-theme-toggle]");
+    if (button instanceof HTMLButtonElement) syncToggle(button, theme);
+  });
+</script>
