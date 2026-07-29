@@ -1,9 +1,11 @@
 ---
 interface Props {
   class?: string;
+  linkClass?: string;
+  iconClass?: string;
 }
 
-const { class: className = "" } = Astro.props;
+const { class: className = "", linkClass = "", iconClass = "" } = Astro.props;
 
 const icons = [
   {
@@ -24,7 +26,7 @@ const icons = [
 ] as const;
 ---
 
-<ul class:list={["flex items-center gap-2.5", className]}>
+<ul class:list={["flex items-center", className || "gap-2.5"]}>
   {
     icons.map((icon) => (
       <li>
@@ -32,18 +34,21 @@ const icons = [
           href={icon.href}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex size-9 items-center justify-center rounded-md text-[var(--color-ink)] transition-colors hover:bg-[var(--color-accent-soft)] hover:text-[var(--color-accent)]"
+          class:list={[
+            "inline-flex items-center justify-center rounded-md text-[var(--color-ink)] transition-colors hover:bg-[var(--color-accent-soft)] hover:text-[var(--color-accent)]",
+            linkClass || "size-9",
+          ]}
           aria-label={icon.label}
         >
           {"orcid" in icon && icon.orcid ? (
-            <svg viewBox="0 0 24 24" class="size-5" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class:list={[iconClass || "size-5"]} aria-hidden="true">
               <path
                 fill="currentColor"
                 d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.687-1.303 3.687-3.726 0-2.31-1.416-3.718-3.781-3.718h-2.203z"
               />
             </svg>
           ) : (
-            <svg viewBox="0 0 24 24" class="size-5" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class:list={[iconClass || "size-5"]} aria-hidden="true">
               <path fill="currentColor" d={"path" in icon ? icon.path : ""} />
             </svg>
           )}

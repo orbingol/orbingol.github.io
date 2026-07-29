@@ -1,6 +1,8 @@
 /** Shared site identity and SEO helpers (public surfaces only). */
 
 export const SITE_NAME = "Onur Rauf Bingol, Ph.D.";
+/** Shorter navbar label for narrow viewports. */
+export const SITE_NAME_SHORT = "Onur R. Bingol, Ph.D.";
 export const SITE_URL = "https://onurraufbingol.com";
 export const SITE_TAGLINE = "Software Engineering · Computational Geometry · Simulations";
 export const DEFAULT_DESCRIPTION = "Software Engineering, Computational Geometry, and Simulations by Onur Rauf Bingol, Ph.D.";
