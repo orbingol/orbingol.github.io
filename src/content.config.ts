@@ -49,8 +49,34 @@ const projects = defineCollection({
           title: z.string(),
           /** Full watch URL or embeddable URL; YouTube watch/shorts IDs are extracted automatically. */
           url: z.string().url(),
-          /** Shown under the embed (e.g. YouTube description). */
+          /**
+           * When the demo was developed: `YYYY`, `YYYY-MM`, or `YYYY-MM-DD`.
+           * Shown under the video title on the project page.
+           * Quote year-only values in YAML (e.g. `"2023"`) so they stay strings.
+           */
+          date: z.preprocess(
+            (value) => (typeof value === "number" ? String(value) : value),
+            z
+              .string()
+              .regex(/^\d{4}(-\d{2}(-\d{2})?)?$/, "Use YYYY, YYYY-MM, or YYYY-MM-DD")
+              .optional(),
+          ),
+          /** Short plain text for JSON-LD / fallback caption when sections are omitted. */
           description: z.string().optional(),
+          /** Ordered markdown blocks under the embed (Story, Technical details, …). */
+          sections: z
+            .array(
+              z.object({
+                title: z.string(),
+                body: z.string(),
+                /**
+                 * Omit = not collapsible.
+                 * true = collapsible, starts collapsed; false = collapsible, starts open.
+                 */
+                collapsed: z.boolean().optional(),
+              }),
+            )
+            .optional(),
         }),
       )
       .optional(),

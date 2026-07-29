@@ -50,6 +50,7 @@ docker build -f docker/Dockerfile --target export --output type=local,dest=dist 
 
 Add a project by copying an existing file under `src/content/projects/`. Use `enabled: false` for drafts
 (omitted from nav, listings, routes, and sitemap). The `miscellaneous` project uses `order: 999` so it sorts last.
+Optional `videos[].sections` entries (`title`, markdown `body`, optional `collapsed`) render under each embed on the project page.
 
 ## Favicons
 
