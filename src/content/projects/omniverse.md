@@ -13,7 +13,7 @@ videos:
     date: "2023-12"
     description: >-
       Full factory simulation with five workcells, each containing two robotic manupilator digital twins,
-      running together in an automatically generated virtual environment.
+      running together in Isaac Sim.
     sections:
       - title: Overview
         body: |
@@ -38,8 +38,7 @@ videos:
     url: https://www.youtube.com/watch?v=b594aO9n4nU
     date: "2023-02"
     description: >-
-      NVIDIA GTC 2023 palletizing demo with a FANUC M-710iC/50 digital twin and Schmalz FXCB area gripper
-      in Omniverse Robotics.
+      NVIDIA GTC 2023 palletizing demo in Isaac Sim.
     sections:
       - title: Overview
         body: |
