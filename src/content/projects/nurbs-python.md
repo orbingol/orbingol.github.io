@@ -5,6 +5,7 @@ description: NURBS-Python (geomdl) — pure Python B-spline and NURBS library fo
 screenshot: /projects/nurbs-python/carousel/surf1_decompose.png
 image: /projects/nurbs-python/carousel/ex_circle.png
 order: 1
+category: 1
 enabled: true
 links:
   GitHub: https://github.com/orbingol/NURBS-Python
@@ -29,6 +30,14 @@ gallery:
 
 NURBS-Python (**geomdl**) is a pure Python object-oriented B-spline and NURBS library with convenient data structures and extensible algorithms.
 The work is described in our [SoftwareX article](https://doi.org/10.1016/j.softx.2018.12.005).
+
+## How It Started
+
+NURBS-Python started in 2016 during my Ph.D. studies at Iowa State University. At the time, most NURBS libraries were either
+commercial or written in compiled languages like C, C++, or Fortran, and the few Python options were fairly limited. I put this
+together, initially as part of my coursework and later as part of my dissertation, favoring readability over raw performance.
+
+Since then, I've also developed GPU-accelerated extensions using Numba, though that work remains unpublished and experimental.
 
 ## Features
 

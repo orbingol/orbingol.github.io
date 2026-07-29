@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+  html: string;
+  /** When set, section is collapsible; value is the initial collapsed state. */
+  collapsed?: boolean;
+}
+
+const { title, html, collapsed } = Astro.props;
+const isCollapsible = collapsed !== undefined;
+const proseClass =
+  "prose-site space-y-3 text-base leading-relaxed text-[var(--color-ink)]/90 [&_a]:text-[var(--color-accent)] [&_a]:underline [&_a]:underline-offset-2 [&_li]:mt-1 [&_ol]:list-decimal [&_ol]:pl-5 [&_p]:mt-0 [&_strong]:font-semibold [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5";
+---
+
+{
+  isCollapsible ? (
+    <details class="group rounded-md border border-[var(--color-ink)]/10 bg-[var(--color-panel)]/40 open:bg-[var(--color-panel)]/70" open={!collapsed}>
+      <summary class="cursor-pointer list-none px-4 py-3 text-lg font-semibold tracking-tight text-[var(--color-ink)] marker:content-none [&::-webkit-details-marker]:hidden">
+        <span class="inline-flex items-center gap-2">
+          <span class="text-[var(--color-muted)] transition-transform group-open:rotate-90" aria-hidden="true">
+            ›
+          </span>
+          {title}
+        </span>
+      </summary>
+      <div class={`border-t border-[var(--color-ink)]/8 px-4 py-3 ${proseClass}`} set:html={html} />
+    </details>
+  ) : (
+    <div class="space-y-2">
+      <h3 class="text-xl font-semibold tracking-tight text-[var(--color-ink)]">{title}</h3>
+      <div class={proseClass} set:html={html} />
+    </div>
+  )
+}

@@ -2,9 +2,12 @@
 import Layout from "../../layouts/Layout.astro";
 import Carousel from "../../components/Carousel.astro";
 import ProjectLinks from "../../components/ProjectLinks.astro";
+import ProjectVideoSection from "../../components/ProjectVideoSection.astro";
 import { render } from "astro:content";
 import { absoluteUrl, isUsableOgImage, SITE_NAME, SITE_URL } from "../../lib/site";
 import { getEnabledProjects } from "../../lib/projects";
+import { renderMarkdown } from "../../lib/markdown";
+import { formatVideoDate } from "../../lib/dates";
 import { youtubeEmbedUrl } from "../../lib/youtube";
 
 export async function getStaticPaths() {
@@ -29,7 +32,14 @@ const videos = (project.data.videos ?? [])
   .map((video) => ({
     title: video.title,
     url: video.url,
+    date: video.date,
+    dateLabel: formatVideoDate(video.date),
     description: video.description,
+    sections: (video.sections ?? []).map((section) => ({
+      title: section.title,
+      collapsed: section.collapsed,
+      html: renderMarkdown(section.body),
+    })),
     embed: youtubeEmbedUrl(video.url),
   }))
   .filter((video) => video.embed);
@@ -57,6 +67,7 @@ const jsonLd = {
           url: video.url,
           embedUrl: video.embed,
           ...(video.description ? { description: video.description } : {}),
+          ...(video.date ? { uploadDate: video.date.length === 4 ? `${video.date}-01-01` : video.date.length === 7 ? `${video.date}-01` : video.date } : {}),
         })),
       }
     : {}),
@@ -99,8 +110,15 @@ const jsonLd = {
       videos.length > 0 && (
         <section class="mt-12 space-y-12" aria-label="Videos">
           {videos.map((video) => (
-            <figure class="space-y-4">
-              <h2 class="text-2xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-3xl">{video.title}</h2>
+            <figure class="space-y-5">
+              <div>
+                <h2 class="text-2xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-3xl">{video.title}</h2>
+                {video.dateLabel && (
+                  <p class="mt-1 text-sm font-medium tracking-wide text-[var(--color-muted)]">
+                    <time datetime={video.date}>{video.dateLabel}</time>
+                  </p>
+                )}
+              </div>
               <div class="aspect-video overflow-hidden rounded-md ring-1 ring-[var(--color-ink)]/10">
                 <iframe
                   src={video.embed}
@@ -112,7 +130,15 @@ const jsonLd = {
                   allowfullscreen
                 />
               </div>
-              {video.description && <figcaption class="text-base leading-relaxed text-[var(--color-muted)]">{video.description}</figcaption>}
+              {video.sections.length > 0 ? (
+                <div class="space-y-4">
+                  {video.sections.map((section) => (
+                    <ProjectVideoSection title={section.title} html={section.html} collapsed={section.collapsed} />
+                  ))}
+                </div>
+              ) : (
+                video.description && <figcaption class="text-base leading-relaxed text-[var(--color-muted)]">{video.description}</figcaption>
+              )}
             </figure>
           ))}
         </section>
