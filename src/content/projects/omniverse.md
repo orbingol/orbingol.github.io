@@ -1,6 +1,6 @@
 ---
 title: NVIDIA Omniverse
-summary: Digital twin and robotics applications built with NVIDIA Omniverse and OpenUSD.
+summary: A collection of digital twin and robotics demos built with NVIDIA Omniverse and OpenUSD.
 description: Factory simulation and robotics applications using NVIDIA Omniverse Platform.
 screenshot: /projects/omniverse/factory-sims.jpg
 order: 2

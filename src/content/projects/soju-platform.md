@@ -1,6 +1,6 @@
 ---
 title: Soju Platform
-summary: Experimental language learning platform for vocabulary, grammar, flashcards, and practice.
+summary: An AI-assisted language learning application focused on vocabulary retention, conversation, and personalized practice.
 description: Soju Platform is an AI-assisted language learning platform with Python-based tooling.
 screenshot: /projects/soju-platform/education.png
 image: /projects/soju-platform/education.png
