@@ -14,6 +14,12 @@ links:
 Soju Platform is a language-learning companion that brings vocabulary, grammar, and practice together in one place.
 It currently focuses on Korean language only.
 
+## How It Started
+
+Soju Platform started as a simple idea: put together lists of Korean vocabulary and verbs for my own studying.
+I actually considered typesetting it in LaTeX at first, but that felt a bit too academic for what was meant to
+be a casual study tool, so I built a web app instead, with a handful of AI-assisted features layered on top later.
+
 ## Features
 
 - **Vocabulary**: browse vocabulary by word type and by topic

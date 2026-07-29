@@ -14,6 +14,12 @@ links:
 AiToS is a full-stack web app and CLI that scores resumes against job descriptions with local AI models via Ollama.
 It roughly mimics Applicant Tracking System (ATS) checks so job seekers can see how a resume might be parsed and ranked.
 
+## How It Started
+
+AiToS started as a quick shell script to help a friend optimize his resume for job applications. Once it was
+clearly useful, I turned it into a small web app as a side project, dabbling in Node.js along the way despite
+not having used it much before.
+
 ## Features
 
 - Upload and analyze resumes (PDF, DOCX) against job descriptions

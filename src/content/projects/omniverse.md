@@ -16,15 +16,24 @@ videos:
     sections:
       - title: Overview
         body: |
-          This demo illustrates the digital twin of a manufacturing workcell equipped with two
-          FANUC M1000iA 6-axis robots and a custom end of arm tooling.
+          This demo illustrates the digital twin of a manufacturing workcell equipped with two robots and rails
+          and a custom end of arm tooling.
       - title: Technical details
         collapsed: true
         body: |
           This short demo illustrates a part of my work at Machina Labs on Virtual Robocraftsman.
-          The software stack was built on top of Nvidia Omniverse platform using `kit-app-template` tooling.
-          The digital twin of the part displayed on the frame was generated from the real data collected
-          during the manufacturing from a sheet metal.
+
+          The digital twins of FANUC M1000iA 6-axis robots and the rails are generated from Solidworks models in USD format.
+          The physics components of the digital twins are generated from the Denavit-Hartenberg (DH) parameters of the robots
+          and the workcell for accurate joint-level dynamics.
+
+          The simulation software stack is built on top of the Nvidia Omniverse platform, using a customized version of
+          the `kit-app-template` tooling for compiling and installing proprietary software developed in-house. This
+          tooling also handles sample data generation and several other maintenance tasks for development and deployment.
+
+          The digital twin of the part displayed on the frame is generated from real-world data collected during
+          sheet-metal manufacturing. The point cloud to USD conversion tooling is integrated into the workcell data
+          collection pipeline to speed up access to the digital twins of the manufactured parts from the Omniverse platform.
   - title: Layer-by-layer Manufacturing with USDRT and Fabric
     url: https://www.youtube.com/watch?v=OUDxJHNdlus
     date: "2024-11"
@@ -35,8 +44,10 @@ videos:
       - title: Overview
         body: |
           A very early implementation of **USDRT** and **Fabric** illusrating the layer-by-layer generation
-          steps of the robotics-assisted manufacturing process. The digital twin of the part was generated
-          from the real world data collected by the workcell during the manufacturing from a sheet metal.
+          steps of the robotics-assisted manufacturing process.
+
+          The digital twin of the part was generated from real-world data collected by the workcell
+          during sheet-metal manufacturing.
   - title: Factory Simulations using NVIDIA Omniverse Platform
     url: https://www.youtube.com/watch?v=BCiEpc9TmqY
     date: "2023-12"
@@ -94,5 +105,20 @@ videos:
 Selected demos from my work on digital twins, factory simulation, and robotics with
 [NVIDIA Omniverse](https://www.nvidia.com/en-us/omniverse/) and [OpenUSD](https://openusd.org).
 
-They highlight simulation pipelines, Omniverse integration, and digital twin generation — themes that
-run through my work in computational geometry, computer graphics, and GPU-accelerated workflows.
+They highlight simulation pipelines, Omniverse integration, and digital twin generation. These are recurring
+threads in my broader work in computational geometry, solid and geometric modeling, computer graphics, and
+GPU-accelerated computing.
+
+## How It Started
+
+I've always been drawn to systems that connect the physical and the simulated. That curiosity took shape during
+my Ph.D., when our lab happened to sit right next to the Cyber-Physical Systems Lab. I asked the professor
+running it if I could get involved, and ended up helping his students write software for robots like the
+TurtleBot and the Sawyer arm. That connection carried into my postdoc at the same lab, where I had the chance to
+work on several interesting cyber-physical systems projects, mostly using Gazebo, which was solid and well
+integrated with ROS, though never a tool I found particularly intuitive for development or visualization.
+
+Things shifted toward NVIDIA's ecosystem during my time at PARC in 2021, when I got my hands on a very early
+alpha of Isaac Sim and started experimenting with it, building on what I'd learned from Gazebo. That curiosity
+carried over later that year at RIOS Intelligent Machines, where I had the chance to build simulations with
+Isaac Sim directly, which became the starting point for the Omniverse-based work shown on this page.
