@@ -24,8 +24,8 @@ videos:
           This short demo illustrates a part of my work at Machina Labs on Virtual Robocraftsman.
 
           The digital twins of FANUC M1000iA 6-axis robots and the rails are generated from Solidworks models in USD format.
-          The physics components of the digital twins are generated from the Denavit-Hartenberg parameters of the robots and
-          the workcell for accurate joint-level dynamics.
+          The physics components of the digital twins are generated from the Denavit-Hartenberg (DH) parameters of the robots
+          and the workcell for accurate joint-level dynamics.
 
           The simulation software stack is built on top of the Nvidia Omniverse platform, using a customized version of
           the `kit-app-template` tooling for compiling and installing proprietary software developed in-house. This
