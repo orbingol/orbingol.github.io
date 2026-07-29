@@ -33,7 +33,9 @@ The work is described in our [SoftwareX article](https://doi.org/10.1016/j.softx
 
 ## How It Started
 
-NURBS-Python started in 2016 during my Ph.D. studies at Iowa State University. At the time, most NURBS libraries were either commercial or written in compiled languages like C, C++, or Fortran, and the few Python options were fairly limited. I put this together, initially as part of my coursework and later as part of my dissertation, favoring readability over raw performance.
+NURBS-Python started in 2016 during my Ph.D. studies at Iowa State University. At the time, most NURBS libraries were either
+commercial or written in compiled languages like C, C++, or Fortran, and the few Python options were fairly limited. I put this
+together, initially as part of my coursework and later as part of my dissertation, favoring readability over raw performance.
 
 Since then, I've also developed GPU-accelerated extensions using Numba, though that work remains unpublished and experimental.
 
