@@ -8,6 +8,35 @@ category: 1
 enabled: true
 schemaType: CreativeWork
 videos:
+  - title: Manufacturing Workcell
+    url: https://www.youtube.com/watch?v=1MuVXlOCRCk
+    date: "2025-06"
+    description: >-
+      Short demo of a manufacturing workcell digital twin, built with NVIDIA Omniverse.
+    sections:
+      - title: Overview
+        body: |
+          This demo illustrates the digital twin of a manufacturing workcell equipped with two
+          FANUC M1000iA 6-axis robots and a custom end of arm tooling.
+      - title: Technical details
+        collapsed: true
+        body: |
+          This short demo illustrates a part of my work at Machina Labs on Virtual Robocraftsman.
+          The software stack was built on top of Nvidia Omniverse platform using `kit-app-template` tooling.
+          The digital twin of the part displayed on the frame was generated from the real data collected
+          during the manufacturing from a sheet metal.
+  - title: Layer-by-layer Manufacturing with USDRT and Fabric
+    url: https://www.youtube.com/watch?v=OUDxJHNdlus
+    date: "2024-11"
+    description: >-
+      Early USDRT and Fabric implementation of a digital twin, showing layer-by-layer manufacturing steps
+      from the real data.
+    sections:
+      - title: Overview
+        body: |
+          A very early implementation of **USDRT** and **Fabric** illusrating the layer-by-layer generation
+          steps of the robotics-assisted manufacturing process. The digital twin of the part was generated
+          from the real world data collected by the workcell during the manufacturing from a sheet metal.
   - title: Factory Simulations using NVIDIA Omniverse Platform
     url: https://www.youtube.com/watch?v=BCiEpc9TmqY
     date: "2023-12"
@@ -46,7 +75,7 @@ videos:
           the capabilities of a very early (beta) version of Isaac Sim alongside with a fully-featured digital twin
           framework integrated in Autodesk Fusion 360.
 
-          Please refer to [our talk]((https://www.nvidia.com/en-us/on-demand/session/gtcspring23-s51494/) for more
+          Please refer to [our talk](https://www.nvidia.com/en-us/on-demand/session/gtcspring23-s51494/) for more
           details on the software frameworks we built for Isaac Sim and Fusion 360.
       - title: Technical details
         collapsed: true
