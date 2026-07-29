@@ -19,28 +19,28 @@ const linkActive = "font-semibold text-[var(--color-accent)]";
 <header class="relative z-50 w-full border-b border-[var(--color-ink)]/8 bg-[var(--color-nav)]/95 backdrop-blur-sm">
   <nav class="site-nav flex w-full flex-wrap items-center gap-3 px-4 py-3 sm:px-6 lg:px-8" aria-label="Primary" data-nav>
     <div class="flex w-full min-w-0 items-center justify-between gap-2 md:contents">
-      <a href="/" class="min-w-0 text-xl font-semibold leading-tight tracking-tight text-[var(--color-ink)] sm:text-2xl" aria-label={SITE_NAME}>
-        <span class="md:hidden">{SITE_NAME_SHORT}</span>
-        <span class="hidden md:inline">{SITE_NAME}</span>
-      </a>
-
-      <div class="flex shrink-0 items-center gap-2 md:order-last">
-        <SocialIcons class="hidden gap-2.5 md:flex" />
-        <button
-          type="button"
-          class="inline-flex items-center justify-center rounded-md border border-[var(--color-ink)]/15 px-3 py-2 text-sm text-[var(--color-ink)] md:hidden"
-          aria-expanded="false"
-          aria-controls="primary-nav-panel"
-          data-nav-toggle
-        >
-          <span class="sr-only">Menu</span>
-          <span aria-hidden="true" class="flex flex-col gap-1.5">
-            <span class="block h-0.5 w-5 bg-current"></span>
-            <span class="block h-0.5 w-5 bg-current"></span>
-            <span class="block h-0.5 w-5 bg-current"></span>
-          </span>
-        </button>
+      <div class="flex min-w-0 items-center gap-2 sm:gap-3">
+        <a href="/" class="min-w-0 text-xl font-semibold leading-tight tracking-tight text-[var(--color-ink)] sm:text-2xl" aria-label={SITE_NAME}>
+          <span class="md:hidden">{SITE_NAME_SHORT}</span>
+          <span class="hidden md:inline">{SITE_NAME}</span>
+        </a>
+        <SocialIcons class="hidden shrink-0 gap-2.5 md:flex" />
       </div>
+
+      <button
+        type="button"
+        class="inline-flex shrink-0 items-center justify-center rounded-md border border-[var(--color-ink)]/15 px-3 py-2 text-sm text-[var(--color-ink)] md:hidden"
+        aria-expanded="false"
+        aria-controls="primary-nav-panel"
+        data-nav-toggle
+      >
+        <span class="sr-only">Menu</span>
+        <span aria-hidden="true" class="flex flex-col gap-1.5">
+          <span class="block h-0.5 w-5 bg-current"></span>
+          <span class="block h-0.5 w-5 bg-current"></span>
+          <span class="block h-0.5 w-5 bg-current"></span>
+        </span>
+      </button>
     </div>
 
     <div
