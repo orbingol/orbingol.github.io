@@ -1,5 +1,6 @@
 ---
 import SocialIcons from "./SocialIcons.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 import { SITE_NAME, SITE_NAME_SHORT } from "../lib/site";
 import { getEnabledProjects } from "../lib/projects";
 
@@ -27,20 +28,23 @@ const linkActive = "font-semibold text-[var(--color-accent)]";
         <SocialIcons class="hidden shrink-0 gap-2.5 md:flex" />
       </div>
 
-      <button
-        type="button"
-        class="inline-flex shrink-0 items-center justify-center rounded-md border border-[var(--color-ink)]/15 px-3 py-2 text-sm text-[var(--color-ink)] md:hidden"
-        aria-expanded="false"
-        aria-controls="primary-nav-panel"
-        data-nav-toggle
-      >
-        <span class="sr-only">Menu</span>
-        <span aria-hidden="true" class="flex flex-col gap-1.5">
-          <span class="block h-0.5 w-5 bg-current"></span>
-          <span class="block h-0.5 w-5 bg-current"></span>
-          <span class="block h-0.5 w-5 bg-current"></span>
-        </span>
-      </button>
+      <div class="flex shrink-0 items-center gap-2 md:order-last">
+        <ThemeToggle />
+        <button
+          type="button"
+          class="inline-flex shrink-0 items-center justify-center rounded-md border border-[var(--color-ink)]/15 px-3 py-2 text-sm text-[var(--color-ink)] md:hidden"
+          aria-expanded="false"
+          aria-controls="primary-nav-panel"
+          data-nav-toggle
+        >
+          <span class="sr-only">Menu</span>
+          <span aria-hidden="true" class="flex flex-col gap-1.5">
+            <span class="block h-0.5 w-5 bg-current"></span>
+            <span class="block h-0.5 w-5 bg-current"></span>
+            <span class="block h-0.5 w-5 bg-current"></span>
+          </span>
+        </button>
+      </div>
     </div>
 
     <div
@@ -64,7 +68,7 @@ const linkActive = "font-semibold text-[var(--color-accent)]";
         </button>
         <div
           id="projects-menu"
-          class="relative z-50 mt-1 hidden w-full rounded-md border border-[var(--color-ink)]/10 bg-white py-1 shadow-lg md:absolute md:left-0 md:mt-1 md:min-w-[14rem]"
+          class="relative z-50 mt-1 hidden w-full rounded-md border border-[var(--color-ink)]/10 bg-[var(--color-panel)] py-1 shadow-lg md:absolute md:left-0 md:mt-1 md:min-w-[14rem]"
           data-projects-panel
           hidden
         >
