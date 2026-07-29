@@ -37,20 +37,28 @@ docker build -f docker/Dockerfile --target export --output type=local,dest=dist 
 
 ## Where to edit
 
-| Path                        | Purpose                                         |
-| --------------------------- | ----------------------------------------------- |
-| `src/pages/`                | Routes (`/`, `/cv`, `/contact`, `/projects`, …) |
-| `src/components/`           | Nav, footer, cards, etc.                        |
-| `src/layouts/Layout.astro`  | Shared shell, SEO head, GA, fonts               |
-| `src/lib/site.ts`           | Site name, default OG, `sameAs`, title helpers  |
-| `src/content/projects/*.md` | Project pages (frontmatter + body)              |
-| `src/styles/global.css`     | Design tokens / global CSS                      |
-| `public/`                   | Static files, OG image, favicons                |
-| `CNAME`                     | Custom domain; copied into `dist/` on build     |
+| Path                            | Purpose                                         |
+| ------------------------------- | ----------------------------------------------- |
+| `src/pages/`                    | Routes (`/`, `/cv`, `/contact`, `/projects`, …) |
+| `src/components/`               | Nav, footer, cards, etc.                        |
+| `src/layouts/Layout.astro`      | Shared shell, SEO head, GA, fonts               |
+| `src/lib/site.ts`               | Site name, default OG, `sameAs`, title helpers  |
+| `src/lib/project-categories.ts` | Category ID → label map for `/projects`         |
+| `src/content/projects/*.md`     | Project pages (frontmatter + body)              |
+| `src/styles/global.css`         | Design tokens / global CSS                      |
+| `public/`                       | Static files, OG image, favicons                |
+| `CNAME`                         | Custom domain; copied into `dist/` on build     |
 
 Add a project by copying an existing file under `src/content/projects/`. Use `enabled: false` for drafts
 (omitted from nav, listings, routes, and sitemap). The `miscellaneous` project uses `order: 999` so it sorts last.
-Optional `videos[].sections` entries (`title`, markdown `body`, optional `collapsed`) render under each embed on the project page.
+
+Useful frontmatter:
+
+- `category` — numeric ID from `src/lib/project-categories.ts` (e.g. `1`, `2`). Groups cards under headings on `/projects` only.
+- `videos[]` — optional embeds. Each video may include:
+  - `date` — `YYYY`, `YYYY-MM`, or `YYYY-MM-DD` (quote year-only values, e.g. `"2023"`)
+  - `description` — short plain text for JSON-LD / fallback caption
+  - `sections` — `{ title, body` (markdown)`, collapsed? }`; omit `collapsed` for always-open, `true`/`false` for initial state
 
 ## Favicons
 
