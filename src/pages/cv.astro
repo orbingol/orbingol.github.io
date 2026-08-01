@@ -1,9 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import EducationTimeline from "../components/EducationTimeline.astro";
-import { ORCID_URL } from "../lib/site";
+import { ORCID_URL, GOOGLE_SCHOLAR_URL, DISSERTATION_URL } from "../lib/site";
 
 // /cv is private-by-link: noindex, omitted from sitemap/robots/llms/JSON-LD. LinkedIn is the public CV.
+
+const orcidIconPath =
+  "M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z";
+const scholarIconPath =
+  "M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z";
 ---
 
 <Layout title="Curriculum Vitae" description="Curriculum vitae and education of Onur Rauf Bingol." noindex breadcrumbs={[{ label: "Home", href: "/" }, { label: "CV" }]}>
@@ -18,11 +23,38 @@ import { ORCID_URL } from "../lib/site";
     </div>
 
     <div class="mt-12">
-      <h2 class="text-3xl font-semibold tracking-tight text-[var(--color-ink)]">Profiles</h2>
-      <ul class="mt-6 list-none space-y-2 text-lg text-[var(--color-muted)]">
-        <li>
-          ORCID:
-          <a href={ORCID_URL} target="_blank" rel="noopener noreferrer" class="font-medium text-[var(--color-accent)] underline-offset-2 hover:underline"> 0000-0002-3139-5725 </a>
+      <h2 class="text-3xl font-semibold tracking-tight text-[var(--color-ink)]">Profiles &amp; Links</h2>
+      <ul class="mt-6 list-none space-y-3 text-lg text-[var(--color-muted)]">
+        <li class="flex items-start gap-3">
+          <svg viewBox="0 0 24 24" class="mt-1 size-5 shrink-0 text-[var(--color-muted)]" fill="none" aria-hidden="true">
+            <path
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+            />
+          </svg>
+          <span>
+            <a href={DISSERTATION_URL} target="_blank" rel="noopener noreferrer" class="font-medium text-[var(--color-accent)] underline-offset-2 hover:underline">
+              Onur's Ph.D. Dissertation
+            </a>
+          </span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg viewBox="0 0 24 24" class="mt-1 size-5 shrink-0 text-[var(--color-muted)]" aria-hidden="true">
+            <path fill="currentColor" d={scholarIconPath} />
+          </svg>
+          <a href={GOOGLE_SCHOLAR_URL} target="_blank" rel="noopener noreferrer" class="font-medium text-[var(--color-accent)] underline-offset-2 hover:underline"> Google Scholar </a>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg viewBox="0 0 24 24" class="mt-1 size-5 shrink-0 text-[var(--color-muted)]" aria-hidden="true">
+            <path fill="currentColor" d={orcidIconPath} />
+          </svg>
+          <span>
+            ORCID:
+            <a href={ORCID_URL} target="_blank" rel="noopener noreferrer" class="font-medium text-[var(--color-accent)] underline-offset-2 hover:underline"> 0000-0002-3139-5725 </a>
+          </span>
         </li>
       </ul>
     </div>

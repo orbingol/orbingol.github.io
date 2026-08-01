@@ -10,7 +10,9 @@ export const DEFAULT_OG_IMAGE = "/og-default.png";
 
 /** Professional profiles used for sameAs / UI — LinkedIn is the public CV surface. */
 export const ORCID_URL = "https://orcid.org/0000-0002-3139-5725";
-export const SAME_AS = ["https://github.com/orbingol/", "https://www.linkedin.com/in/orbingol/", ORCID_URL] as const;
+export const GOOGLE_SCHOLAR_URL = "https://scholar.google.com/citations?user=CuXTN_UAAAAJ&hl=en";
+export const DISSERTATION_URL = "https://dr.lib.iastate.edu/handle/20.500.12876/31587";
+export const SAME_AS = ["https://github.com/orbingol/", "https://www.linkedin.com/in/orbingol/", ORCID_URL, GOOGLE_SCHOLAR_URL] as const;
 
 /** Raster formats that social crawlers reliably support (SVG is gated out). */
 const RASTER_OG = /\.(png|jpe?g|webp|gif)$/i;
