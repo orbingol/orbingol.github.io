@@ -15,7 +15,9 @@
 
 ## License
 
-- All text, figures and pictures used on this webpage is licensed under [CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) unless indicated otherwise
+- All text, figures and pictures used on this webpage are licensed under [CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) unless indicated otherwise
+- Brand icons are sourced from [Simple Icons](https://github.com/simple-icons/simple-icons), licensed under CC0 1.0 Universal
+- Some icons are sourced from [Heroicons](https://github.com/tailwindlabs/heroicons), licensed under the MIT License
 - [Astro](https://github.com/withastro/astro) is licensed under the MIT License
 - [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss) is licensed under the MIT License
 - [Outfit](https://fonts.google.com/specimen/Outfit) is licensed under the SIL Open Font License 1.1
