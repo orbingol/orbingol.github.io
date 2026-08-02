@@ -1,18 +1,60 @@
 services:
+  # Astro stays off the host network — reachable only via the backend bridge.
   web:
     build:
       context: .
       dockerfile: docker/Dockerfile
       target: web
-    ports:
-      - "4321:4321"
+    # tini as PID 1 so SIGTERM reaches Astro (avoids exit 137 / stale .astro/dev.json)
+    init: true
+    expose:
+      - "4321"
     volumes:
       - .:/app
       - web_node_modules:/app/node_modules
     environment:
       - CHOKIDAR_USEPOLLING=true
       - ASTRO_TELEMETRY_DISABLED=1
-    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0 --port 4321"
+    # exec: Astro is the main process. --ignore-lock: bind-mounted .astro/dev.json
+    # otherwise confuses container PID reuse after an unclean stop.
+    command:
+      - sh
+      - -c
+      - |
+        npm ci
+        rm -f .astro/dev.json
+        exec ./node_modules/.bin/astro dev --host 0.0.0.0 --port 4321 --ignore-lock
+    stop_grace_period: 10s
+    networks:
+      - backend
+
+  # COMPOSE_PROFILES=access — publish Astro on ORB_FE_PORT (default 4321)
+  web-access:
+    profiles: [access]
+    image: busybox:1.37
+    network_mode: service:web
+    ports:
+      - "${ORB_FE_PORT:-4321}:4321"
+    command: ["sleep", "infinity"]
+    depends_on:
+      - web
+
+  # Only published port: browser → localhost:${ORB_WEB_PORT:-8080} → Caddy → web:4321
+  proxy:
+    image: caddy:2-alpine
+    init: true
+    ports:
+      - "${ORB_WEB_PORT:-8080}:80"
+    environment:
+      ORB_WEB_PORT: ${ORB_WEB_PORT:-8080}
+    volumes:
+      - ./docker/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./docker/proxy-entrypoint.sh:/proxy-entrypoint.sh:ro
+    entrypoint: ["/bin/sh", "/proxy-entrypoint.sh"]
+    depends_on:
+      - web
+    networks:
+      - backend
 
   # Writes static site to ./dist on the host
   build:
@@ -36,6 +78,13 @@ services:
       target: favicons
     volumes:
       - ./public:/work
+
+networks:
+  # Dedicated bridge: DNS name `web` resolves for the proxy.
+  # Not internal: true — `web` still needs outbound access for npm ci.
+  # Host isolation comes from unpublished ports on `web`.
+  backend:
+    driver: bridge
 
 volumes:
   web_node_modules:
