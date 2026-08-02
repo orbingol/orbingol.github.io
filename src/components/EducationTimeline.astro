@@ -1,4 +1,6 @@
 ---
+import { renderMarkdown } from "../lib/markdown";
+
 type EducationItem = {
   degree: string;
   school: string;
@@ -17,7 +19,7 @@ const education: EducationItem[] = [
     school: "Iowa State University",
     schoolUrl: "https://www.iastate.edu",
     countryCode: "US",
-    note: "Received Research Excellence Award for outstanding research",
+    note: "*“A framework for geometric modeling and structural analysis of composite laminates”*\n\nReceived **Research Excellence Award** for outstanding research.",
     startYear: "2015",
     endYear: "2019",
   },
@@ -90,7 +92,12 @@ function flagEmoji(countryCode: string) {
                 </span>
               )}
             </p>
-            {item.note && <p class="mt-2 text-base text-[var(--color-ink)]/80 italic">{item.note}</p>}
+            {item.note && (
+              <div
+                class="mt-2 space-y-2 text-base text-[var(--color-ink)]/80 [&_a]:font-medium [&_a]:text-[var(--color-accent)] [&_a]:underline-offset-2 [&_a]:hover:underline [&_em]:italic [&_p]:m-0 [&_strong]:font-semibold"
+                set:html={renderMarkdown(item.note)}
+              />
+            )}
           </li>
         );
       })
