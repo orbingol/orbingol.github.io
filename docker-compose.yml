@@ -4,6 +4,8 @@ services:
       context: .
       dockerfile: docker/Dockerfile
       target: web
+    # tini as PID 1 so SIGTERM reaches Astro (avoids exit 137 / stale .astro/dev.json)
+    init: true
     ports:
       - "4321:4321"
     volumes:
@@ -12,7 +14,16 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
       - ASTRO_TELEMETRY_DISABLED=1
-    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0 --port 4321"
+    # exec: Astro is the main process. --ignore-lock: bind-mounted .astro/dev.json
+    # otherwise confuses container PID reuse after an unclean stop.
+    command:
+      - sh
+      - -c
+      - |
+        npm ci
+        rm -f .astro/dev.json
+        exec ./node_modules/.bin/astro dev --host 0.0.0.0 --port 4321 --ignore-lock
+    stop_grace_period: 10s
 
   # Writes static site to ./dist on the host
   build:
