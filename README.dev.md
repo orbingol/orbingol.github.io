@@ -10,15 +10,28 @@ Astro + Tailwind. **Use Docker** — no host Node required. Images use **Node.js
 ## Start the dev server
 
 ```bash
-docker compose up web
+docker compose up proxy
 ```
 
-Open [http://localhost:4321](http://localhost:4321). The repo is bind-mounted, so edits hot-reload. Stop with `Ctrl+C`.
+(`proxy` depends on `web`, so both start.) After Astro is reachable, the `proxy` logs print `Dev server: http://localhost:8080` (override with `ORB_WEB_PORT=…`).
+
+Topology: `web` joins a private `backend` bridge with **no published ports**. Caddy (`proxy`) is the only
+host ingress (`${ORB_WEB_PORT:-8080}→80`) and reverse-proxies to `web:4321` (including Vite HMR WebSockets).
+See [`docker/Caddyfile`](docker/Caddyfile).
+
+Optional direct Astro access:
+
+```bash
+COMPOSE_PROFILES=access docker compose up proxy
+# → also http://localhost:4321 (override with ORB_FE_PORT=…)
+```
+
+The repo is bind-mounted into `web`, so edits hot-reload. Stop with `Ctrl+C`.
 
 After `package.json` / lockfile changes:
 
 ```bash
-docker compose build web && docker compose up web
+docker compose build web && docker compose up proxy
 ```
 
 ## Production build locally
@@ -72,12 +85,17 @@ Hard-refresh (or clear site data) after regenerating — browsers cache favicons
 
 ## Docker targets
 
-| Target          | Role                                            |
-| --------------- | ----------------------------------------------- |
-| `web` (default) | `astro dev` for local preview                   |
-| `build`         | `astro build` → `/app/dist`                     |
-| `export`        | Scratch stage used by CI to copy only `dist`    |
-| `favicons`      | Rasterize SVG sources → PNG/ICO under `public/` |
+| Target     | Role                                                    |
+| ---------- | ------------------------------------------------------- |
+| `proxy`    | Caddy edge; publishes `localhost:${ORB_WEB_PORT:-8080}` |
+| `web`      | `astro dev` on `backend` network (no host ports)        |
+| `build`    | `astro build` → `/app/dist`                             |
+| `export`   | Scratch stage used by CI to copy only `dist`            |
+| `favicons` | Rasterize SVG sources → PNG/ICO under `public/`         |
+
+`backend` is a user-defined bridge (not `internal: true`) so `web` can still reach the npm registry.
+Isolation from the host is “no published ports on `web`.” A next experiment is an `internal: true`
+network once deps are baked into the image and startup no longer runs `npm ci`.
 
 ## Lint / pre-commit
 

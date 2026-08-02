@@ -1,0 +1,5 @@
+# Edge proxy: host:${ORB_WEB_PORT:-8080} → proxy:80 → web:4321 on the backend network.
+# WebSockets (Vite HMR) are proxied automatically.
+:80 {
+	reverse_proxy web:4321
+}
